@@ -64,13 +64,13 @@ void Player::StateIdle()
 void Player::Update()
 {
 	m_pos_old = m_pos;
-	/*switch (m_state) 
+	switch (m_state) 
 	{
 		case eState_Idle:
 			StateIdle();
 			break;
 
-	}*/
+	}
 
 	if (m_is_ground && m_vec.y > GRAVITY * 4)
 		m_is_ground = false;
