@@ -14,6 +14,24 @@
     <ClCompile Include="Game\Map.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\daikei.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\hisigata.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\L.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\maru.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\sankaku.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\sikaku.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -38,6 +56,24 @@
       <Filter>TItle</Filter>
     </ClInclude>
     <ClInclude Include="Game\Map.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\daikei.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\hisigata.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\L.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\maru.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\sankaku.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\sikaku.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
