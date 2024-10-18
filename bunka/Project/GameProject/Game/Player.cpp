@@ -117,14 +117,14 @@ void Player::Collision(Base* b)
 }
 
 static TexAnim playerIdle[] = {
-	{0,10},
-	{1,10},
+	{0,20},
+	{1,20},
 };
 
 static TexAnim playerWalk[] = {
-	{3,20},
-	{4,20},
-	{5,20},
+	{3,10},
+	{4,5},
+	{5,10},
 };
 
 static TexAnim playerjump[] = {
