@@ -1,6 +1,6 @@
 #include "Base/Base.h"
 #include "Game/Player.h"
-
+#include "Game/Map.h"
 
 
 
@@ -63,8 +63,8 @@ void Init(void)
 	//-----------------------------------------------------
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 16, 16));
 	Base::Add(new Player(CVector2D(200, 200), true));
-
-
+	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip.png"));
+	Base::Add(new Map());
 
 
 

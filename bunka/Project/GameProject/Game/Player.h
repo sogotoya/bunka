@@ -2,17 +2,19 @@
 #include "Base/Base.h"
 
 class Player : public Base {
-	enum {
+	enum 
+	{
 		eState_Idle,
 		eState_Walk,
 		
 	};
-	enum {
+	enum 
+	{
 		eAnimIdle = 0,
 		eAnimWalk,
 		eAnimjump,
 
-};
+	};
 private:
 	int m_state;
 	CImage m_img;
