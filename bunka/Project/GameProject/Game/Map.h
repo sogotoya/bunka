@@ -1,9 +1,9 @@
 #pragma once
 #include "../Base/Base.h"
 
-#define MAP_WIDTH 20
-#define MAP_HEIGHT 20
-#define MAP_TIP_SIZE 12
+#define MAP_WIDTH 39
+#define MAP_HEIGHT 22
+#define MAP_TIP_SIZE 49
 
 class Map :public Base 
 {
