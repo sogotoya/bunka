@@ -1,17 +1,13 @@
 #include "sikaku.h"
 
-/*sikaku::sikaku(const CVector2D& p, bool flip)
+sikaku::sikaku():Base(eType_Sikaku)
 {
-}*/
-
-void sikaku::Update()
-{
+	m_img = COPY_RESOURCE("sikaku", CImage);
+	
 }
 
 void sikaku::Draw()
 {
-}
-
-void sikaku::Collision(Base* b)
-{
+	m_img.SetSize(MAP_TIP_SIZE*6, MAP_TIP_SIZE*3);
+	m_img.Draw();
 }

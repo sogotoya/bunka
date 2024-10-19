@@ -1,7 +1,7 @@
 #include "Base/Base.h"
 #include "Game/Player.h"
 #include "Game/Map.h"
-
+#include "Game/sikaku.h"
 
 
 
@@ -80,8 +80,8 @@ void Init(void)
 	Base::Add(new Player(CVector2D(200, 200), true));
 	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip.png"));
 	Base::Add(new Map());
-
-
+	ADD_RESOURCE("sikaku", CImage::CreateImage("Image/sikaku1.png"));
+	Base::Add(new sikaku());
 
 
 
