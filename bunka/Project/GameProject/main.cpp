@@ -2,7 +2,7 @@
 #include "Game/Player.h"
 #include "Game/Map.h"
 #include "Game/sikaku.h"
-
+#include "Game/L.h"
 
 
 
@@ -82,7 +82,8 @@ void Init(void)
 	Base::Add(new Map());
 	ADD_RESOURCE("sikaku", CImage::CreateImage("Image/sikaku1.png"));
 	Base::Add(new sikaku());
-
+	ADD_RESOURCE("L", CImage::CreateImage("Image/Gata.png"));
+	Base::Add(new L());
 
 
 }
