@@ -18,6 +18,7 @@ enum {
     eType_Scene,
     eType_Sikaku,
     eType_L,
+    eType_maru,
 };
 //d—Í‰Á‘¬“x
 #define GRAVITY (9.8f/20)
