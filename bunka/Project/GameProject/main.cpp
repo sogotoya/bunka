@@ -3,11 +3,9 @@
 #include "Game/Map.h"
 #include "Game/sikaku.h"
 #include "Game/L.h"
-<<<<<<< HEAD
 #include "Game/Block.h"
-=======
 #include "Game/maru.h"
->>>>>>> f50b079a273ca96c419d967d7fbd89ce05006a90
+
 
 
 //--------------------------------------------
@@ -85,11 +83,8 @@ void Init(void)
 	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip.png"));
 	Base::Add(new Map());
 	ADD_RESOURCE("sikaku", CImage::CreateImage("Image/sikaku1.png"));
-<<<<<<< HEAD
 	//Base::Add(new sikaku(CVector2D(0,0),true));
-=======
-	Base::Add(new sikaku());
->>>>>>> f50b079a273ca96c419d967d7fbd89ce05006a90
+	//Base::Add(new sikaku());
 	ADD_RESOURCE("L", CImage::CreateImage("Image/Gata.png"));
 	//Base::Add(new L());
 	//Base::Add(new Block(CVector2D(3, 0), Block::eL));
