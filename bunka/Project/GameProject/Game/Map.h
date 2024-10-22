@@ -9,6 +9,8 @@ class Map :public Base
 {
 private:
 	CImage m_img;
+	//書き換え可能データ
+	int m_stage_data[MAP_HEIGHT][MAP_WIDTH];
 public:
 	Map();
 	void Draw();
@@ -16,6 +18,10 @@ public:
 	int GetTip(const CVector2D& pos);
 	//指定列、行のマップチップを取得
 	int GetTip(int col, int row);
+
+	//指定列、行のマップチップを設定
+	void SetTip(int col, int row, int t);
+
 	//マップとの判定
 	int CollisionPoint(const CVector2D& pos);
 	//当たり判定

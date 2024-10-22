@@ -5,17 +5,12 @@
 enum {
     eType_Field,
     eType_Map,
-    eType_Door,
-    eType_AreaChange,
     eType_Player,
-    eType_Enemy,
-    eType_Bullet,
     eType_Goal,
-    eType_Player_Attack,
-    eType_Enemy_Attack,
     eType_Effect,
     eType_UI,
     eType_Scene,
+    eType_Block,
     eType_Sikaku,
     eType_L,
 };

@@ -29,6 +29,8 @@ static int stage1data[MAP_HEIGHT][MAP_WIDTH] =
 Map::Map():Base(eType_Map)
 {
 	m_img =COPY_RESOURCE("Map_Tip", CImage);
+    //ステージ1データをコピー
+    memcpy(m_stage_data, stage1data, sizeof(stage1data));
 }
 
 void Map::Draw()
@@ -65,7 +67,12 @@ int Map::GetTip(const CVector2D& pos)
 
 int Map::GetTip(int col, int row)
 {
-    return stage1data[row][col];
+    return m_stage_data[row][col];
+}
+
+void Map::SetTip(int col, int row, int t)
+{
+    m_stage_data[row][col] = t;
 }
 
 int Map::CollisionPoint(const CVector2D& pos)
