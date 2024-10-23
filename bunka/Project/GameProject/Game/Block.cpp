@@ -1,18 +1,56 @@
 #include "Block.h"
 #include "Map.h"
 
-static int block_data[Block::eMax][3][3] = 
+static int block_data[Block::eMax][4][3][3] = 
 {
-	{//L
+	{
+
+	{//L0
 		1,0,0,
 		1,0,0,
 		1,1,1,
 	},
-	
+
+	{//L1
+		0,0,1,
+		0,0,1,
+		1,1,1,
+	},
+
+	{//L2
+		1,1,1,
+		0,0,1,
+		0,0,1,
+	},
+
+	{//L3
+		1,1,1,
+		1,0,0,
+		1,0,0,
+	},
+	},
+	{
 	{//sikaku
 		1,1,0,
 		1,1,0,
 		0,0,0,
+	},
+	{//sikaku
+		1,1,0,
+		1,1,0,
+		0,0,0,
+	},
+	{//sikaku
+		1,1,0,
+		1,1,0,
+		0,0,0,
+	},
+
+	{//sikaku
+		1,1,0,
+		1,1,0,
+		0,0,0,
+	},
 	}
 };
 
@@ -20,6 +58,7 @@ Block::Block(const CVector2D& pos, int type)
 	:Base(eType_Block)
 {
 	m_block_type = type;
+	m_block_dir = 0;
 	m_pos = pos;
 	m_cnt = 0;
 	//新しい位置へブロックの書き込み
@@ -29,6 +68,14 @@ Block::Block(const CVector2D& pos, int type)
 void Block::Update()
 {
 	int move_cnt = 30;
+	if (PUSH_PAD(1, CInput::eButton1)) 
+	{
+		WriteBlock(m_pos, 0);
+		m_block_dir++;
+		if (m_block_dir >= 4)
+			m_block_dir = 0;
+		WriteBlock(m_pos, 2);
+	}
 	m_cnt++;
 	//一定時間で下へ落下
 	if (m_cnt >= move_cnt) 
@@ -37,7 +84,7 @@ void Block::Update()
 		//今の位置のブロックを消す
 		WriteBlock(m_pos, 0);
 		//1マス下を確認
-		if(CollisionCheck(m_pos+CVector2D(0,1)))
+		if(CollisionCheck(m_pos+CVector2D(0,1),m_block_dir))
 		{
 			//下に行けないのなら削除
 			SetKill();
@@ -54,7 +101,7 @@ void Block::Update()
 	}
 }
 
-bool Block::CollisionCheck(const CVector2D& new_pos)
+bool Block::CollisionCheck(const CVector2D& new_pos,int new_dir)
 {
 	Map* m = dynamic_cast<Map*>(Base::FindObject(eType_Map));
 	//3*3のブロックで検査
@@ -63,7 +110,7 @@ bool Block::CollisionCheck(const CVector2D& new_pos)
 		for (int j = 0; j < 3; j++) 
 		{
 			//block_dataが0の所はスキップ
-			if (block_data[m_block_type][i][j] == 0)continue;
+			if (block_data[m_block_type][new_dir][i][j] == 0)continue;
 			CVector2D v = new_pos + CVector2D(j, i);
 			if (m->GetTip(v.x, v.y) != 0) 
 			{
@@ -85,7 +132,7 @@ void Block::WriteBlock(const CVector2D& pos, int t)
 		for (int j = 0; j < 3; j++) 
 		{
 			//block_dataが0の所はスキップ
-			if (block_data[m_block_type][i][j] == 0)continue;
+			if (block_data[m_block_type][m_block_dir][i][j] == 0)continue;
 			CVector2D v = pos + CVector2D(j, i);
 			//マップチップへ書き込み
 			m->SetTip(v.x, v.y, t);

@@ -39,8 +39,8 @@ void Map::Draw()
 	{
 		for (int w = 0; w < MAP_WIDTH; w++) 
 		{
-            if (stage1data[q][w] == 0)continue;
-            int t = stage1data[q][w];
+            if (m_stage_data[q][w] == 0)continue;
+            int t = m_stage_data[q][w];
             m_img.SetRect(32*t, 0, 32*t + 32, 32);//?
 			m_img.SetSize(MAP_TIP_SIZE,MAP_TIP_SIZE );
             m_img.SetPos(MAP_TIP_SIZE * w - m_scroll.x, MAP_TIP_SIZE * q - m_scroll.y);

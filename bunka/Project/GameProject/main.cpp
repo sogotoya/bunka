@@ -50,8 +50,7 @@ void Init(void)
 	CInput::SetButton(0, CInput::eMouseR, VK_RBUTTON);
 	CInput::SetButton(0, CInput::eMouseC, VK_MBUTTON);
 
-	CInput::Init();
-	//CInput::SetButton(1, CInput::eButton1, 'Z');
+	CInput::SetButton(1, CInput::eButton1, 'Z');
 	//CInput::SetButton(1, CInput::eButton2, 'X');
 	//CInput::SetButton(1, CInput::eButton3, 'C');
 	//CInput::SetButton(1, CInput::eButton4, 'V');
@@ -87,8 +86,8 @@ void Init(void)
 	//Base::Add(new sikaku());
 	ADD_RESOURCE("L", CImage::CreateImage("Image/Gata.png"));
 	//Base::Add(new L());
-	//Base::Add(new Block(CVector2D(3, 0), Block::eL));
-	//Base::Add(new Block(CVector2D(8, 0), Block::eSikaku));
+	Base::Add(new Block(CVector2D(3, 0), Block::eL));
+	Base::Add(new Block(CVector2D(8, 0), Block::eSikaku));
 }
 
 
