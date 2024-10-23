@@ -58,6 +58,7 @@ Block::Block(const CVector2D& pos, int type)
 	:Base(eType_Block)
 {
 	m_block_type = type;
+	//‰ñ“]‚Ì‰Šú”
 	m_block_dir = 0;
 	m_pos = pos;
 	m_cnt = 0;
