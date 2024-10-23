@@ -35,7 +35,7 @@ void Player::StateIdle()
 	{
 		m_pos.x += move_speed;
 		//”½“]ƒtƒ‰ƒO
-		m_flip = true;
+		m_flip = false;
 		move_flag = true;
 	}
 	const float jump_pow = 15;
