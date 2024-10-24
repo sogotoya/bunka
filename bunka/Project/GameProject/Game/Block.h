@@ -4,11 +4,7 @@
 class Block :public Base 
 {
 public:
-	enum
-	{
-		eState_Idle,
-
-	};
+	
 	enum 
 	{
 		eL,
@@ -16,7 +12,7 @@ public:
 		eMax,
 	};
 private:
-	int m_state;
+	
 	//ブロックの種類
 	int m_block_type;
 	//ブロックの回転
@@ -27,7 +23,7 @@ private:
 	bool CollisionCheck(const CVector2D& new_pos,int new_dir);
 	//ブロックをマップへ書き込み
 	void WriteBlock(const CVector2D& pos, int t);
-	void StateIdle();
+	
 public:
 	Block(const CVector2D& pos, int type);
 	void Update();

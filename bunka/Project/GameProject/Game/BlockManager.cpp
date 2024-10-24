@@ -13,6 +13,6 @@ void BlockManager::Update()
 	if (m_cnt == 0) 
 	{
 		Base::Add(new Block(CVector2D(3, 0), rand() % Block::eMax));
-		m_cnt = rand() % 60 + 60;
+		m_cnt = rand() % 300 + 300;
 	}
 }
