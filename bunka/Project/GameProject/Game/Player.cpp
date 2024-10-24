@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Map.h"
-
+#include "AreaChange.h"
+#include "Goal.h"
 
 Player::Player(const CVector2D& p, bool flip)
 	:Base(eType_Player)
@@ -114,11 +115,25 @@ void Player::Collision(Base* b)
 		}
 		break;
 	case eType_Goal:
-			if (Base::CollisionRect(this, b)) {
-				b->SetKill();
+			if (Base::CollisionRect(this, b)) 
+			{
+				if (Goal* g = dynamic_cast<Goal*>(b))
+					g->SetGoal();
+			}
+		break;
+	case eType_AreaChange:
+		if (AreaChange* s = dynamic_cast<AreaChange*>(b))
+		{
+			if(Base::CollisionRect(this,s))
+			{
+				Base::Kill(1 << eType_Field
+					| 1 << eType_AreaChange
+					| 1 << eType_Goal);
+				m_pos_old = m_pos = s->GetNextPos();
+				Base::Add(new Map(s->GetNextArea()));
+			}
 		}
 		break;
-
 	}
 }
 

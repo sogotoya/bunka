@@ -12,27 +12,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
+    <ClCompile Include="Game\AreaChange.cpp" />
     <ClCompile Include="Game\Block.cpp" />
     <ClCompile Include="Game\BlockManager.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
     <ClCompile Include="Game\Goal.cpp" />
-    <ClCompile Include="Game\L.cpp" />
     <ClCompile Include="Game\Map.cpp" />
-    <ClCompile Include="Game\maru.cpp" />
     <ClCompile Include="Game\Player.cpp" />
-    <ClCompile Include="Game\sikaku.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TItle\TItle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
+    <ClInclude Include="Game\AreaChange.h" />
     <ClInclude Include="Game\Block.h" />
     <ClInclude Include="Game\BlockManager.h" />
+    <ClInclude Include="Game\Game.h" />
     <ClInclude Include="Game\Goal.h" />
-    <ClInclude Include="Game\L.h" />
     <ClInclude Include="Game\Map.h" />
-    <ClInclude Include="Game\maru.h" />
     <ClInclude Include="Game\Player.h" />
-    <ClInclude Include="Game\sikaku.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="TItle\TItle.h" />
   </ItemGroup>

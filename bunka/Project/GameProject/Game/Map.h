@@ -12,7 +12,7 @@ private:
 	//書き換え可能データ
 	int m_stage_data[MAP_HEIGHT][MAP_WIDTH];
 public:
-	Map();
+	Map(int area);
 	void Draw();
 	//指定座標チップ番号の取得
 	int GetTip(const CVector2D& pos);

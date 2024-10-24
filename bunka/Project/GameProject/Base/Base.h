@@ -5,6 +5,7 @@
 enum {
     eType_Field,
     eType_Map,
+    eType_AreaChange,
     eType_Player,
     eType_Goal,
     eType_Effect,

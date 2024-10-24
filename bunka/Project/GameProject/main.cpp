@@ -83,12 +83,7 @@ void Init(void)
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 16, 16));
 	Base::Add(new Player(CVector2D(200, 900), true));
 	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip.png"));
-	Base::Add(new Map());
-	ADD_RESOURCE("sikaku", CImage::CreateImage("Image/sikaku1.png"));
-	//Base::Add(new sikaku(CVector2D(0,0),true));
-	//Base::Add(new sikaku());
-	ADD_RESOURCE("L", CImage::CreateImage("Image/Gata.png"));
-	//Base::Add(new L());
+	Base::Add(new Map(1));
 	Base::Add(new BlockManager());
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
 	Base::Add(new Goal(CVector2D(1740, 613)));
