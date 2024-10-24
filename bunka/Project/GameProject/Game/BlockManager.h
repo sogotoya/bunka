@@ -7,5 +7,6 @@ private:
 	int m_cnt = 30;
 
 public:
+	BlockManager();
 	void Update();
 };

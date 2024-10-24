@@ -77,6 +77,14 @@ void Block::Update()
 			m_block_dir = 0;
 		WriteBlock(m_pos, 2);
 	}
+	/*if (PUSH_PAD(1, CInput::eButton2))
+	{
+		WriteBlock(m_pos, 0);
+		m_block_dir--;
+		if (m_block_dir >= 4)
+			m_block_dir = 0;
+		WriteBlock(m_pos, 2);
+	}*/
 	m_cnt++;
 	//ˆê’èŽžŠÔ‚Å‰º‚Ö—Ž‰º
 	if (m_cnt >= move_cnt) 
