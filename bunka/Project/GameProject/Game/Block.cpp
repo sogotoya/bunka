@@ -66,6 +66,57 @@ Block::Block(const CVector2D& pos, int type)
 	WriteBlock(m_pos, 2);
 }
 
+void Block::StateIdle()
+{
+	const float move_speed = 5;
+	//移動フラグ
+	bool move_flag = false;
+	//左
+	if (PUSH_PAD(1, CInput::eLeft))
+	{
+		//今の位置のブロックを消す
+		WriteBlock(m_pos, 0);
+		//1マス左を確認
+		if (CollisionCheck(m_pos + CVector2D(-1, 0), m_block_dir))
+		{
+			//左に行けないのなら削除
+			SetKill();
+			//今の位置へブロックを書き込み
+			WriteBlock(m_pos, 2);
+		}
+		else
+		{
+			//左へ移動
+			m_pos += CVector2D(-1, 0);
+			//新しい位置へブロックの書き込み
+			WriteBlock(m_pos, 2);
+
+		}
+	}
+	//右
+	if (PUSH_PAD(1, CInput::eRight))
+	{
+		//今の位置のブロックを消す
+		WriteBlock(m_pos, 0);
+		//1マス右を確認
+		if (CollisionCheck(m_pos + CVector2D(1, 0), m_block_dir))
+		{
+			//右に行けないのなら削除
+			SetKill();
+			//今の位置へブロックを書き込み
+			WriteBlock(m_pos, 2);
+		}
+		else
+		{
+			//下へ移動
+			m_pos += CVector2D(0, 1);
+			//新しい位置へブロックの書き込み
+			WriteBlock(m_pos, 2);
+
+		}
+	}
+}
+
 void Block::Update()
 {
 	int move_cnt = 30;
@@ -107,6 +158,12 @@ void Block::Update()
 			WriteBlock(m_pos, 2);
 
 		}
+	}
+	switch (m_state)
+	{
+	case eState_Idle:
+		StateIdle();
+		break;
 	}
 }
 
@@ -153,3 +210,5 @@ void Block::WriteBlock(const CVector2D& pos, int t)
 
 
 }
+
+
