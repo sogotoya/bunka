@@ -91,6 +91,7 @@ void Init(void)
 	//Base::Add(new L());
 	Base::Add(new BlockManager());
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
+	Base::Add(new Goal(CVector2D(1740, 613)));
 
 }
 
