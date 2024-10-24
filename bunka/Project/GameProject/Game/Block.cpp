@@ -146,7 +146,7 @@ void Block::Update()
 		else
 		{
 			//下へ移動
-			m_pos += CVector2D(1, 1);
+			m_pos += CVector2D(1, 0);
 			//新しい位置へブロックの書き込み
 			WriteBlock(m_pos, 2);
 
