@@ -5,7 +5,7 @@
 #include "Game/L.h"
 #include "Game/Block.h"
 #include "Game/maru.h"
-
+#include "Game/BlockManager.h"
 
 
 //--------------------------------------------
@@ -51,7 +51,7 @@ void Init(void)
 	CInput::SetButton(0, CInput::eMouseC, VK_MBUTTON);
 
 	CInput::SetButton(1, CInput::eButton1, 'Z');
-	//CInput::SetButton(1, CInput::eButton2, 'X');
+	CInput::SetButton(1, CInput::eButton2, 'X');
 	//CInput::SetButton(1, CInput::eButton3, 'C');
 	//CInput::SetButton(1, CInput::eButton4, 'V');
 	//CInput::SetButton(1, CInput::eButton5, VK_SPACE);
@@ -77,6 +77,8 @@ void Init(void)
 	//‰Šú‰»‚Ì–½—ß‚ğ‘‚­
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
 	//-----------------------------------------------------
+	//—”‚Ìí
+	srand(time(NULL));
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 16, 16));
 	Base::Add(new Player(CVector2D(200, 900), true));
 	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip.png"));
@@ -86,8 +88,7 @@ void Init(void)
 	//Base::Add(new sikaku());
 	ADD_RESOURCE("L", CImage::CreateImage("Image/Gata.png"));
 	//Base::Add(new L());
-	Base::Add(new Block(CVector2D(3, 0), Block::eL));
-	Base::Add(new Block(CVector2D(8, 0), Block::eSikaku));
+	Base::Add(new BlockManager());
 }
 
 
