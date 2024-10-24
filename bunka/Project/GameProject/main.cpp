@@ -6,6 +6,7 @@
 #include "Game/Block.h"
 #include "Game/maru.h"
 #include "Game/BlockManager.h"
+#include "Game/Goal.h"
 
 
 //--------------------------------------------
@@ -89,6 +90,8 @@ void Init(void)
 	ADD_RESOURCE("L", CImage::CreateImage("Image/Gata.png"));
 	//Base::Add(new L());
 	Base::Add(new BlockManager());
+	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
+
 }
 
 
