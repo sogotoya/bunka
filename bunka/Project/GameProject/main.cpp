@@ -7,8 +7,12 @@
 #include "Game/maru.h"
 #include "Game/BlockManager.h"
 #include "Game/Goal.h"
+<<<<<<< HEAD
 #include "Game/count.h"
 
+=======
+#include "Game/Game.h"
+>>>>>>> fc54e937f6521232bc3043c6f9a4f1dcb91c5dcb
 
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
@@ -88,8 +92,12 @@ void Init(void)
 	Base::Add(new BlockManager());
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
 	Base::Add(new Goal(CVector2D(1740, 613)));
+<<<<<<< HEAD
 	Base::Add(new count(CVector2D(500, 0)));
 
+=======
+	Base::Add(new Game());
+>>>>>>> fc54e937f6521232bc3043c6f9a4f1dcb91c5dcb
 }
 
 

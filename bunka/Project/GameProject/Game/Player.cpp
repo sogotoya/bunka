@@ -126,7 +126,7 @@ void Player::Collision(Base* b)
 		{
 			if(Base::CollisionRect(this,s))
 			{
-				Base::Kill(1 << eType_Field
+				Base::Kill(1 << eType_Map
 					| 1 << eType_AreaChange
 					| 1 << eType_Goal);
 				m_pos_old = m_pos = s->GetNextPos();

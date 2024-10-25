@@ -3,6 +3,7 @@
 #include "Map.h"
 #include "BlockManager.h"
 #include "Goal.h"
+#include "GameData.h"
 Game::Game()
 	:Base(eType_Scene)
 {
@@ -19,7 +20,14 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if(g->GetGoal())
 		{
-			Base::KillAll();
+			//�܂Ƃ߂č폜
+			Base::Kill(1 << eType_Map
+				| 1 << eType_AreaChange
+				| 1 << eType_Goal
+				| 1 <<eType_Block);
+
+			Base::Add(new Map(2));
+			
 			//Base::Add(new Title());
 		}
 	}
