@@ -7,7 +7,7 @@
 #include "Game/maru.h"
 #include "Game/BlockManager.h"
 #include "Game/Goal.h"
-
+#include "Game/Game.h"
 
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
@@ -87,7 +87,7 @@ void Init(void)
 	Base::Add(new BlockManager());
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
 	Base::Add(new Goal(CVector2D(1740, 613)));
-
+	Base::Add(new Game());
 }
 
 
