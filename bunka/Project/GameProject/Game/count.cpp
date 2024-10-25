@@ -13,7 +13,7 @@ void count::Update()
 
 void count::Draw()
 {
-	FONT_T()->Draw(64, 64, 1, 1, 1, "%d", m_cnt/60);
+	FONT_T()->Draw(910, 80, 1000, 1000, 1000, "%d", m_cnt/60);
 }
 
 void count::Collision(Base* b)
