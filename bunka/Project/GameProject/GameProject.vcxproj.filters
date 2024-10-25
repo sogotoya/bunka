@@ -29,7 +29,11 @@
     <ClCompile Include="Game\Game.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="Game\count.cpp">
+=======
     <ClCompile Include="Game\GameData.cpp">
+>>>>>>> fc54e937f6521232bc3043c6f9a4f1dcb91c5dcb
       <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -73,7 +77,11 @@
     <ClInclude Include="Game\Game.h">
       <Filter>Game</Filter>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="Game\count.h">
+=======
     <ClInclude Include="Game\GameData.h">
+>>>>>>> fc54e937f6521232bc3043c6f9a4f1dcb91c5dcb
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>

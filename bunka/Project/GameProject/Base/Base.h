@@ -14,7 +14,8 @@ enum {
     eType_Sikaku,
     eType_L,
     eType_maru,
-    eType_BlockManager
+    eType_BlockManager,
+    eType_count,
 };
 //d—Í‰Á‘¬“x
 #define GRAVITY (9.8f/20)
