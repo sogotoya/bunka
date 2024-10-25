@@ -6,10 +6,10 @@
 Game::Game()
 	:Base(eType_Scene)
 {
-	Base::Add(new Player(CVector2D(200, 900), true));
-	Base::Add(new Map(1));
-	Base::Add(new BlockManager());
-	Base::Add(new Goal(CVector2D(1740, 613)));
+	//Base::Add(new Player(CVector2D(200, 900), true));
+	//Base::Add(new Map(1));
+	//Base::Add(new BlockManager());
+	//Base::Add(new Goal(CVector2D(1740, 613)));
 }
 
 void Game::Update()
