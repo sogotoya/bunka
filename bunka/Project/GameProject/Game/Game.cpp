@@ -25,13 +25,12 @@ void Game::Update()
 				| 1 << eType_AreaChange
 				| 1 << eType_Goal
 				| 1 <<eType_Block);
-
+		
 			Base::Add(new Map(2));
 			
-			//Base::Add(new Title());
 		}
 	}
-	/*if ()
+	/*if (s_score>=3)
 	{
 		Base::KillAll();
 		Base::Add(new Title());
