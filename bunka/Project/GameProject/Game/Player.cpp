@@ -44,15 +44,17 @@ void Player::StateIdle()
 	{
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
+		Base::Add(new Effect("Effect_Jump", m_pos + CVector2D(0, -30), m_flip));
 	}
 	if (!m_is_ground) 
 	{//?
 		if (m_vec.y < 0)
 			m_img.ChangeAnimation(eAnimjump, false);
+		
 	}
 	else 
 	{
-		Base::Add(new Effect("Effect_Jump", m_pos + CVector2D(0, -90), m_flip));
+		
 		if (move_flag) 
 		{
 			m_img.ChangeAnimation(eAnimWalk);
