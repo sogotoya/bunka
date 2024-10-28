@@ -91,7 +91,7 @@ void Init(void)
 	Base::Add(new Goal(CVector2D(1740, 613)));
 	Base::Add(new count(CVector2D(500, 0)));
 	Base::Add(new Game());
-	//ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data.32, 32));
+	ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data,32, 32));
 }
 
 
