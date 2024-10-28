@@ -5,13 +5,7 @@
     <ClCompile Include="Base\Base.cpp">
       <Filter>Base</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Player.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="TItle\TItle.cpp">
-      <Filter>TItle</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Map.cpp">
+    <ClCompile Include="Game\AreaChange.cpp">
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Game\Block.cpp">
@@ -20,46 +14,36 @@
     <ClCompile Include="Game\BlockManager.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Goal.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\AreaChange.cpp">
+    <ClCompile Include="Game\count.cpp">
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Game\Game.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="Game\count.cpp">
-=======
     <ClCompile Include="Game\GameData.cpp">
->>>>>>> fc54e937f6521232bc3043c6f9a4f1dcb91c5dcb
       <Filter>Game</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Base">
-      <UniqueIdentifier>{92d21a0f-3d8d-4a8b-8c39-31fd384788c0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game">
-      <UniqueIdentifier>{1886e338-edfb-4be8-91ca-eb50ffd53402}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="TItle">
-      <UniqueIdentifier>{19081afd-8980-4b8a-972b-19b87c43c133}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Game\Goal.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Map.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Player.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TItle\TItle.cpp">
+      <Filter>TItle</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Effect.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="Global.h" />
-    <ClInclude Include="Game\Player.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="TItle\TItle.h">
-      <Filter>TItle</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Map.h">
+    <ClInclude Include="Game\AreaChange.h">
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Block.h">
@@ -68,21 +52,41 @@
     <ClInclude Include="Game\BlockManager.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Goal.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\AreaChange.h">
+    <ClInclude Include="Game\count.h">
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Game.h">
       <Filter>Game</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Game\count.h">
-=======
     <ClInclude Include="Game\GameData.h">
->>>>>>> fc54e937f6521232bc3043c6f9a4f1dcb91c5dcb
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Goal.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Map.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Player.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="TItle\TItle.h">
+      <Filter>TItle</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="Game\Effect.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Base">
+      <UniqueIdentifier>{28d83862-2d4d-4119-a487-71ff52928293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{71cb786e-0e03-4dcf-ad64-6001d8fbe45f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TItle">
+      <UniqueIdentifier>{81524cfc-490b-40b0-8fec-9e7b3eb794a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
