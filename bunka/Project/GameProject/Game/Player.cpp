@@ -2,7 +2,7 @@
 #include "Map.h"
 #include "AreaChange.h"
 #include "Goal.h"
-
+#include "Effect.h"
 Player::Player(const CVector2D& p, bool flip)
 	:Base(eType_Player)
 {
@@ -52,6 +52,7 @@ void Player::StateIdle()
 	}
 	else 
 	{
+		Base::Add(new Effect("Effect_Jump", m_pos + CVector2D(0, -90), m_flip));
 		if (move_flag) 
 		{
 			m_img.ChangeAnimation(eAnimWalk);
