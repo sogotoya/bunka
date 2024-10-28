@@ -11,6 +11,7 @@
 #include "Game/Game.h"
 #include "Game/GameData.h"	
 #include "Game/Effect.h"
+#include "TItle/TItle.h"
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
@@ -92,6 +93,7 @@ void Init(void)
 	Base::Add(new count(CVector2D(500, 0)));
 	Base::Add(new Game());
 	ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data,32, 32));
+	Base::Add(new TItle())
 }
 
 

@@ -1,12 +1,12 @@
 #pragma once
 #include "../Base/Base.h"
 
-class Title : public Base {
+class TItle : public Base {
 	CImage m_img;
 	CFont m_title_text;
 	int m_cnt;
 public:
-	Title();
+	TItle();
 	void Update();
 	void Draw();
 };
