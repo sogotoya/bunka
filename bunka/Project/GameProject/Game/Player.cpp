@@ -54,7 +54,7 @@ void Player::StateIdle()
 	}
 	else 
 	{
-		
+
 		if (move_flag) 
 		{
 			m_img.ChangeAnimation(eAnimWalk);
@@ -146,16 +146,23 @@ static TexAnim playerIdle[] = {
 };
 
 static TexAnim playerWalk[] = {
-	{3,10},
-	{4,5},
-	{5,10},
+	{4,10},
+	{5,5},
+	{6,10},
 };
 
 static TexAnim playerjump[] = {
-	{6,50}
+	{8,50}
+};
+
+static TexAnim playerdon[] = {
+	{12,10},
+	{13,5},
+	{14,10},
 };
 TexAnimData player_anim_data[] = {
 	ANIMDATA(playerIdle),//0
 	ANIMDATA(playerWalk),//1
 	ANIMDATA(playerjump),//2
+	ANIMDATA(playerdon),//3
 };

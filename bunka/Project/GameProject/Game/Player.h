@@ -13,6 +13,7 @@ class Player : public Base {
 		eAnimIdle = 0,
 		eAnimWalk,
 		eAnimjump,
+		eAnimDon
 
 	};
 private:
