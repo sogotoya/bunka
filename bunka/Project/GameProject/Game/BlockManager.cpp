@@ -9,10 +9,12 @@ BlockManager::BlockManager()
 
 void BlockManager::Update()
 {
+	//見つからなければカウントダウン
+	if(!Base::FindObject(eType_Block))
 	m_cnt--;
 	if (m_cnt == 0) 
 	{
-		Base::Add(new Block(CVector2D(150, 0), rand() % Block::eMax));
-		m_cnt = rand() % 300 + 300;
+		Base::Add(new Block(CVector2D(96, 0), rand() % Block::eMax));
+		m_cnt = rand() % 10 + 10;
 	}
 }
