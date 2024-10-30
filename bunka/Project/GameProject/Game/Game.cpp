@@ -22,13 +22,19 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if(g->GetGoal())
 		{
-			//�܂Ƃ߂č폜
-			Base::Kill(1 << eType_Map
-				| 1 << eType_AreaChange
-				| 1 << eType_Goal
-				| 1 <<eType_Block);
-			GameData::s_score++;
-			Base::Add(new Map(GameData::s_score));
+			if (GameData::s_score==2)
+			{
+				m_ing = COPY_RESOURCE("GameClear", CImage);
+			}
+			else{
+				Base::Kill(1 << eType_Map
+					| 1 << eType_AreaChange
+					| 1 << eType_Goal
+					| 1 << eType_Block);
+				GameData::s_score++;
+				Base::Add(new Map(GameData::s_score));
+			}
+				
 			
 		}
 	}
