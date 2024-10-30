@@ -25,6 +25,8 @@ void Game::Update()
 			if (GameData::s_score==2)
 			{
 				m_ing = COPY_RESOURCE("GameClear", CImage);
+				GameData::Gameclear = true;
+
 			}
 			else{
 				Base::Kill(1 << eType_Map

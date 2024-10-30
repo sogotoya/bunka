@@ -3,6 +3,7 @@
 #include "AreaChange.h"
 #include "Goal.h"
 #include "Effect.h"
+#include "GameData.h"
 Player::Player(const CVector2D& p, bool flip)
 	:Base(eType_Player)
 {
@@ -67,21 +68,24 @@ void Player::StateIdle()
 void Player::Update()
 {
 	m_pos_old = m_pos;
-	switch (m_state) 
+	if (GameData::Gameclear == false)
 	{
+		switch (m_state)
+		{
 		case eState_Idle:
 			StateIdle();
 			break;
 
+		}
+
+		if (m_is_ground && m_vec.y > GRAVITY * 4)
+			m_is_ground = false;
+
+		m_vec.y += GRAVITY;
+		m_pos += m_vec;
+
+		m_img.UpdateAnimation();
 	}
-
-	if (m_is_ground && m_vec.y > GRAVITY * 4)
-		m_is_ground = false;
-
-	m_vec.y += GRAVITY;
-	m_pos += m_vec;
-
-	m_img.UpdateAnimation();
 }
 
 void Player::Draw()
