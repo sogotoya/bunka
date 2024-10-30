@@ -24,45 +24,66 @@ void Player::StateIdle()
 	const float move_speed = 5;
 	//移動フラグ
 	bool move_flag = false;
-	//左
-	if (HOLD(CInput::eLeft)) 
+
+	if (cooltime <= 0)
 	{
-		m_pos.x += -move_speed;
-		//反転フラグ
-		m_flip = true;
-		move_flag = true;
+		//左
+		if (HOLD(CInput::eLeft))
+		{
+			m_pos.x += -move_speed;
+			//反転フラグ
+			m_flip = true;
+			move_flag = true;
+		}
+		//右
+		if (HOLD(CInput::eRight))
+		{
+			m_pos.x += move_speed;
+			//反転フラグ
+			m_flip = false;
+			move_flag = true;
+		}
+		const float jump_pow = 15;
+		if (m_is_ground && PUSH(CInput::eUp))
+		{
+			m_vec.y = -jump_pow;
+			m_is_ground = false;
+			Base::Add(new Effect("Effect_Jump", m_pos + CVector2D(0, -30), m_flip));
+		}
 	}
-	//右
-	if (HOLD(CInput::eRight)) 
-	{
-		m_pos.x += move_speed;
-		//反転フラグ
-		m_flip = false;
-		move_flag = true;
-	}
-	const float jump_pow = 15;
-	if (m_is_ground && PUSH(CInput::eUp)) 
-	{
-		m_vec.y = -jump_pow;
-		m_is_ground = false;
-		Base::Add(new Effect("Effect_Jump", m_pos + CVector2D(0, -30), m_flip));
-	}
+
 	if (!m_is_ground) 
-	{//?
+	{
+		air_time_cnt++;
+
 		if (m_vec.y < 0)
 			m_img.ChangeAnimation(eAnimjump, false);
 		
 	}
 	else 
 	{
-		if (move_flag) 
+		if (air_time_cnt > air_time_set)
 		{
-			m_img.ChangeAnimation(eAnimWalk);
+			m_img.ChangeAnimation(eAnimDon);
+			cooltime = cooltime_set;
 		}
-		else 
+
+		air_time_cnt = 0;
+
+
+		if (cooltime <= 0)
 		{
-			m_img.ChangeAnimation(eAnimIdle);
+			if (move_flag)
+			{
+				m_img.ChangeAnimation(eAnimWalk);
+			}
+			else
+			{
+				m_img.ChangeAnimation(eAnimIdle);
+			}
 		}
+
+		cooltime--;
 	}
 }
 void Player::Update()
@@ -159,8 +180,8 @@ static TexAnim playerjump[] = {
 };
 
 static TexAnim playerdon[] = {
-	{12,10},
-	{13,5},
+	{12,7},
+	{13,7},
 	{14,10},
 };
 TexAnimData player_anim_data[] = {

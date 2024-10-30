@@ -17,6 +17,9 @@ class Player : public Base {
 
 	};
 private:
+	const int air_time_set = 70;
+	const int cooltime_set = 30;
+
 	int m_state;
 	CImage m_img;
 	bool m_flip;
@@ -24,6 +27,12 @@ private:
 	void StateIdle();
 	//着地
 	bool m_is_ground;
+
+	//空中にいる時間をカウント
+	int air_time_cnt = 0;
+	//クールタイム。これが０以上の場合はプレイヤーが動けません。
+	int cooltime = 0;
+
 
 public:
 	Player(const CVector2D& p, bool flip);
