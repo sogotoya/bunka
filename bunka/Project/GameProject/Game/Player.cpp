@@ -54,7 +54,6 @@ void Player::StateIdle()
 	}
 	else 
 	{
-
 		if (move_flag) 
 		{
 			m_img.ChangeAnimation(eAnimWalk);
