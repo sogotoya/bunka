@@ -2,10 +2,12 @@
 #include "Map.h"
 #include "GameData.h"
 
-count::count(const CVector2D& pos) : Base(eType_count)
+count::count(const CVector2D& pos) : Base(eType_count),
+m_count_text("C:\\Windows\\Fonts\\msgothic.ttc", 100)
 {
-	m_cnt = 300 * 60;
+	m_cnt = 180 * 60;
 }
+
 
 void count::Update()
 {
@@ -17,7 +19,8 @@ void count::Update()
 void count::Draw()
 {
 	if (!GameData::Gameclear)
-	FONT_T()->Draw(910, 80, 1, 1, 1, "%d", m_cnt/60);
+	//•¶Žš•\Ž¦
+	m_count_text.Draw(830, 120, 1, 1, 1, "%d",m_cnt/60);
 }
 
 void count::Collision(Base* b)
