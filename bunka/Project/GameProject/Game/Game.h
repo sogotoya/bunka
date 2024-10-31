@@ -3,7 +3,7 @@
 
 class Game :public Base {
 private:
-	CImage m_ing;
+	CImage m_img;
 public:
 	Game();
 	void Update();
