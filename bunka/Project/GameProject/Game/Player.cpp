@@ -43,7 +43,7 @@ void Player::StateIdle()
 			m_flip = false;
 			move_flag = true;
 		}
-		const float jump_pow = 35;//15
+		const float jump_pow = 15;//15
 		if (m_is_ground && PUSH(CInput::eUp))
 		{
 			m_vec.y = -jump_pow;
@@ -124,16 +124,17 @@ void Player::Collision(Base* b)
 	case eType_Map:
 		if (Map* m = dynamic_cast<Map*>(b)) 
 		{
+			CVector2D rev_pos;
 			int t;
-			t = m->CollisionRect(CVector2D(m_pos.x,m_pos_old.y),m_rect);
+			t = m->CollisionRect(CVector2D(m_pos.x,m_pos_old.y),m_rect,&rev_pos);
 			if(t != 0)
 			{
 				m_pos.x = m_pos_old.x;
 			}
-			t = m->CollisionRect(CVector2D(m_pos_old.x, m_pos.y),m_rect);
+			t = m->CollisionRect(CVector2D(m_pos_old.x, m_pos.y),m_rect,&rev_pos);
 			if (t != 0) 
 			{
-				m_pos.y = m_pos_old.y;
+				m_pos.y = rev_pos.y;
 				//落下速度のリエット
 				m_vec.y = 0;
 				//着地フラグon

@@ -119,7 +119,7 @@ void Map::Draw()
 	}
 }
 
-int Map::GetTip(const CVector2D& pos)
+int Map::GetTip(const CVector2D& pos, int* tx, int* ty)
 {
     //列の計算
     int col = pos.x / MAP_TIP_SIZE;
@@ -131,6 +131,9 @@ int Map::GetTip(const CVector2D& pos)
     //列(0～MAP_HEIGHT-1 まで)の制限
     if (row < 0)row = 0;
     if (row > MAP_HEIGHT - 1)row = MAP_HEIGHT - 1;
+    //行と列の出力
+    if (ty) *ty = row ;
+    if (tx) *tx = col ;
     //チップデータの返却
     return GetTip(col, row);
 }
@@ -153,21 +156,34 @@ int Map::CollisionPoint(const CVector2D& pos)
     return 0;
 }
 
-int Map::CollisionRect(const CVector2D& pos, const CRect& rect)
+int Map::CollisionRect(const CVector2D& pos, const CRect& rect,CVector2D* rev_pos)
 {
     CRect r = CRect(
         pos.x + rect.m_left,
         pos.y + rect.m_top,
         pos.x + rect.m_right,
         pos.y + rect.m_bottom);
+    int tx, ty;
     int t;//?
-    t = CollisionPoint(CVector2D(r.m_left, r.m_top));
-    if (t != 0)return t;
-    t = CollisionPoint(CVector2D(r.m_right, r.m_top));
-    if (t != 0)return t;
-    t = CollisionPoint(CVector2D(r.m_left, r.m_bottom));
-    if (t != 0)return t;
-    t = CollisionPoint(CVector2D(r.m_right, r.m_bottom));
-    if (t != 0)return t;
+    t = GetTip(CVector2D(r.m_left, r.m_top),&tx,&ty);//&tx,&ty何行目で当たったか
+    if (t != 0) {
+        rev_pos->y = (ty + 1) * MAP_TIP_SIZE - rect.m_top + 1;//m_top + 1で１マス上
+        return t;
+    }
+    t = GetTip(CVector2D(r.m_right, r.m_top), &tx, &ty);
+    if (t != 0) {
+        rev_pos->y = (ty + 1) * MAP_TIP_SIZE - rect.m_top + 1;
+        return t;
+    }
+    t = GetTip(CVector2D(r.m_left, r.m_bottom), &tx, &ty);
+    if (t != 0) {
+        rev_pos->y = ty * MAP_TIP_SIZE - rect.m_bottom - 1;//m_bottom - 1で１マス下
+        return t;
+    }
+    t = GetTip(CVector2D(r.m_right, r.m_bottom), &tx, &ty);
+    if (t != 0) {
+        rev_pos->y = ty * MAP_TIP_SIZE - rect.m_bottom - 1;
+        return t;
+    }
     return 0;
 }
