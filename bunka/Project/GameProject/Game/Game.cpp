@@ -22,11 +22,11 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if(g->GetGoal())
 		{
-			if (GameData::s_score==2)
+			if (GameData::s_score==3)
 			{
 				m_img = COPY_RESOURCE("GameClear", CImage);
-				GameData::Gameclear = true;
-
+				//GameData::Gameclear = true;
+				Base::KillAll();
 			}
 			else{
 				Base::Kill(1 << eType_Map
