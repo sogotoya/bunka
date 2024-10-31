@@ -40,6 +40,9 @@ void Game::Update()
 			
 		}
 	}
+	if (!Base::FindObject(eType_Player)) {
+		Base::Add(new Player(CVector2D(200, 900), true));
+	}
 	/*if (GamaData::s_score>=3)
 	{
 		Base::KillAll();

@@ -43,7 +43,7 @@ void Player::StateIdle()
 			m_flip = false;
 			move_flag = true;
 		}
-		const float jump_pow = 45;//15
+		const float jump_pow = 15;//15
 		if (m_is_ground && PUSH(CInput::eUp))
 		{
 			m_vec.y = -jump_pow;
@@ -104,7 +104,8 @@ void Player::Update()
 
 		m_vec.y += GRAVITY;
 		m_pos += m_vec;
-
+		if (m_pos.y > 1160)
+			SetKill();
 		m_img.UpdateAnimation();
 	}
 }
