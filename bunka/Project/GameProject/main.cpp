@@ -97,7 +97,7 @@ void Init(void)
 	ADD_RESOURCE("TItle", CImage::CreateImage("Image/title.png"));
 	Base::Add(new TItle());
 
-	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game-clear-2024-10-30.png"));
+	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 }
 
 
