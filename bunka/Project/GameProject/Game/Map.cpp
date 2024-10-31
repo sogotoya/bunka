@@ -96,7 +96,7 @@ Map::Map(int area):Base(eType_Map)
         break;
     case 3:
         memcpy(m_stage_data, stage3data, sizeof(stage3data));
-        Base::Add(new Goal(CVector2D(90, 613)));
+        Base::Add(new Goal(CVector2D(960, 150)));
         break;
    }
     //ステージ1データをコピー
