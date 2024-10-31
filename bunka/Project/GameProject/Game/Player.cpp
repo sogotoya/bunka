@@ -180,8 +180,8 @@ static TexAnim playerjump[] = {
 };
 
 static TexAnim playerdon[] = {
-	{12,7},
-	{13,7},
+	{12,2},
+	{13,5},
 	{14,10},
 };
 TexAnimData player_anim_data[] = {

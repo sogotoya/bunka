@@ -18,7 +18,7 @@ class Player : public Base {
 	};
 private:
 	const int air_time_set = 70;
-	const int cooltime_set = 30;
+	const int cooltime_set = 20;
 
 	int m_state;
 	CImage m_img;
