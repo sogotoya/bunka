@@ -96,7 +96,9 @@ void Init(void)
 	
 	ADD_RESOURCE("TItle", CImage::CreateImage("Image/title.png"));
 	Base::Add(new TItle());
-
+	ADD_RESOURCE("Retry", CImage::CreateImage("Image/Retry.png"));
+	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
+	ADD_RESOURCE("stage1goal", CImage::CreateImage("Image/1st clear.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 }
 

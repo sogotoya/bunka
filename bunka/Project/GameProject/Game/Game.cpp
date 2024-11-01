@@ -13,6 +13,12 @@ Game::Game()
 	Base::Add(new BlockManager());
 	Base::Add(new Goal(CVector2D(1740, 613)));
 	Base::Add(new count(CVector2D(500, 0)));
+	retryimg = COPY_RESOURCE("Retry", CImage);
+	clearimg = COPY_RESOURCE("GameClear", CImage);
+	stage1goal= COPY_RESOURCE("stage1goal", CImage);
+	drawclear = false;
+	drawretry = false;
+	draw1goal = false;
 }
 
 void Game::Update()
@@ -24,17 +30,21 @@ void Game::Update()
 		{
 			if (GameData::s_score==3)
 			{
-				m_img = COPY_RESOURCE("GameClear", CImage);
+				drawclear = true;
 				//GameData::Gameclear = true;
+				if(PUSH(CInput::eButton1))
 				Base::KillAll();
 			}
 			else{
-				Base::Kill(1 << eType_Map
-					| 1 << eType_AreaChange
-					| 1 << eType_Goal
-					| 1 << eType_Block);
-				GameData::s_score++;
-				Base::Add(new Map(GameData::s_score));
+				
+					Base::Kill(1 << eType_Map
+						| 1 << eType_AreaChange
+						| 1 << eType_Goal
+						| 1 << eType_Block);
+					
+					GameData::s_score++;
+					Base::Add(new Map(GameData::s_score));
+			
 			}
 				
 			
@@ -42,7 +52,9 @@ void Game::Update()
 	}
 	if (!Base::FindObject(eType_Player)) 
 	{
+		drawretry = true;
 		if (PUSH(CInput::eButton1))
+			
 		Base::Add(new Player(CVector2D(200, 900), true));
 	}
 	/*if (GamaData::s_score>=3)
@@ -50,4 +62,23 @@ void Game::Update()
 		Base::KillAll();
 		Base::Add(new Title());
 	}*/
+}
+
+void Game::Draw()
+{
+	//è„Ç…âÊëúÇ™îÌÇÁÇ»Ç¢ÇÊÇ§Ç…
+	if (drawclear)
+	{
+			clearimg.Draw();
+	}
+	if(drawretry)
+	{
+		retryimg.Draw();
+		drawretry = false;
+	}
+	if (draw1goal)
+	{
+		stage1goal.Draw();
+		draw1goal = false;
+	}
 }
