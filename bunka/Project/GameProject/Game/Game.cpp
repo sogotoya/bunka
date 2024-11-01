@@ -13,12 +13,13 @@ Game::Game()
 	Base::Add(new BlockManager());
 	Base::Add(new Goal(CVector2D(1740, 613)));
 	Base::Add(new count(CVector2D(500, 0)));
+	//ヘッダーで作ったCImageに、COPY_RESOURCEで画像をセット
 	retryimg = COPY_RESOURCE("Retry", CImage);
 	clearimg = COPY_RESOURCE("GameClear", CImage);
-	stage1goal= COPY_RESOURCE("stage1goal", CImage);
+	clear_one = COPY_RESOURCE("stage1goal",CImage);
+	clear_two = COPY_RESOURCE("stage2goal", CImage);
 	drawclear = false;
 	drawretry = false;
-	draw1goal = false;
 }
 
 void Game::Update()
@@ -37,13 +38,7 @@ void Game::Update()
 			}
 			else{
 				
-					Base::Kill(1 << eType_Map
-						| 1 << eType_AreaChange
-						| 1 << eType_Goal
-						| 1 << eType_Block);
-					
-					GameData::s_score++;
-					Base::Add(new Map(GameData::s_score));
+				GameData::Gameclear = true;
 			
 			}
 				
@@ -57,11 +52,30 @@ void Game::Update()
 			
 		Base::Add(new Player(CVector2D(200, 900), true));
 	}
-	/*if (GamaData::s_score>=3)
+
+	if (GameData::Gameclear)
 	{
-		Base::KillAll();
-		Base::Add(new Title());
-	}*/
+		if (GameData::s_score == 1)
+		{
+			if (GameData::s_score == 2)
+			{
+				clear_two.Draw();
+			}
+			clear_one.Draw();
+		}
+		
+		if (PUSH(CInput::eButton1))
+		{
+			Base::Kill(1 << eType_Map
+				| 1 << eType_AreaChange
+				| 1 << eType_Goal
+				| 1 << eType_Block);
+
+			GameData::s_score++;
+			GameData::Gameclear = false;
+			Base::Add(new Map(GameData::s_score));
+		}
+	}
 }
 
 void Game::Draw()
@@ -75,10 +89,5 @@ void Game::Draw()
 	{
 		retryimg.Draw();
 		drawretry = false;
-	}
-	if (draw1goal)
-	{
-		stage1goal.Draw();
-		draw1goal = false;
 	}
 }

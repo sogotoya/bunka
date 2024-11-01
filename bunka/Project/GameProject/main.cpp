@@ -99,7 +99,9 @@ void Init(void)
 	ADD_RESOURCE("Retry", CImage::CreateImage("Image/Retry.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 	ADD_RESOURCE("stage1goal", CImage::CreateImage("Image/1st clear.png"));
+	ADD_RESOURCE("stage2goal", CImage::CreateImage("Image/2st clear.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
+	
 }
 
 
