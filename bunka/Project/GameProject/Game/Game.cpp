@@ -40,7 +40,9 @@ void Game::Update()
 			
 		}
 	}
-	if (!Base::FindObject(eType_Player)) {
+	if (!Base::FindObject(eType_Player)) 
+	{
+		if (PUSH(CInput::eButton1))
 		Base::Add(new Player(CVector2D(200, 900), true));
 	}
 	/*if (GamaData::s_score>=3)
