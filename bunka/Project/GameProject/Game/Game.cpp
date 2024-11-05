@@ -87,11 +87,24 @@ void Game::Update()
 				| 1 << eType_AreaChange
 				| 1 << eType_Goal
 				| 1 << eType_Block);
+			if (GameData::s_score <= 2)
+			{
+				Base::Kill(1 << eType_Player);
+			}
 
 			GameData::s_score++;
 			GameData::Gameclear = false;
 			Base::Add(new Map(GameData::s_score));
 		}
+		if (GameData::s_score == 2)
+		{
+			Base::Add(new Player(CVector2D(1800, 900), true));
+		}
+		if (GameData::s_score == 3)
+		{
+			Base::Add(new Player(CVector2D(1800, 900), true));
+		}
+		
 	}
 }
 
