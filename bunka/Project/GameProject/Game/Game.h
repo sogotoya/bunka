@@ -9,10 +9,10 @@ private:
 
 	//ステージ1クリア画像
 	CImage clear_one;
-
+	bool drawone;
 	//ステージ２クリア画像
 	CImage clear_two;
-
+	bool drawtwo;
 	//リトライ画像
 	CImage retryimg;
 	bool drawretry;

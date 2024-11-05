@@ -20,6 +20,8 @@ Game::Game()
 	clear_two = COPY_RESOURCE("stage2goal", CImage);
 	drawclear = false;
 	drawretry = false;
+	drawone = false;
+	drawtwo = false;
 }
 
 void Game::Update()
@@ -45,23 +47,38 @@ void Game::Update()
 			
 		}
 	}
-	if (!Base::FindObject(eType_Player)) 
+	if (!Base::FindObject(eType_Player))
 	{
 		drawretry = true;
 		if (PUSH(CInput::eButton1))
-			
-		Base::Add(new Player(CVector2D(200, 900), true));
+		{
+
+
+			if (GameData::s_score == 1)
+			{
+				Base::Add(new Player(CVector2D(200, 900), true));
+			}
+			if (GameData::s_score == 2)
+			{
+				Base::Add(new Player(CVector2D(1800, 900), true));
+			}
+			if (GameData::s_score == 3) 
+			{
+				Base::Add(new Player(CVector2D(1800, 900), true));
+			}
+		}
 	}
 
 	if (GameData::Gameclear)
 	{
 		if (GameData::s_score == 1)
 		{
-			if (GameData::s_score == 2)
-			{
-				clear_two.Draw();
-			}
-			clear_one.Draw();
+			drawone = true;
+			
+		}
+		if (GameData::s_score == 2)
+		{
+			drawtwo = true;
 		}
 		
 		if (PUSH(CInput::eButton1))
@@ -89,5 +106,15 @@ void Game::Draw()
 	{
 		retryimg.Draw();
 		drawretry = false;
+	}
+	if (drawone)
+	{
+		clear_one.Draw();
+		drawone = false;
+	}
+	if (drawtwo)
+	{
+		clear_two.Draw();
+		drawtwo = false;
 	}
 }
