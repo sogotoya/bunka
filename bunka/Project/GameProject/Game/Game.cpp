@@ -5,6 +5,8 @@
 #include "Goal.h"
 #include "GameData.h"
 #include "count.h"
+#include "TItle/TItle.h"
+
 Game::Game()
 	:Base(eType_Scene)
 {
@@ -134,6 +136,16 @@ void Game::Draw()
 	}
 	if (GameData::Gameover)
 	{
+		Base::Kill(1 << eType_AreaChange
+			| 1 << eType_Goal
+			| 1 << eType_Block);
 		outimg.Draw();
+		if(PUSH(CInput::eButton1))
+		{ 
+			//すべてのオブジェクトを破棄
+			Base::KillAll();
+			//タイトルシーンへ
+			Base::Add(new TItle());
+		}
 	}
 }
