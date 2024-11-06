@@ -6,7 +6,8 @@ private:
 	//Gameクリア画像
 	CImage clearimg;
 	bool drawclear;
-
+	//ゲームオーバー画像
+	CImage outimg;
 	//ステージ1クリア画像
 	CImage clear_one;
 	bool drawone;

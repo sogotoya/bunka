@@ -16,6 +16,7 @@ Game::Game()
 	//ヘッダーで作ったCImageに、COPY_RESOURCEで画像をセット
 	retryimg = COPY_RESOURCE("Retry", CImage);
 	clearimg = COPY_RESOURCE("GameClear", CImage);
+	outimg = COPY_RESOURCE("GameOver", CImage);
 	clear_one = COPY_RESOURCE("stage1goal",CImage);
 	clear_two = COPY_RESOURCE("stage2goal", CImage);
 	drawclear = false;
@@ -106,6 +107,7 @@ void Game::Update()
 		}
 		
 	}
+	
 }
 
 void Game::Draw()
@@ -129,5 +131,9 @@ void Game::Draw()
 	{
 		clear_two.Draw();
 		drawtwo = false;
+	}
+	if (GameData::Gameover)
+	{
+		outimg.Draw();
 	}
 }
