@@ -164,6 +164,7 @@ void Block::Update()
 				//下にブロックがなければ
 				if (CollisionCheck(m_pos + CVector2D(0, 1), m_block_dir))
 				{
+					SetKill();
 					//今の位置へブロックを書き込み
 					WriteBlock(m_pos, 2);
 				}
