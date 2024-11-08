@@ -6,14 +6,26 @@ count::count(const CVector2D& pos) : Base(eType_count),
 m_count_text("C:\\Windows\\Fonts\\msgothic.ttc", 100)
 {
 	m_cnt = 180 * 60;
+	
 }
 
 
 void count::Update()
 {
 	//ゲームクリアがトゥルーの時にif文を通る
-	if(!GameData::Gameclear)
-	m_cnt--;
+	if(m_cnt>=0)
+	{
+		if(!GameData::Gameclear)
+		{
+			m_cnt--;
+			
+		}
+	}
+	//時間切れになるとゲームオーバー
+	if (m_cnt == 0)
+	{
+		GameData::Gameover = true;
+	}
 }
 
 void count::Draw()

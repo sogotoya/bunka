@@ -113,6 +113,7 @@ void Block::Update()
 
 			}
 		}
+		//左
 		if (PUSH_PAD(1, CInput::eLeft))
 		{
 			//今の位置のブロックを消す
@@ -149,12 +150,31 @@ void Block::Update()
 			}
 			else
 			{
-				//下へ移動
+				//右へ移動
 				m_pos += CVector2D(1, 0);
 				//新しい位置へブロックの書き込み
 				WriteBlock(m_pos, 2);
 
 			}
+			//下
+			/*if (PUSH_PAD(1, CInput::eButton3))
+			{
+				//今の場所のブロックを消す
+				WriteBlock(m_pos, 0);
+				//下にブロックがなければ
+				if (CollisionCheck(m_pos + CVector2D(0, 1), m_block_dir))
+				{
+					//今の位置へブロックを書き込み
+					WriteBlock(m_pos, 2);
+				}
+				else
+				{
+					//下へ移動
+					m_pos += CVector2D(0, 2);
+					//新しい位置へブロックの書き込み
+					WriteBlock(m_pos, 2);
+				}
+			}*/
 		}
 	}
 }

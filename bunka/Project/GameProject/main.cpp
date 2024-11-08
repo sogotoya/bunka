@@ -56,11 +56,11 @@ void Init(void)
 
 	CInput::SetButton(1, CInput::eButton1, 'Z');
 	CInput::SetButton(1, CInput::eButton2, 'X');
-	//CInput::SetButton(1, CInput::eButton3, 'C');
-	//CInput::SetButton(1, CInput::eButton4, 'V');
-	//CInput::SetButton(1, CInput::eButton5, VK_SPACE);
-	//CInput::SetButton(1, CInput::eButton10, VK_RETURN);
-	//CInput::SetButton(1, CInput::eUp, VK_UP);
+	CInput::SetButton(1, CInput::eButton3, 'S');
+	CInput::SetButton(1, CInput::eButton4, 'V');
+	CInput::SetButton(1, CInput::eButton5, VK_SPACE);
+	CInput::SetButton(1, CInput::eButton10, VK_RETURN);
+	CInput::SetButton(1, CInput::eUp, VK_UP);
 	CInput::SetButton(1, CInput::eDown, VK_DOWN);
 	CInput::SetButton(1, CInput::eLeft, 'A');
 	CInput::SetButton(1, CInput::eRight, 'D');
@@ -99,7 +99,9 @@ void Init(void)
 	ADD_RESOURCE("Retry", CImage::CreateImage("Image/Retry.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 	ADD_RESOURCE("stage1goal", CImage::CreateImage("Image/1st clear.png"));
+	ADD_RESOURCE("stage2goal", CImage::CreateImage("Image/2st clear.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
+	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/GameOver.png"));
 }
 
 

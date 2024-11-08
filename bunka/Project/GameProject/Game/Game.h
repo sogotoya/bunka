@@ -3,13 +3,21 @@
 
 class Game :public Base {
 private:
+	//Gameクリア画像
 	CImage clearimg;
 	bool drawclear;
+	//ゲームオーバー画像
+	CImage outimg;
+	//ステージ1クリア画像
+	CImage clear_one;
+	bool drawone;
+	//ステージ２クリア画像
+	CImage clear_two;
+	bool drawtwo;
+	//リトライ画像
 	CImage retryimg;
 	bool drawretry;
-	CImage stage1goal;
-	bool draw1goal;
-	
+
 public:
 	Game();
 	void Update();
