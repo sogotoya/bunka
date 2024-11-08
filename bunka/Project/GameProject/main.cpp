@@ -46,10 +46,10 @@ void Init(void)
 	CInput::SetButton(0, CInput::eButton4, 'V');
 	CInput::SetButton(0, CInput::eButton5, VK_SPACE);
 	CInput::SetButton(0, CInput::eButton10, VK_RETURN);
-	CInput::SetButton(0, CInput::eUp, VK_UP);
+	CInput::SetButton(0, CInput::eUp,' ');
 	CInput::SetButton(0, CInput::eDown, VK_DOWN);
-	CInput::SetButton(0, CInput::eLeft, VK_LEFT);
-	CInput::SetButton(0, CInput::eRight, VK_RIGHT);
+	CInput::SetButton(0, CInput::eLeft, 'A');
+	CInput::SetButton(0, CInput::eRight, 'D');
 	CInput::SetButton(0, CInput::eMouseL, VK_LBUTTON);
 	CInput::SetButton(0, CInput::eMouseR, VK_RBUTTON);
 	CInput::SetButton(0, CInput::eMouseC, VK_MBUTTON);
@@ -62,8 +62,8 @@ void Init(void)
 	CInput::SetButton(1, CInput::eButton10, VK_RETURN);
 	CInput::SetButton(1, CInput::eUp, VK_UP);
 	CInput::SetButton(1, CInput::eDown, VK_DOWN);
-	CInput::SetButton(1, CInput::eLeft, 'A');
-	CInput::SetButton(1, CInput::eRight, 'D');
+	CInput::SetButton(1, CInput::eLeft, VK_LEFT);
+	CInput::SetButton(1, CInput::eRight, VK_RIGHT);
 	CInput::SetButton(1, CInput::eMouseL, VK_LBUTTON);
 	CInput::SetButton(1, CInput::eMouseR, VK_RBUTTON);
 	CInput::SetButton(1, CInput::eMouseC, VK_MBUTTON);

@@ -17,4 +17,5 @@ void BlockManager::Update()
 		Base::Add(new Block(CVector2D(96, -4), rand() % Block::eMax));
 		m_cnt = rand() % 10 + 10;
 	}
+
 }

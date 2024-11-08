@@ -73,7 +73,7 @@ void Block::Update()
 	if (GameData::Gameclear == false)
 	{
 		int move_cnt = 30;
-		if (PUSH_PAD(1, CInput::eButton1))
+		if (PUSH_PAD(1, CInput::eUp))
 		{
 			WriteBlock(m_pos, 0);
 			m_block_dir++;
@@ -81,14 +81,14 @@ void Block::Update()
 				m_block_dir = 0;
 			WriteBlock(m_pos, 2);
 		}
-		if (PUSH_PAD(1, CInput::eButton2))
+		/*if (PUSH_PAD(1, CInput::eButton2))
 		{
 			WriteBlock(m_pos, 0);
 			m_block_dir--;
 			if (m_block_dir <= 0)
 				m_block_dir = 3;
 			WriteBlock(m_pos, 2);
-		}
+		}*/
 		m_cnt++;
 		//一定時間で下へ落下
 		if (m_cnt >= move_cnt)
@@ -157,7 +157,7 @@ void Block::Update()
 
 			}
 			//下
-			/*if (PUSH_PAD(1, CInput::eButton3))
+			if (HOLD_PAD(1, CInput:: eDown))
 			{
 				//今の場所のブロックを消す
 				WriteBlock(m_pos, 0);
@@ -174,7 +174,7 @@ void Block::Update()
 					//新しい位置へブロックの書き込み
 					WriteBlock(m_pos, 2);
 				}
-			}*/
+			}
 		}
 	}
 }
