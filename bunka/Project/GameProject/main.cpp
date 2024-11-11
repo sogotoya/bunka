@@ -102,6 +102,9 @@ void Init(void)
 	ADD_RESOURCE("stage2goal", CImage::CreateImage("Image/2st clear.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/GameOver.png"));
+	ADD_RESOURCE("zanki", CImage::CreateImage("Image/corsa2.png"));
+	ADD_RESOURCE("zanki2", CImage::CreateImage("Image/corsa1.png"));
+	ADD_RESOURCE("zanki3", CImage::CreateImage("Image/jumptobu.png"));
 }
 
 

@@ -17,7 +17,8 @@ private:
 	//リトライ画像
 	CImage retryimg;
 	bool drawretry;
-
+	//残機
+	CImage zankiimg[ 3];
 public:
 	Game();
 	void Update();

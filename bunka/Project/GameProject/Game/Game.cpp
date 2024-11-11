@@ -21,10 +21,16 @@ Game::Game()
 	outimg = COPY_RESOURCE("GameOver", CImage);
 	clear_one = COPY_RESOURCE("stage1goal",CImage);
 	clear_two = COPY_RESOURCE("stage2goal", CImage);
+	zankiimg[0] = COPY_RESOURCE("zanki", CImage);
+	zankiimg [1] = COPY_RESOURCE("zanki2", CImage);
+	zankiimg[2] = COPY_RESOURCE("zanki3", CImage);
 	drawclear = false;
 	drawretry = false;
 	drawone = false;
 	drawtwo = false;
+	for(int i=0;i<3;i++)
+	zankiimg[i].SetSize(75, 75);
+	
 }
 
 void Game::Update()
@@ -52,6 +58,7 @@ void Game::Update()
 	}
 	if (!Base::FindObject(eType_Player))
 	{
+		
 		drawretry = true;
 		if (PUSH(CInput::eButton1))
 		{
@@ -84,6 +91,7 @@ void Game::Update()
 			drawtwo = true;
 		}
 		
+		//eButton1で次のマップへ
 		if (PUSH(CInput::eButton1))
 		{
 			Base::Kill(1 << eType_Map
@@ -109,11 +117,19 @@ void Game::Update()
 		}
 		
 	}
-	
+		
 }
 
 void Game::Draw()
 {
+	//残機描画
+	for (int i = 0; i < GameData::zanki; i++)
+	{ 
+	zankiimg[i].SetPos(10+80*i, 10);
+	zankiimg[i].Draw();
+	}
+	
+	
 	//上に画像が被らないように
 	if (drawclear)
 	{
