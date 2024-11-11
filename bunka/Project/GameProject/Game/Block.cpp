@@ -91,7 +91,7 @@ void Block::Update()
 		}*/
 		m_cnt++;
 		//一定時間で下へ落下
-		if (m_cnt >= move_cnt)
+		if (m_cnt <= move_cnt)
 		{
 			m_cnt = 0;
 			//今の位置のブロックを消す
@@ -157,7 +157,7 @@ void Block::Update()
 
 			}
 			//下
-			if (HOLD_PAD(1, CInput:: eDown))
+			if (HOLD_PAD(1, CInput::eDown))
 			{
 				//今の場所のブロックを消す
 				WriteBlock(m_pos, 0);
@@ -171,7 +171,7 @@ void Block::Update()
 				else
 				{
 					//下へ移動
-					m_pos += CVector2D(0, 2);
+					m_pos += CVector2D(0, 1);
 					//新しい位置へブロックの書き込み
 					WriteBlock(m_pos, 2);
 				}
