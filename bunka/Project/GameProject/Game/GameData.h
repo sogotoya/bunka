@@ -6,6 +6,7 @@ public:
  static int s_score;
  //Žc‹@
  static int zanki;
+ static bool Gametry;
  static bool Gameclear;
  static bool Gameover;
 };

@@ -60,6 +60,7 @@ void Game::Update()
 	{
 		if(GameData::zanki!=0)
 			drawretry = true;
+		//GameData::Gametry = false;
 		if (PUSH(CInput::eButton1))
 		{
 
@@ -133,12 +134,15 @@ void Game::Draw()
 	//ã‚É‰æ‘œ‚ª”í‚ç‚È‚¢‚æ‚¤‚É
 	if (drawclear)
 	{
-			clearimg.Draw();
+		clearimg.Draw();
 	}
 	if(drawretry)
 	{
-		retryimg.Draw();
-		drawretry = false;
+		if(!drawclear)
+		{ 
+			retryimg.Draw();
+			drawretry = false;
+		}
 	}
 	if (drawone)
 	{

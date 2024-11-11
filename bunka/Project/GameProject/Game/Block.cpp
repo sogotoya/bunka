@@ -180,9 +180,9 @@ void Block::Update()
 	}
 }
 
-
 bool Block::CollisionCheck(const CVector2D& new_pos,int new_dir)
 {
+
 	Map* m = dynamic_cast<Map*>(Base::FindObject(eType_Map));
 	//3*3‚ÌƒuƒƒbƒN‚ÅŒŸ¸
 	for (int i = 0; i < 3; i++) 
