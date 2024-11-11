@@ -58,8 +58,8 @@ void Game::Update()
 	}
 	if (!Base::FindObject(eType_Player))
 	{
-		
-		drawretry = true;
+		if(GameData::zanki!=0)
+			drawretry = true;
 		if (PUSH(CInput::eButton1))
 		{
 

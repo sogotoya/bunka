@@ -104,10 +104,18 @@ void Player::Update()
 
 		m_vec.y += GRAVITY;
 		m_pos += m_vec;
-		if (m_pos.y > 1160)
+		//1160‚æ‚è‰º‚És‚­‚ÆKill‚³‚ê‚é
+		if (GameData::zanki != 0) 
 		{
-			GameData::zanki--;
-			SetKill();
+			if (m_pos.y > 1160)
+			{
+				GameData::zanki--;
+				SetKill();
+				if (GameData::zanki == 0)
+				{
+					GameData::Gameover = true;
+				}
+			}
 		}
 		m_img.UpdateAnimation();
 	}
