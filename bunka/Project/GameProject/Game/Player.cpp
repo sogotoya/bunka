@@ -105,7 +105,10 @@ void Player::Update()
 		m_vec.y += GRAVITY;
 		m_pos += m_vec;
 		if (m_pos.y > 1160)
+		{
+			GameData::zanki--;
 			SetKill();
+		}
 		m_img.UpdateAnimation();
 	}
 }
