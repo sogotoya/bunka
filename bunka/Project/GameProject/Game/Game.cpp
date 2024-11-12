@@ -44,9 +44,16 @@ void Game::Update()
 			{
 				drawclear = true;
 				GameData::clear = true;
-				//GameData::Gameclear = true;
-				if(PUSH(CInput::eButton1))
-				Base::KillAll();
+				if (PUSH(CInput::eButton1))
+				{
+					Base::KillAll();
+					Base::Add(new TItle());
+					GameData::s_score = 1;
+					GameData::zanki=3;
+					GameData::Gameclear = false;
+					
+				}
+				
 			}
 			else{
 				
@@ -109,10 +116,12 @@ void Game::Update()
 			GameData::Gameclear = false;
 			Base::Add(new Map(GameData::s_score));
 		}
+		//マップ２のPlayerの出現位置
 		if (GameData::s_score == 2)
 		{
 			Base::Add(new Player(CVector2D(1800, 900), true));
 		}
+		//マップ３のPlayerの出現位置
 		if (GameData::s_score == 3)
 		{
 			Base::Add(new Player(CVector2D(1800, 900), true));
@@ -127,8 +136,8 @@ void Game::Draw()
 	//残機描画
 	for (int i = 0; i < GameData::zanki; i++)
 	{ 
-	zankiimg[i].SetPos(10+80*i, 10);
-	zankiimg[i].Draw();
+		zankiimg[i].SetPos(10+80*i, 10);
+		zankiimg[i].Draw();
 	}
 	
 	
