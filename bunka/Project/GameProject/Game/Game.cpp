@@ -43,6 +43,7 @@ void Game::Update()
 			if (GameData::s_score==3)
 			{
 				drawclear = true;
+				GameData::clear = true;
 				//GameData::Gameclear = true;
 				if(PUSH(CInput::eButton1))
 				Base::KillAll();

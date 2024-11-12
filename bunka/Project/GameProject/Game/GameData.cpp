@@ -5,3 +5,4 @@ int GameData::zanki = 3;
 bool GameData::Gameclear = false;
 bool GameData::Gameover = false;
 bool GameData::Gametry = false;
+bool GameData::clear = false;

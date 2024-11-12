@@ -9,4 +9,5 @@ public:
  static bool Gametry;
  static bool Gameclear;
  static bool Gameover;
+ static bool clear;
 };
