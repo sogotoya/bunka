@@ -30,7 +30,7 @@ Game::Game()
 	drawtwo = false;
 	for(int i=0;i<3;i++)
 	zankiimg[i].SetSize(75, 75);
-	
+
 }
 
 void Game::Update()
@@ -144,6 +144,9 @@ void Game::Draw()
 	//ã‚É‰æ‘œ‚ª”í‚ç‚È‚¢‚æ‚¤‚É
 	if (drawclear)
 	{
+		clearimg.SetSize(950,800);
+		clearimg.SetCenter(50,100);
+		clearimg.SetPos(610,330);
 		clearimg.Draw();
 	}
 	if(drawretry)
