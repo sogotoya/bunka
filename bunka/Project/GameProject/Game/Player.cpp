@@ -91,6 +91,7 @@ void Player::Update()
 	m_pos_old = m_pos;
 	if (GameData::Gameclear == false)
 	{
+
 		switch (m_state)
 		{
 		case eState_Idle:
