@@ -18,5 +18,5 @@ void TItle::Update()
 void TItle::Draw()
 {
 	m_img.Draw();
-	
+
 }

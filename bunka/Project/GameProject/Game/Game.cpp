@@ -51,7 +51,7 @@ void Game::Update()
 					GameData::s_score = 1;
 					GameData::zanki=3;
 					GameData::Gameclear = false;
-					
+					GameData::clear = false;
 				}
 				
 			}
@@ -178,6 +178,8 @@ void Game::Draw()
 			//すべてのオブジェクトを破棄
 			Base::KillAll();
 			//タイトルシーンへ
+			GameData::zanki = GameData::Zanki_set;
+			GameData::Gameover = false;
 			Base::Add(new TItle());
 		}
 	}
