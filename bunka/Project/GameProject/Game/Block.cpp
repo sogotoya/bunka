@@ -178,6 +178,11 @@ void Block::Update()
 			}
 		}
 	}
+	if (m_pos.y > 1000)
+	{
+		WriteBlock(m_pos, 0);
+		SetKill();
+	}
 }
 
 bool Block::CollisionCheck(const CVector2D& new_pos,int new_dir)

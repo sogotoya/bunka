@@ -2,7 +2,7 @@
 #include "../Base/Base.h"
 
 #define MAP_WIDTH 39
-#define MAP_HEIGHT 25
+#define MAP_HEIGHT 26
 #define MAP_TIP_SIZE 49
 
 class Map :public Base 
