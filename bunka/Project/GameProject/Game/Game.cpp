@@ -144,9 +144,9 @@ void Game::Draw()
 	//上に画像が被らないように
 	if (drawclear)
 	{
-		clearimg.SetSize(950,800);
+		clearimg.SetSize(1550,745);
 		clearimg.SetCenter(50,100);
-		clearimg.SetPos(590,310);
+		clearimg.SetPos(230,250);
 		clearimg.Draw();
 	}
 	if(drawretry)
@@ -176,10 +176,8 @@ void Game::Draw()
 		if (PUSH(CInput::eButton1))
 		{
 			Base::KillAll();
-<<<<<<< HEAD
-			//タイトルシーンへ
-=======
->>>>>>> 6ff2c495be79dc03cea06963221aa4aa1471e7e0
+		
+
 			Base::Add(new TItle());
 			GameData::s_score = 1;
 			GameData::zanki = GameData::Zanki_set;
