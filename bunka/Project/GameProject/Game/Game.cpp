@@ -40,6 +40,7 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if(g->GetGoal())
 		{
+			//ステージが３だった場合
 			if (GameData::s_score==3)
 			{
 				drawclear = true;
@@ -66,13 +67,14 @@ void Game::Update()
 	}
 	if (!Base::FindObject(eType_Player))
 	{
+		//残機がまだあれば描画できる
 		if(GameData::zanki!=0)
 			drawretry = true;
-		//GameData::Gametry = false;
+		
 		if (PUSH(CInput::eButton1))
 		{
 
-
+			//プレイヤーの各ステージの出現位置
 			if (GameData::s_score == 1)
 			{
 				Base::Add(new Player(CVector2D(200, 900), true));
@@ -142,6 +144,7 @@ void Game::Draw()
 	
 	
 	//上に画像が被らないように
+	//最後	のステージクリア画面描画
 	if (drawclear)
 	{
 		clearimg.SetSize(1550,745);
@@ -149,6 +152,7 @@ void Game::Draw()
 		clearimg.SetPos(230,240);
 		clearimg.Draw();
 	}
+	//リトライ画面描画
 	if(drawretry)
 	{
 		if(!drawclear)
@@ -157,16 +161,19 @@ void Game::Draw()
 			drawretry = false;
 		}
 	}
+	//ステージ1クリア画面描画
 	if (drawone)
 	{
 		clear_one.Draw();
 		drawone = false;
 	}
+	//ステージ2クリア画面描画
 	if (drawtwo)
 	{
 		clear_two.Draw();
 		drawtwo = false;
 	}
+	//ゲームオーバー関連
 	if (GameData::Gameover)
 	{
 		Base::Kill(1 << eType_AreaChange
