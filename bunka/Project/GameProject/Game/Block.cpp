@@ -73,23 +73,18 @@ void Block::Update()
 	if (GameData::Gameclear == false)
 	{
 		int move_cnt = 30;
+		//ブロックの向きの変更
 		if (PUSH_PAD(1, CInput::eUp))
 		{
+			//今の位置のブロックを消す
 			WriteBlock(m_pos, 0);
 			m_block_dir++;
 			if (m_block_dir >= 4)
 				m_block_dir = 0;
 			WriteBlock(m_pos, 2);
 		}
-		/*if (PUSH_PAD(1, CInput::eButton2))
-		{
-			WriteBlock(m_pos, 0);
-			m_block_dir--;
-			if (m_block_dir <= 0)
-				m_block_dir = 3;
-			WriteBlock(m_pos, 2);
-		}*/
 		m_cnt++;
+
 		//一定時間で下へ落下
 		if (m_cnt >= move_cnt)//あいうえお
 		{
