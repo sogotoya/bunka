@@ -151,28 +151,29 @@ void Block::Update()
 				WriteBlock(m_pos, 2);
 
 			}
-			//下
-			if (HOLD_PAD(1, CInput::eDown))
+		}
+		//下
+		if (HOLD_PAD(1, CInput::eDown))
+		{
+			//今の場所のブロックを消す
+			WriteBlock(m_pos, 0);
+			//下にブロックがなければ
+			if (CollisionCheck(m_pos + CVector2D(0, 1), m_block_dir))
 			{
-				//今の場所のブロックを消す
-				WriteBlock(m_pos, 0);
-				//下にブロックがなければ
-				if (CollisionCheck(m_pos + CVector2D(0, 1), m_block_dir))
-				{
-					SetKill();
-					//今の位置へブロックを書き込み
-					WriteBlock(m_pos, 2);
-				}
-				else
-				{
-					//下へ移動
-					m_pos += CVector2D(0, 1);
-					//新しい位置へブロックの書き込み
-					WriteBlock(m_pos, 2);
-				}
+				SetKill();
+				//今の位置へブロックを書き込み
+				WriteBlock(m_pos, 2);
+			}
+			else
+			{
+				//下へ移動
+				m_pos += CVector2D(0, 1);
+				//新しい位置へブロックの書き込み
+				WriteBlock(m_pos, 2);
 			}
 		}
 	}
+	//1000より下にいたらブロックを削除
 	if (m_pos.y > 1000)
 	{
 		WriteBlock(m_pos, 0);
