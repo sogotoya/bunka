@@ -17,6 +17,7 @@ enum {
     eType_BlockManager,
     eType_count,
     eType_TItle,
+    eType_Field,
 };
 //d—Í‰Á‘¬“x
 #define GRAVITY (9.8f/20)

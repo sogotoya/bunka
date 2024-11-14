@@ -12,6 +12,7 @@
 #include "Game/GameData.h"	
 #include "Game/Effect.h"
 #include "TItle/TItle.h"
+#include "Game/Field.h"
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
