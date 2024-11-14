@@ -51,7 +51,7 @@ void Game::Update()
 					GameData::s_score = 1;
 					GameData::zanki=3;
 					GameData::Gameclear = false;
-					GameData::clear = false;
+					
 				}
 				
 			}
@@ -146,7 +146,7 @@ void Game::Draw()
 	{
 		clearimg.SetSize(950,800);
 		clearimg.SetCenter(50,100);
-		clearimg.SetPos(610,330);
+		clearimg.SetPos(590,310);
 		clearimg.Draw();
 	}
 	if(drawretry)
@@ -178,8 +178,6 @@ void Game::Draw()
 			//すべてのオブジェクトを破棄
 			Base::KillAll();
 			//タイトルシーンへ
-			GameData::zanki = GameData::Zanki_set;
-			GameData::Gameover = false;
 			Base::Add(new TItle());
 		}
 	}
