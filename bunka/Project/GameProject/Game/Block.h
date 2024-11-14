@@ -9,6 +9,7 @@ public:
 	{
 		eL,
 		eSikaku,
+		eStick,
 		eMax,
 	};
 private:
