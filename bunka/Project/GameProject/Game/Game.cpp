@@ -6,10 +6,12 @@
 #include "GameData.h"
 #include "count.h"
 #include "TItle/TItle.h"
+#include "Field.h"
 
 Game::Game()
 	:Base(eType_Scene)
 {
+	Base::Add(new Field());
 	Base::Add(new Player(CVector2D(200, 900), true));
 	Base::Add(new Map(1));
 	Base::Add(new BlockManager());

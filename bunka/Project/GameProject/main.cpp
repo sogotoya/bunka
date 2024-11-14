@@ -106,6 +106,9 @@ void Init(void)
 	ADD_RESOURCE("zanki", CImage::CreateImage("Image/corsa2.png"));
 	ADD_RESOURCE("zanki2", CImage::CreateImage("Image/corsa1.png"));
 	ADD_RESOURCE("zanki3", CImage::CreateImage("Image/jumptobu.png"));
+	ADD_RESOURCE("aozora", CImage::CreateImage("Image/aoisora.png"));
+	ADD_RESOURCE("yuugata", CImage::CreateImage("Image/yuugata.png"));
+	ADD_RESOURCE("yuugatakumo", CImage::CreateImage("Image/yuugatakumo.png"));
 }
 
 

@@ -6,6 +6,8 @@ private:
 
 
 	CImage m_haikei;
+	CImage m_yuugata;
+	CImage m_yuugatakumo;
 	static float m_ground_y;
 public:
 	Field();
