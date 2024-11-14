@@ -173,12 +173,20 @@ void Game::Draw()
 			| 1 << eType_Goal
 			| 1 << eType_Block);
 		outimg.Draw();
-		if(PUSH(CInput::eButton1))
-		{ 
-			//すべてのオブジェクトを破棄
+		if (PUSH(CInput::eButton1))
+		{
 			Base::KillAll();
+<<<<<<< HEAD
 			//タイトルシーンへ
+=======
+>>>>>>> 6ff2c495be79dc03cea06963221aa4aa1471e7e0
 			Base::Add(new TItle());
+			GameData::s_score = 1;
+			GameData::zanki = GameData::Zanki_set;
+			GameData::Gameclear = false;
+			GameData::clear = false;
+			GameData::Gameover = false;
 		}
 	}
 }
+
