@@ -73,7 +73,8 @@ void Game::Update()
 		
 		if (PUSH(CInput::eButton1))
 		{
-
+			Base::Kill(1 << eType_count);
+			Base::Add(new count(CVector2D(500, 0)));
 			//プレイヤーの各ステージの出現位置
 			if (GameData::s_score == 1)
 			{
@@ -108,6 +109,7 @@ void Game::Update()
 			Base::Kill(1 << eType_Map
 				| 1 << eType_AreaChange
 				| 1 << eType_Goal
+				| 1 << eType_count
 				| 1 << eType_Block);
 			if (GameData::s_score <= 2)
 			{
@@ -117,6 +119,8 @@ void Game::Update()
 			GameData::s_score++;
 			GameData::Gameclear = false;
 			Base::Add(new Map(GameData::s_score));
+
+			Base::Add(new count(CVector2D(500, 0)));
 		}
 		//マップ２のPlayerの出現位置
 		if (GameData::s_score == 2)
