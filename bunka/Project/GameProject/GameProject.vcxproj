@@ -25,6 +25,7 @@
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TItle\TItle.cpp" />
+    <ClCompile Include="UI\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
@@ -41,6 +42,7 @@
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="TItle\TItle.h" />
+    <ClInclude Include="UI\Menu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE2CE3B1-49BF-46A5-9DB1-9BD5B52FE1A0}</ProjectGuid>

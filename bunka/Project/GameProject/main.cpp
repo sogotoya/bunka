@@ -109,6 +109,8 @@ void Init(void)
 	ADD_RESOURCE("aozora", CImage::CreateImage("Image/aoisora.png"));
 	ADD_RESOURCE("yuugata", CImage::CreateImage("Image/yuugata.png"));
 	ADD_RESOURCE("yuugatakumo", CImage::CreateImage("Image/yuugatakumo.png"));
+	ADD_RESOURCE("Menu", CImage::CreateImage("Image/murasaki.png"));
+	ADD_RESOURCE("Waku", CImage::CreateImage("Image/waku.png"));
 }
 
 
