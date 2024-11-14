@@ -38,3 +38,8 @@ void count::Draw()
 void count::Collision(Base* b)
 {
 }
+
+void count::SetCount(int count)
+{
+	m_cnt = count;
+}

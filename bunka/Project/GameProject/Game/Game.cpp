@@ -75,34 +75,43 @@ void Game::Update()
 		
 		if (PUSH(CInput::eButton1))
 		{
-			Base::Kill(1 << eType_count);
-			Base::Add(new count(CVector2D(500, 0)));
-			//プレイヤーの各ステージの出現位置
-			if (GameData::s_score == 1)
-			{
-				Base::Add(new Player(CVector2D(200, 900), true));
-			}
-			if (GameData::s_score == 2)
-			{
-				Base::Add(new Player(CVector2D(1800, 900), true));
-			}
-			if (GameData::s_score == 3) 
-			{
-				Base::Add(new Player(CVector2D(1800, 900), true));
+			//Base::Kill(1 << eType_count);
+			//Base::Add(new count(CVector2D(500, 0)));
+			Base* b = Base::FindObject(eType_count);
+			count* c = dynamic_cast<count*>(b);
+			c->SetCount(180 * 60);
+			
+			//プレイヤーの各ステージのリスポーン位置
+			switch(GameData::s_score)
+			{ 
+				case 1:
+					Base::Add(new Player(CVector2D(200, 900), true));
+					break;
+				case 2:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+			
+				case 3:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
 			}
 		}
 	}
 
 	if (GameData::Gameclear)
 	{
-		if (GameData::s_score == 1)
+		switch(GameData::s_score)
 		{
+		case 1:
+			//ステージ1クリア画面
 			drawone = true;
+			break;
 			
-		}
-		if (GameData::s_score == 2)
-		{
+		
+		case 2: 
+			//ステージ2クリア画面
 			drawtwo = true;
+			break;
 		}
 		
 		//eButton1で次のマップへ
@@ -120,19 +129,25 @@ void Game::Update()
 
 			GameData::s_score++;
 			GameData::Gameclear = false;
+			//s_scoreに連動したMap生成
 			Base::Add(new Map(GameData::s_score));
 
 			Base::Add(new count(CVector2D(500, 0)));
 		}
-		//マップ２のPlayerの出現位置
-		if (GameData::s_score == 2)
+		
+		//各ステージクリア後の次Playerの出現位置
+		switch(GameData::s_score)
 		{
+		
+		case 2:
+			//マップ２のPlayerの出現位置
 			Base::Add(new Player(CVector2D(1800, 900), true));
-		}
-		//マップ３のPlayerの出現位置
-		if (GameData::s_score == 3)
-		{
+			break;
+		
+		case 3:
+			//マップ３のPlayerの出現位置
 			Base::Add(new Player(CVector2D(1800, 900), true));
+			break;
 		}
 		
 	}
@@ -150,7 +165,7 @@ void Game::Draw()
 	
 	
 	//上に画像が被らないように
-	//最後	のステージクリア画面描画
+	//最後のステージクリア画面描画
 	if (drawclear)
 	{
 		clearimg.SetSize(1550,745);
@@ -161,6 +176,7 @@ void Game::Draw()
 	//リトライ画面描画
 	if(drawretry)
 	{
+	//ゲームクリアしていなければ表示
 		if(!drawclear)
 		{ 
 			retryimg.Draw();

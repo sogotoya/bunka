@@ -12,6 +12,6 @@ public:
 	void Update();
 	void Draw();
 	void Collision(Base* b);
-	
+	void SetCount(int count);
 	
 };
