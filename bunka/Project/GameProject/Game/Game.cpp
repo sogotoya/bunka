@@ -146,7 +146,7 @@ void Game::Draw()
 	{
 		clearimg.SetSize(1550,745);
 		clearimg.SetCenter(50,100);
-		clearimg.SetPos(230,250);
+		clearimg.SetPos(230,240);
 		clearimg.Draw();
 	}
 	if(drawretry)
@@ -172,6 +172,8 @@ void Game::Draw()
 		Base::Kill(1 << eType_AreaChange
 			| 1 << eType_Goal
 			| 1 << eType_Block);
+		outimg.SetSize(1000, 700);
+		outimg.SetPos(440, 200);
 		outimg.Draw();
 		if (PUSH(CInput::eButton1))
 		{
