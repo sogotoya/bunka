@@ -43,8 +43,8 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if(g->GetGoal())
 		{
-			//ステージが３だった場合
-			if (GameData::s_score==3)
+			//ステージが4だった場合
+			if (GameData::s_score==4)
 			{
 				//描画
 				drawclear = true;
@@ -96,6 +96,10 @@ void Game::Update()
 				case 3:
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
+
+				case 4:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
 			}
 		}
 	}
@@ -112,7 +116,7 @@ void Game::Update()
 				| 1 << eType_Goal
 				| 1 << eType_count
 				| 1 << eType_Block);
-			if (GameData::s_score <= 2)
+			if (GameData::s_score <= 3)
 			{
 				Base::Kill(1 << eType_Player);
 			}
@@ -136,6 +140,10 @@ void Game::Update()
 		
 		case 3:
 			//マップ３のPlayerの出現位置
+			Base::Add(new Player(CVector2D(1800, 900), true));
+			break;
+		case 4:
+			//マップ4のPlayerの出現位置
 			Base::Add(new Player(CVector2D(1800, 900), true));
 			break;
 		}
@@ -188,6 +196,13 @@ void Game::Draw()
 		}
 		
 	case 2://ステージ2
+		if (drawone)
+		{
+			clear_two.Draw();
+			drawone = false;
+			break;
+		}
+	case 3://ステージ3
 		if (drawone)
 		{
 			clear_two.Draw();
