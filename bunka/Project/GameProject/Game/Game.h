@@ -10,15 +10,15 @@ private:
 	CImage outimg;
 	//ステージ1クリア画像
 	CImage clear_one;
-	bool drawone;
 	//ステージ２クリア画像
 	CImage clear_two;
-	bool drawtwo;
 	//リトライ画像
 	CImage retryimg;
 	bool drawretry;
 	//残機
-	CImage zankiimg[ 3];
+	CImage zankiimg[3];
+	//ステージクリア画面描画
+	bool drawone;
 public:
 	Game();
 	void Update();
