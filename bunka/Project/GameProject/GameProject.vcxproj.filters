@@ -41,6 +41,7 @@
     <ClCompile Include="Game\Field.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Tutorial Player.cpp" />
     <ClCompile Include="UI\Menu.cpp">
       <Filter>UI</Filter>
     </ClCompile>
@@ -86,6 +87,7 @@
     <ClInclude Include="Game\Field.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Tutorial Player.h" />
     <ClInclude Include="UI\Menu.h">
       <Filter>UI</Filter>
     </ClInclude>
