@@ -18,6 +18,7 @@ enum {
     eType_BlockManager,
     eType_count,
     eType_TItle,
+    eType_TutorialPlayer,
 };
 //èdóÕâ¡ë¨ìx
 #define GRAVITY (9.8f/20)
