@@ -16,7 +16,11 @@
 /*void Menu::Update()
 {
 	KillAll();
-	Base::Add(new Menu());
+	Base::Add(new Menu(100,100));
+	if(PUSH(CInput::eMouseL< m_rect)
+	{
+		
+	}
 }
 
 void Menu::Draw()
@@ -24,4 +28,6 @@ void Menu::Draw()
 
 	m_waku.Draw();
 	DrawRect();
-}*/
+}
+*/
+
