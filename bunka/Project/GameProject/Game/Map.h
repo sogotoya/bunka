@@ -3,7 +3,7 @@
 
 #define MAP_WIDTH 39
 #define MAP_HEIGHT 26
-#define MAP_TIP_SIZE 49
+#define MAP_TIP_SIZE 49.3
 
 class Map :public Base 
 {
