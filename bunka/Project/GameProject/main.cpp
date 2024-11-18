@@ -114,6 +114,7 @@ void Init(void)
 	ADD_RESOURCE("murasaki", CImage::CreateImage("Image/murasaki.png"));
 	ADD_RESOURCE("D key", CImage::CreateImage("Image/D key.png")); 
 	ADD_RESOURCE("A key", CImage::CreateImage("Image/A key.png"));
+	ADD_RESOURCE("Space key", CImage::CreateImage("Image/Space key.png"));
 }
 
 

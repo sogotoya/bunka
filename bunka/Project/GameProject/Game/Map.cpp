@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "Goal.h"
+#include "Tutorial Player.h"
 static int Tutorialstagedata[MAP_HEIGHT][MAP_WIDTH] =
 {
         { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,},
@@ -180,8 +181,7 @@ Map::Map(int area):Base(eType_Map)
     {
     case 0:
         memcpy(m_stage_data, Tutorialstagedata, sizeof(Tutorialstagedata));
-        "Player";
-        Base::Add(new Goal(CVector2D(90, 613)));
+        Base::Add(new TutorialPlayer());
         break;
     case 1:
         //ステージ1データをコピー
