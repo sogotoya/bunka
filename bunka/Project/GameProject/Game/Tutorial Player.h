@@ -3,7 +3,8 @@
 
 class TutorialPlayer :public Base {
 	int Step = 0;
-	CImage img;
+	CImage dimg;
+	CImage aimg;
 public:
 	TutorialPlayer();
 	void Update();

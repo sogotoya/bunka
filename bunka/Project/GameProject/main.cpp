@@ -112,7 +112,8 @@ void Init(void)
 	ADD_RESOURCE("Menu", CImage::CreateImage("Image/murasaki.png"));
 	ADD_RESOURCE("Waku", CImage::CreateImage("Image/waku.png"));
 	ADD_RESOURCE("murasaki", CImage::CreateImage("Image/murasaki.png"));
-	ADD_RESOURCE("D key", CImage::CreateImage("Image/D key.png"));
+	ADD_RESOURCE("D key", CImage::CreateImage("Image/D key.png")); 
+	ADD_RESOURCE("A key", CImage::CreateImage("Image/A key.png"));
 }
 
 
