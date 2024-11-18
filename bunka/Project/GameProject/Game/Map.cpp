@@ -178,6 +178,11 @@ Map::Map(int area):Base(eType_Map)
 	m_img =COPY_RESOURCE("Map_Tip", CImage);
     switch (area)
     {
+    case 0:
+        memcpy(m_stage_data, Tutorialstagedata, sizeof(Tutorialstagedata));
+        "Player";
+        Base::Add(new Goal(CVector2D(90, 613)));
+        break;
     case 1:
         //ステージ1データをコピー
         memcpy(m_stage_data, stage1data, sizeof(stage1data));
