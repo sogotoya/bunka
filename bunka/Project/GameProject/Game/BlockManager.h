@@ -4,7 +4,7 @@
 class BlockManager :public Base 
 {
 private:
-	int m_cnt = 35.5;
+	int m_cnt = 35;
 
 public:
 	BlockManager();
