@@ -1,33 +1,41 @@
 #include "Menu.h"
 #include "Game/Game.h"
-/*Menu::Menu(const CVector2D& pos) :Base(eType_Scene)
+#include "Game/GameData.h"
+Menu::Menu() :Base(eType_Scene)
 {
 	//ÉÅÉjÉÖÅ[îwåi
 	m_menu = COPY_RESOURCE("Menu", CImage);
 	m_menu.SetSize(1920, 1080);
 	//òg
-	m_waku = COPY_RESOURCE("Waku", CImage);
-	m_waku.SetPos(500, 500);
-	m_waku.SetCenter(250, 500);
-	m_rect = CRect(-240, -490, 240, 0);
+	m_sute1 = COPY_RESOURCE("Waku", CImage);
+	m_sute1.SetSize(100, 100);
+	m_sute1.SetCenter(50, 100);
+	m_sute1.SetPos(600, 600);
+	m_rect = CRect(-50, -100, 50, 0);
 	
-}*/
+}
 
-/*void Menu::Update()
+void Menu::Update()
 {
-	KillAll();
-	Base::Add(new Menu(100,100));
-	if(PUSH(CInput::eMouseL< m_rect)
+	/*switch (PUSH(CInput::eMouseL))
 	{
-		
+		case m_sute1:
+			GameData::s_score=1;
+			break;
+		//case :
+	}*/
+	if(PUSH(CInput::eMouseL))
+	{
+		Base:KillAll();
+		Base::Add(new Game());
 	}
 }
 
 void Menu::Draw()
 {
-
-	m_waku.Draw();
+	m_menu.Draw();
+	m_sute1.Draw();
 	DrawRect();
 }
-*/
+
 

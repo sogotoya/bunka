@@ -1,5 +1,6 @@
 #include "TItle.h"
 #include"../Game/Game.h"
+#include "UI/Menu.h"
 TItle::TItle():Base(eType_TItle),
 m_title_text("C:\\Windows\\Fonts\\tItle.xct",64)
 {
@@ -11,7 +12,8 @@ void TItle::Update()
 {
 	if (m_cnt++ > 60 && PUSH(CInput::eButton1)) {
 		Base::KillAll();
-		Base::Add(new Game());
+		Base::Add(new Menu());
+		//Base::Add(new Game());
 	}
 }
 

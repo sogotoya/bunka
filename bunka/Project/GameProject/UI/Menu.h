@@ -1,14 +1,15 @@
 #pragma once
 #include "Base/Base.h"
 
-/*class Menu :public Base
+class Menu :public Base
 {
 private:
 	CImage m_menu;
-	CImage m_waku;
+	CImage m_sute1;
+	
 
 public:
-	Menu(const CVector2D& pos);
+	Menu();
 	void Update();
 	void Draw();
-};*/
+};
