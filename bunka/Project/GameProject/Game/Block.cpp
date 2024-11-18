@@ -1,6 +1,7 @@
 #include "Block.h"
 #include "GameData.h"
 #include "Map.h"
+#include "Game.h"
 
 static int block_data[Block::eMax][4][3][3] =
 {

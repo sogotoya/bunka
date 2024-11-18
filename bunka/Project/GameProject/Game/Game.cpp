@@ -48,7 +48,9 @@ void Game::Update()
 			{
 				//•`‰æ
 				drawclear = true;
+
 				GameData::clear = true;
+			
 				if (PUSH(CInput::eButton1))
 				{
 					Base::KillAll();
