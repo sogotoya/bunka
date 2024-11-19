@@ -16,7 +16,6 @@ Game::Game()
 	Base::Add(new Player(CVector2D(200, 900), true));
 	Base::Add(new Map(GameData::s_score));
 	Base::Add(new BlockManager());
-	Base::Add(new Goal(CVector2D(1740, 613)));
 	Base::Add(new count(CVector2D(500, 0)));
 	//ヘッダーで作ったCImageに、COPY_RESOURCEで画像をセット
 	retryimg = COPY_RESOURCE("Retry", CImage);
