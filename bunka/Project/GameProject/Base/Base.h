@@ -11,6 +11,7 @@ enum {
     eType_Effect,
     eType_UI,
     eType_Scene,
+    eType_Waku,
     eType_Block,
     eType_Sikaku,
     eType_L,

@@ -6,28 +6,40 @@ Menu::Menu() :Base(eType_Scene)
 	//メニュー背景
 	m_menu = COPY_RESOURCE("Menu", CImage);
 	m_menu.SetSize(1920, 1080);
-	//1枠
-	m_sute1 = COPY_RESOURCE("Waku", CImage);
-	m_sute1.SetSize(100, 100);
-	m_sute1.SetCenter(50, 100);
-	m_pos = CVector2D(600, 600);
-	m_sute1.SetPos(600, 600);
-	m_rect = CRect(-50, -100, 50, 0);
-
-	
+	//メニュー画像生成
+	for (int i = 0; i < 4; i++)
+	{
+		Base::Add(m_waku[i] = new Waku("Maru", CVector2D(200 * i, 400),i+1));
+	}
 }
 
 
 void Menu::Update()
 {
-	/*switch (PUSH(CInput::eMouseL))
-	{
-		case m_sute1:
-			GameData::s_score=1;
-			break;
-		//case :
-	}*/
-	if(PUSH(CInput::eMouseL))
+	
+}
+
+void Menu::Draw()
+{
+	m_menu.Draw();
+	
+}
+
+Menu::Waku::Waku(char* imgname, CVector2D pos,int stagen):Base(eType_Waku)
+{
+	m_pos = pos;
+	//何ステージ選択
+	m_stagen = stagen;
+	m_sute= COPY_RESOURCE(imgname, CImage);
+	m_sute.SetSize(100, 100);
+	m_sute.SetCenter(50, 100);
+	m_rect = CRect(-50, -100, 50, 0);
+}
+
+void Menu::Waku::Update()
+{
+	//マウスがメニューをクリックしたときの判定
+	if (PUSH(CInput::eMouseL))
 	{
 		//マウスの座標
 		CVector2D p = CInput::GetMousePoint();
@@ -41,37 +53,18 @@ void Menu::Update()
 		//矩形同士の判定
 		if (p.x <= rect2.m_right && p.x >= rect2.m_left &&
 			p.y <= rect2.m_bottom && p.y >= rect2.m_top)
-			{
-				//
-				Base:KillAll();
-				Base::Add(new Game());
-			};
-	
+		{
+			//
+		Base:KillAll();
+			GameData::s_score = m_stagen;
+			Base::Add(new Game());
+		};
+
 	}
 }
 
-void Menu::Draw()
+void Menu::Waku::Draw()
 {
-	m_menu.Draw();
-	m_sute1.Draw();
-	DrawRect();
+	m_sute2.SetPos(m_pos);
+	m_sute2.Draw();
 }
-
-
-
-
-
-
-
-/*Menu::Botan::Botan() :Base(eType_Scene)
-{
-	m_aikon = COPY_RESOURCE("Maru", CImage);
-	m_aikon.SetSize(100, 100);
-	m_aikon.SetCenter(50, 100);
-	m_pos = CVector2D(700, 700);
-	m_aikon.SetPos(700, 700);
-	m_rect = CRect(-50, -100, 50, 0);
-	m_aikon.Draw();
-}*/
-
-

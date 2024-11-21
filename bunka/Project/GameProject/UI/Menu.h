@@ -3,18 +3,22 @@
 
 class Menu :public Base
 {
-	class Botan :public Base 
+	//ƒƒjƒ…[˜gŠÖ˜A
+	class Waku :public Base
 	{
 	private:
-		 static CImage m_aikon;
+		CImage m_sute;
+		int m_stagen;
 	public:
-		Botan();
+		
+		Waku(char* imgname,CVector2D pos, int stagen);
+		void Update();
+		void Draw();
 	};
 
 private:
 	CImage m_menu;
-	CImage m_sute1;
-	
+	Waku *m_waku[4];
 
 public:
 	Menu();
