@@ -4,23 +4,24 @@ m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 {
 	dimg = COPY_RESOURCE("D key", CImage);
 	aimg = COPY_RESOURCE("A key", CImage);
+	simg = COPY_RESOURCE("Space key", CImage);
 }
 void TutorialPlayer::Update()
 {
-	switch (Step) {
-	case 0:
-		if (HOLD(CInput::eLeft)) {
-			Step++;
-			dimg = COPY_RESOURCE("D key", CImage);
+	
+		if (HOLD(CInput::eRight)) {
+			Step=0;
+			
 		}
-		break;
-	case 1:
-		if (HOLD(CInput::eRight)){
-			Step--;
-			aimg = COPY_RESOURCE("A key", CImage);
+		if (HOLD(CInput::eLeft)){
+			Step=1;
+			
 		}
-		break;
-	}
+		if (HOLD(CInput::eUp)) {
+			Step=2;
+			
+		}
+
 }
 void TutorialPlayer::Draw()
 {
@@ -37,5 +38,12 @@ void TutorialPlayer::Draw()
 		m_Tutorial_text.Draw(830, 700, 1, 1, 1, "ç∂à⁄ìÆ");
 		aimg.Draw();
 		break;
+	case 2:
+		simg.SetSize(410, 100);
+		simg.SetPos(750, 450);
+		m_Tutorial_text.Draw(830, 618, 1, 1, 1, "ÉWÉÉÉìÉv");
+		simg.Draw();
+		break;
 	}
+
 }

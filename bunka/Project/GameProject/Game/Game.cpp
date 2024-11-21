@@ -16,6 +16,7 @@ Game::Game()
 	Base::Add(new Player(CVector2D(200, 900), true));
 	Base::Add(new Map(GameData::s_score));
 	Base::Add(new BlockManager());
+	if(GameData::s_score!=0)
 	Base::Add(new count(CVector2D(500, 0)));
 	//ヘッダーで作ったCImageに、COPY_RESOURCEで画像をセット
 	retryimg = COPY_RESOURCE("Retry", CImage);
@@ -156,6 +157,7 @@ void Game::Update()
 void Game::Draw()
 {
 	//残機描画
+	if(GameData::s_score!=0)
 	for (int i = 0; i < GameData::zanki; i++)
 	{ 
 		zankiimg[i].SetPos(10+80*i, 10);
