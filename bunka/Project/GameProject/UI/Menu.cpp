@@ -65,6 +65,6 @@ void Menu::Waku::Update()
 
 void Menu::Waku::Draw()
 {
-	m_sute2.SetPos(m_pos);
-	m_sute2.Draw();
+	m_sute.SetPos(m_pos);
+	m_sute.Draw();
 }
