@@ -10,6 +10,7 @@ m_title_text("C:\\Windows\\Fonts\\tItle.xct",64)
 
 void TItle::Update()
 {
+	SOUND("SE_show")->Play();
 	if (m_cnt++ > 60 && PUSH(CInput::eButton1)) {
 		Base::KillAll();
 		Base::Add(new Menu());
@@ -20,5 +21,5 @@ void TItle::Update()
 void TItle::Draw()
 {
 	m_img.Draw();
-
+	
 }

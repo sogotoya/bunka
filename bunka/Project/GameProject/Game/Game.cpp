@@ -51,6 +51,7 @@ Game::Game()
 	//残機を３にセット
 	for(int i=0;i<3;i++)
 	zankiimg[i].SetSize(75, 75);
+	
 
 }
 
