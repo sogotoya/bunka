@@ -249,7 +249,7 @@ void Game::Draw()
 		{
 			Base::KillAll();
 		
-
+			//ゲームオーバーになるとメニュー画面に戻る
 			Base::Add(new Menu());
 			GameData::s_score = 1;
 			GameData::zanki = GameData::Zanki_set;
@@ -258,6 +258,7 @@ void Game::Draw()
 			GameData::Gameover = false;
 		}
 	}
+	//一時停止画像の描画
 	if (m_pose)
 	{
 		stopimg.Draw();
