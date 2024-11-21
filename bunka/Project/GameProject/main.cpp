@@ -120,8 +120,9 @@ void Init(void)
 	ADD_RESOURCE("L key", CImage::CreateImage("Image/L key.png"));
 	ADD_RESOURCE("U key", CImage::CreateImage("Image/U key.png"));
 	ADD_RESOURCE("Down key", CImage::CreateImage("Image/Down key.png"));
-	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window.png"));
-	SOUND("SE_show")->Load("Sound/Future_2 .wav", 10);
+	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window .png"));
+	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
+	SOUND("title")->Load("Sound/trance2 .wav", 10);
 }
 
 

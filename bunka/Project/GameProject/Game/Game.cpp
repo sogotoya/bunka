@@ -45,6 +45,8 @@ Game::Game()
 	zankiimg[0] = COPY_RESOURCE("zanki", CImage);
 	zankiimg [1] = COPY_RESOURCE("zanki2", CImage);
 	zankiimg[2] = COPY_RESOURCE("zanki3", CImage);
+	stopimg = COPY_RESOURCE("stop", CImage);
+	stopimg.SetPos(770, 400);
 	drawclear = false;
 	drawretry = false;
 	drawone = false;
@@ -73,8 +75,7 @@ void Game::Update()
 				if (PUSH(CInput::eButton1))
 				{
 					Base::KillAll();
-					Base::Add(new TItle());
-					GameData::s_score = 1;
+					Base::Add(new Menu());
 					GameData::zanki=3;
 					GameData::Gameclear = false;
 					
@@ -256,6 +257,10 @@ void Game::Draw()
 			GameData::clear = false;
 			GameData::Gameover = false;
 		}
+	}
+	if (m_pose)
+	{
+		stopimg.Draw();
 	}
 }
 
