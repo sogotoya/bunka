@@ -7,13 +7,31 @@
 #include "count.h"
 #include "TItle/TItle.h"
 #include "Field.h"
+#include "UI/Menu.h"
 
 Game::Game()
 	:Base(eType_Scene)
 {
 	//生成
 	Base::Add(new Field());
-	Base::Add(new Player(CVector2D(200, 900), true));
+	//プレイヤーの各ステージのリスポーン位置
+	switch (GameData::s_score)
+	{
+	case 1:
+		Base::Add(new Player(CVector2D(200, 900), true));
+		break;
+	case 2:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
+
+	case 3:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
+
+	case 4:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
+	}
 	Base::Add(new Map(GameData::s_score));
 	Base::Add(new BlockManager());
 	if(GameData::s_score!=0)
@@ -125,6 +143,7 @@ void Game::Update()
 
 			GameData::s_score++;
 			GameData::Gameclear = false;
+			GameData::zanki = GameData::Zanki_set;
 			//s_scoreに連動したMap生成
 			Base::Add(new Map(GameData::s_score));
 
@@ -151,11 +170,13 @@ void Game::Update()
 		}
 		
 	}
-		
+	
 }
 
 void Game::Draw()
 {
+	if (PUSH(CInput::eButton1))
+		m_pose = !m_pose;
 	//残機描画
 	if(GameData::s_score!=0)
 	for (int i = 0; i < GameData::zanki; i++)
@@ -227,7 +248,7 @@ void Game::Draw()
 			Base::KillAll();
 		
 
-			Base::Add(new TItle());
+			Base::Add(new Menu());
 			GameData::s_score = 1;
 			GameData::zanki = GameData::Zanki_set;
 			GameData::Gameclear = false;

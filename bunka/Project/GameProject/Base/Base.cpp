@@ -1,6 +1,8 @@
 #include "Base.h"
 std::list<Base*> Base::m_list;
 CVector2D Base::m_scroll(0, 0);
+//ポーズfalse
+bool Base::m_pose = false;
 Base::Base(int type) : m_type(type),m_pos(0, 0),m_vec(0,0),m_rad(0), m_kill(false)
 {
 
@@ -49,6 +51,8 @@ void Base::CollisionAll()
 
 void Base::UpdateAll()
 {
+    //ポーズ中なら停止
+    if (m_pose)return;
     //リスト内全ての要素の更新
     for (auto& b : m_list) {
         b->Update();

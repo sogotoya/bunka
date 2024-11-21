@@ -46,7 +46,8 @@ public:
     static std::list<Base*> m_list;
     //スクロール値
     static CVector2D m_scroll;
-
+    //ポーズフラグ
+    static bool m_pose;
 public:
     /// <summary>
     /// コンストラクタ
