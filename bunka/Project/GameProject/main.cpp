@@ -117,6 +117,10 @@ void Init(void)
 	ADD_RESOURCE("A key", CImage::CreateImage("Image/A key.png"));
 	ADD_RESOURCE("Space key", CImage::CreateImage("Image/Space key.png"));
 	ADD_RESOURCE("R key", CImage::CreateImage("Image/R key.png"));
+	ADD_RESOURCE("L key", CImage::CreateImage("Image/L key.png"));
+	ADD_RESOURCE("U key", CImage::CreateImage("Image/U key.png"));
+	ADD_RESOURCE("Down key", CImage::CreateImage("Image/Down key.png"));
+	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window key.png"));
 }
 
 

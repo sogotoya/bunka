@@ -5,6 +5,7 @@ m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 	dimg = COPY_RESOURCE("D key", CImage);
 	aimg = COPY_RESOURCE("A key", CImage);
 	simg = COPY_RESOURCE("Space key", CImage);
+	Rimg = COPY_RESOURCE("R key", CImage);
 }
 void TutorialPlayer::Update()
 {
@@ -20,6 +21,9 @@ void TutorialPlayer::Update()
 		if (HOLD(CInput::eUp)) {
 			Step=2;
 			
+		}
+		if (HOLD(CInput::eRight)) {
+			Step = 3;
 		}
 
 }
