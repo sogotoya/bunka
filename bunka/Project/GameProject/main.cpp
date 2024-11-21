@@ -94,9 +94,7 @@ void Init(void)
 	//Base::Add(new count(CVector2D(500, 0)));
 	//Base::Add(new Game());
 	ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data,32, 32));
-	
 	ADD_RESOURCE("TItle", CImage::CreateImage("Image/title.png"));
-	Base::Add(new TItle());
 	ADD_RESOURCE("Retry", CImage::CreateImage("Image/Retry.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 	ADD_RESOURCE("stage1goal", CImage::CreateImage("Image/1st clear.png"));
@@ -122,7 +120,8 @@ void Init(void)
 	ADD_RESOURCE("Down key", CImage::CreateImage("Image/Down key.png"));
 	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window .png"));
 	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
-	SOUND("title")->Load("Sound/trance2 .wav", 10);
+	SOUND("title")->Load("Sound/BGM/trance2.wav", 10);
+	Base::Add(new TItle());
 }
 
 
