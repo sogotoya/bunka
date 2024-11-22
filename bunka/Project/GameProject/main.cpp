@@ -59,7 +59,7 @@ void Init(void)
 	CInput::SetButton(1, CInput::eButton2, 'X');
 	CInput::SetButton(1, CInput::eButton3, 'S');
 	CInput::SetButton(1, CInput::eButton4, 'V');
-	CInput::SetButton(1, CInput::eButton5, VK_SPACE);
+	CInput::SetButton(1, CInput::eButton5, 'E');
 	CInput::SetButton(1, CInput::eButton10, VK_RETURN);
 	CInput::SetButton(1, CInput::eUp, VK_UP);
 	CInput::SetButton(1, CInput::eDown, VK_DOWN);
@@ -94,9 +94,7 @@ void Init(void)
 	//Base::Add(new count(CVector2D(500, 0)));
 	//Base::Add(new Game());
 	ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data,32, 32));
-	
 	ADD_RESOURCE("TItle", CImage::CreateImage("Image/title.png"));
-	Base::Add(new TItle());
 	ADD_RESOURCE("Retry", CImage::CreateImage("Image/Retry.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 	ADD_RESOURCE("stage1goal", CImage::CreateImage("Image/1st clear.png"));
@@ -124,8 +122,17 @@ void Init(void)
 <<<<<<< HEAD
 =======
 	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
+<<<<<<< HEAD
 	SOUND("title")->Load("Sound/trance2 .wav", 10);
 >>>>>>> 13bc79c92c0468a3ab44b0e075c7f878af41ca8b
+=======
+	SOUND("title")->Load("Sound/BGM/House_01.wav", 10);
+	SOUND("stage1")->Load("Sound/BGM/Ska_03.wav", 10);
+	SOUND("stage2")->Load("Sound/BGM/tekuno_02.wav");
+	SOUND("stage3")->Load("Sound/BGM/Trance_01.wav");
+	SOUND("stage4")->Load("Sound/BGM/trance2.wav");
+	Base::Add(new TItle());
+>>>>>>> 458c99a16bf72d66714e50741f4d9e7d89043d23
 }
 
 
