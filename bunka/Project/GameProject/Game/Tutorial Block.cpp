@@ -10,19 +10,19 @@ m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 void TutorialBlock::Update()
 {
 
-	if (HOLD(CInput::eRight)) {
+	if (PUSH_PAD(1, CInput::eRight)) {
 		Step = 0;
 
 	}
-	if (HOLD(CInput::eLeft)) {
+	if (PUSH_PAD(1, CInput::eLeft)) {
 		Step = 1;
 
 	}
-	if (HOLD(CInput::eUp)) {
+	if (PUSH_PAD(1, CInput::eUp)) {
 		Step = 2;
 
 	}
-	if (HOLD(CInput::eDown)) {
+	if (HOLD_PAD(1, CInput::eDown)) {
 		Step = 3;
 
 	}

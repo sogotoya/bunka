@@ -6,10 +6,6 @@ class TutorialPlayer :public Base {
 	CImage dimg;
 	CImage aimg;
 	CImage simg;
-	CImage Rimg;
-	CImage Limg;
-	CImage Uimg;
-	CImage Downimg;
 private:
 	CFont m_Tutorial_text;
 public:
