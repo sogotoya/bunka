@@ -28,20 +28,20 @@ void TutorialPlayer::Draw()
 	switch (Step) {
 	case 0:
 		dimg.SetSize(180, 180);
-		dimg.SetPos(830, 450);
-		m_Tutorial_text.Draw(830, 700, 1, 1, 1, "右移動");
+		dimg.SetPos(500, 450);
+		m_Tutorial_text.Draw(500, 700, 1, 1, 1, "右移動");
 		dimg.Draw();
 		break;
 	case 1:
 		aimg.SetSize(180, 180);
-		aimg.SetPos(830, 450);
-		m_Tutorial_text.Draw(830, 700, 1, 1, 1, "左移動");
+		aimg.SetPos(500, 450);
+		m_Tutorial_text.Draw(500, 700, 1, 1, 1, "左移動");
 		aimg.Draw();
 		break;
 	case 2:
 		simg.SetSize(410, 100);
-		simg.SetPos(750, 450);
-		m_Tutorial_text.Draw(830, 618, 1, 1, 1, "ジャンプ");
+		simg.SetPos(420, 450);
+		m_Tutorial_text.Draw(500, 618, 1, 1, 1, "ジャンプ");
 		simg.Draw();
 		break;
 	}

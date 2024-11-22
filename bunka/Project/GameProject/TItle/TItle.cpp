@@ -1,6 +1,7 @@
 #include "TItle.h"
 #include"../Game/Game.h"
 #include "Game/Tutorial Player.h"
+#include "Game/Tutorial Block.h"
 #include "Game/Player.h"
 #include "Game/Map.h"
 #include "Game/Field.h"
@@ -26,6 +27,7 @@ void TItle::Update()
 		Base::Add(new Field());
 		Base::Add(new Game());
 		Base::Add(new TutorialPlayer());
+		Base::Add(new TutorialBlock());
 		Base::Add(new Player(CVector2D(200, 900), true));
 		Base::Add(new Map(GameData::s_score));
 		Base::Add(new BlockManager());

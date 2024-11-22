@@ -2,7 +2,7 @@
 #include "../Base/Base.h"
 
 class TutorialBlock :public Base {
-	int Step = 0;
+	int x = 0;
 	CImage Rimg;
 	CImage Limg;
 	CImage Uimg;

@@ -11,48 +11,48 @@ void TutorialBlock::Update()
 {
 
 	if (PUSH_PAD(1, CInput::eRight)) {
-		Step = 0;
+		x = 0;
 
 	}
 	if (PUSH_PAD(1, CInput::eLeft)) {
-		Step = 1;
+		x = 1;
 
 	}
 	if (PUSH_PAD(1, CInput::eUp)) {
-		Step = 2;
+		x = 2;
 
 	}
 	if (HOLD_PAD(1, CInput::eDown)) {
-		Step = 3;
+		x = 3;
 
 	}
 
 }
 void TutorialBlock::Draw()
 {
-	switch (Step) {
+	switch (x) {
 	case 0:
 		Rimg.SetSize(180, 180);
-		Rimg.SetPos(830, 450);
-		m_Tutorial_text.Draw(830, 700, 1, 1, 1, "âEà⁄ìÆ");
+		Rimg.SetPos(1160, 450);
+		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "âEà⁄ìÆ");
 		Rimg.Draw();
 		break;
 	case 1:
 		Limg.SetSize(180, 180);
-		Limg.SetPos(830, 450);
-		m_Tutorial_text.Draw(830, 700, 1, 1, 1, "ç∂à⁄ìÆ");
+		Limg.SetPos(1160, 450);
+		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "ç∂à⁄ìÆ");
 		Limg.Draw();
 		break;
 	case 2:
 		Uimg.SetSize(180, 180);
-		Uimg.SetPos(830, 450);
-		m_Tutorial_text.Draw(830, 700, 1, 1, 1, "âÒì]");
+		Uimg.SetPos(1160, 450);
+		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "âÒì]");
 		Uimg.Draw();
 		break;
 	case 3:
 		Downimg.SetSize(180, 180);
-		Downimg.SetPos(830, 450);
-		m_Tutorial_text.Draw(830, 700, 1, 1, 1, "çÇë¨ç~â∫");
+		Downimg.SetPos(1160, 450);
+		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "çÇë¨ç~â∫");
 		Downimg.Draw();
 		break;
 	}
