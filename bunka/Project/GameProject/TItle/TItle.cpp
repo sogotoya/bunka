@@ -19,6 +19,11 @@ m_title_text("C:\\Windows\\Fonts\\tItle.xct",64)
 	SOUND("title")->Play();
 }
 
+TItle::~TItle()
+{
+	SOUND("title")->Stop();
+}
+
 void TItle::Update()
 {
 	

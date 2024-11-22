@@ -8,6 +8,7 @@ class TItle : public Base {
 
 public:
 	TItle();
+	~TItle();
 	void Update();
 	void Draw();
 };

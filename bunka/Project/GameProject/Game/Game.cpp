@@ -68,7 +68,7 @@ void Game::Update()
 		if(g->GetGoal())
 		{
 			//ステージが4だった場合
-			if (GameData::s_score == 4)
+			if (GameData::s_score != 4)
 			{
 				//描画
 				drawclear = true;
