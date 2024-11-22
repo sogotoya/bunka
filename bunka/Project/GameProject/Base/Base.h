@@ -20,6 +20,7 @@ enum {
     eType_count,
     eType_TItle,
     eType_TutorialPlayer,
+    eType_TutorialBlock,
 };
 //èdóÕâ¡ë¨ìx
 #define GRAVITY (9.8f/20)

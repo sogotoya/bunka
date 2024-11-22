@@ -45,6 +45,9 @@
     <ClCompile Include="UI\Menu.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Tutorial Block.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h">
@@ -90,6 +93,9 @@
     <ClInclude Include="Game\Tutorial Player.h" />
     <ClInclude Include="UI\Menu.h">
       <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Tutorial Block.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
