@@ -182,6 +182,7 @@ Map::Map(int area):Base(eType_Map)
     case 0:
         memcpy(m_stage_data, Tutorialstagedata, sizeof(Tutorialstagedata));
         Base::Add(new TutorialPlayer());
+        Base::Add(new Goal(CVector2D(1740, 613)));
         break;
     case 1:
         //ステージ1データをコピー

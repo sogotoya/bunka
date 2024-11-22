@@ -22,7 +22,7 @@ void TItle::Update()
 {
 	
 	if (m_cnt++ > 60 && PUSH(CInput::eButton1)) {
-		//Base::KillAll();
+		Base::KillAll();
 		//Base::Add(new Field());
 		//Base::Add(new Game());
 		//Base::Add(new Player(CVector2D(200, 900), true));
