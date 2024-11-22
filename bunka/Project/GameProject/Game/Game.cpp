@@ -68,31 +68,35 @@ void Game::Update()
 		if(g->GetGoal())
 		{
 			//ステージが4だった場合
-			if (GameData::s_score==4)
+			if (GameData::s_score == 4)
 			{
 				//描画
 				drawclear = true;
 
 				GameData::clear = true;
-			
-				if (PUSH(CInput::eButton1))
+				if (GameData::clear = true)
 				{
-					Base::KillAll();
-					Base::Add(new Menu());
-					GameData::zanki=3;
-					GameData::Gameclear = false;
-					
+					if (PUSH(CInput::eButton1))
+					{
+						Base::KillAll();
+						Base::Add(new Menu());
+						GameData::zanki = 3;
+						GameData::Gameclear = false;
+
+					}
+
 				}
-				
+				else {
+
+					GameData::Gameclear = true;
+
+				}
 			}
-			else{
-				
-				GameData::Gameclear = true;
-			
+			if (GameData::s_score == 0)
+			{
+				Base::KillAll();
+				Base::Add(new Menu());
 			}
-				if(GameData::s_score==0)
-					Base::Add(new Menu());
-			
 		}
 	}
 	if (!Base::FindObject(eType_Player))
