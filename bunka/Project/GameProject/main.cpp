@@ -121,6 +121,11 @@ void Init(void)
 	ADD_RESOURCE("U key", CImage::CreateImage("Image/U key.png"));
 	ADD_RESOURCE("Down key", CImage::CreateImage("Image/Down key.png"));
 	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window .png"));
+<<<<<<< HEAD
+=======
+	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
+	SOUND("title")->Load("Sound/trance2 .wav", 10);
+>>>>>>> 13bc79c92c0468a3ab44b0e075c7f878af41ca8b
 }
 
 

@@ -19,6 +19,8 @@ private:
 	CImage zankiimg[3];
 	//ステージクリア画面描画
 	bool drawone;
+	//一時停止画像
+	CImage stopimg;
 public:
 	Game();
 	void Update();
