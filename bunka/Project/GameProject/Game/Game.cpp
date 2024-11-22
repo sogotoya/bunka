@@ -14,9 +14,12 @@ Game::Game()
 {
 	//生成
 	Base::Add(new Field());
-	//プレイヤーの各ステージのリスポーン位置
+	//プレイヤーの各ステージのスポーン位置
 	switch (GameData::s_score)
 	{
+	case 0:
+		Base::Add(new Player(CVector2D(200, 900), true));
+		break;
 	case 1:
 		Base::Add(new Player(CVector2D(200, 900), true));
 		break;
@@ -87,7 +90,8 @@ void Game::Update()
 				GameData::Gameclear = true;
 			
 			}
-				
+				if(GameData::s_score==0)
+					Base::Add(new Menu());
 			
 		}
 	}
