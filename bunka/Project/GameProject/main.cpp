@@ -119,20 +119,14 @@ void Init(void)
 	ADD_RESOURCE("U key", CImage::CreateImage("Image/U key.png"));
 	ADD_RESOURCE("Down key", CImage::CreateImage("Image/Down key.png"));
 	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window .png"));
-<<<<<<< HEAD
-=======
 	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
-<<<<<<< HEAD
 	SOUND("title")->Load("Sound/trance2 .wav", 10);
->>>>>>> 13bc79c92c0468a3ab44b0e075c7f878af41ca8b
-=======
 	SOUND("title")->Load("Sound/BGM/House_01.wav", 10);
 	SOUND("stage1")->Load("Sound/BGM/Ska_03.wav", 10);
 	SOUND("stage2")->Load("Sound/BGM/tekuno_02.wav");
 	SOUND("stage3")->Load("Sound/BGM/Trance_01.wav");
 	SOUND("stage4")->Load("Sound/BGM/trance2.wav");
 	Base::Add(new TItle());
->>>>>>> 458c99a16bf72d66714e50741f4d9e7d89043d23
 }
 
 
