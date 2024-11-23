@@ -120,6 +120,7 @@ void Init(void)
 	ADD_RESOURCE("Down key", CImage::CreateImage("Image/Down key.png"));
 	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window .png"));
 	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
+	ADD_RESOURCE("stagewaku1", CImage::CreateImage("Image/stage1.png"));
 	SOUND("title")->Load("Sound/BGM/trance2.wav", 10);
 	SOUND("Stege")->Load("Sound/BGM/House_01.wav", 10);
 	SOUND("stage1")->Load("Sound/BGM/Ska_03.wav", 10);

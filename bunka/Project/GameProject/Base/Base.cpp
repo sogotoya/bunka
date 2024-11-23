@@ -114,6 +114,14 @@ void Base::Kill(int mask)
     }
 }
 
+void Base::SelectKill(int Type)
+{
+    for (auto& b : m_list) {
+        if (b->m_type == Type)
+            b->SetKill();
+    }
+}
+
 Base* Base::FindObject(int type)
 {
     //リストをループ

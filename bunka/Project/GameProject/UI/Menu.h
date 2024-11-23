@@ -8,7 +8,10 @@ class Menu :public Base
 	{
 	private:
 		CImage m_sute;
+		//ステージ１
+		CImage m_stagewaku1;
 		int m_stagen;
+
 	public:
 		
 		Waku(char* imgname,CVector2D pos, int stagen);

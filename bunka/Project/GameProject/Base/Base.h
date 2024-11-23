@@ -3,8 +3,9 @@
 /// オブジェクトの種類
 /// </summary>
 enum {
-    eType_Field,
     eType_Map,
+    eType_Menu,
+    eType_Field,
     eType_AreaChange,
     eType_Player,
     eType_Goal,
@@ -12,15 +13,16 @@ enum {
     eType_UI,
     eType_Scene,
     eType_Waku,
-    eType_Block,
     eType_Sikaku,
     eType_L,
     eType_maru,
-    eType_BlockManager,
     eType_count,
     eType_TItle,
     eType_TutorialPlayer,
     eType_TutorialBlock,
+    eType_Block,
+    eType_BlockManager,
+    
 };
 //重力加速度
 #define GRAVITY (9.8f/20)
@@ -113,7 +115,11 @@ public:
     /// </summary>
     /// <param name="mask">削除対象オブジェクトのマスク</param>
     static void Kill(int mask);
-
+    /// <summary>
+    /// eType選択削除
+    /// </summary>
+    /// <param name="Type"></param>
+    static void SelectKill(int Type);
     /// <summary>
     /// リスト内からオブジェクトを探索
     /// </summary>
