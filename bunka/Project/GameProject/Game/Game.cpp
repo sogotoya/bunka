@@ -70,14 +70,10 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if (g->GetGoal())
 		{
-			//ステージが4だった場合（現在、ステージ４でしかゴールできないようになっている。この下のif文が原因）
-			if (GameData::s_score == 4)
+				//ゲームクリア画面表示
+				drawclear = true;
 
-			//ゲームクリア画面
-			drawclear = true;
-			GameData::clear = true;
-
-
+				GameData::clear = true;
 			if (GameData::clear)
 			{
 				if (PUSH(CInput::eButton1))
@@ -90,6 +86,7 @@ void Game::Update()
 					| 1 << eType_count
 					| 1 << eType_Scene);
 					Base::Add(new Menu());
+				
 				}
 			}
 			//チュ－トリアルからメニュー
@@ -207,7 +204,7 @@ void Game::Update()
 void Game::Draw()
 {
 	//ゲーム中の一時停止
-	if (PUSH(CInput::eButton1))
+	if (PUSH(CInput::eButton10))
 		m_pose = !m_pose;
 	//残機描画
 	if(GameData::s_score!=0)
