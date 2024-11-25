@@ -35,24 +35,28 @@ void TutorialBlock::Draw()
 		Rimg.SetSize(180, 180);
 		Rimg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "âEà⁄ìÆ");
+		COPY_RESOURCE("Red window", CImage);
 		Rimg.Draw();
 		break;
 	case 1:
 		Limg.SetSize(180, 180);
 		Limg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "ç∂à⁄ìÆ");
+		COPY_RESOURCE("Red window", CImage);
 		Limg.Draw();
 		break;
 	case 2:
 		Uimg.SetSize(180, 180);
 		Uimg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "âÒì]");
+		COPY_RESOURCE("Red window", CImage);
 		Uimg.Draw();
 		break;
 	case 3:
 		Downimg.SetSize(180, 180);
 		Downimg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "çÇë¨ç~â∫");
+		COPY_RESOURCE("Red window", CImage);
 		Downimg.Draw();
 		break;
 	}

@@ -118,7 +118,8 @@ void Init(void)
 	ADD_RESOURCE("L key", CImage::CreateImage("Image/L key.png"));
 	ADD_RESOURCE("U key", CImage::CreateImage("Image/U key.png"));
 	ADD_RESOURCE("Down key", CImage::CreateImage("Image/Down key.png"));
-	ADD_RESOURCE("Red key", CImage::CreateImage("Image/Red window .png"));
+	ADD_RESOURCE("Red window", CImage::CreateImage("Image/Red window .png"));
+	ADD_RESOURCE("Red Side window", CImage::CreateImage("Image/Red Side window  .png"));
 	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
 	ADD_RESOURCE("stagewaku1", CImage::CreateImage("Image/stage1.png"));
 	SOUND("title")->Load("Sound/BGM/trance2.wav", 10);
