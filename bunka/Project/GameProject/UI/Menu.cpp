@@ -18,7 +18,7 @@ Menu::Menu() :Base(eType_Menu)
 	char name[4][32] = { "stagewaku1", "stagewaku1", "stagewaku1", "stagewaku1", };
 	for (int i = 0; i < 4; i++)
 	{
-		Base::Add(m_waku[i] = new Waku(name[i], CVector2D(560 + 250 * i, 560), i + 1));
+		Base::Add(m_waku[i] = new Waku(name[i], CVector2D(620 + 250 * i, 600), i + 1));
 	}
 }
 
@@ -42,7 +42,7 @@ Menu::Waku::Waku(char* imgname, CVector2D pos,int stagen):Base(eType_Waku)
 	m_sute= COPY_RESOURCE(imgname, CImage);
 	m_sute.SetSize(280, 180);
 	m_sute.SetCenter(180, 180);
-	m_rect = CRect(-100, -100, 100, 0);
+	m_rect = CRect(-180, -180, 180, 0);
 }
 
 void Menu::Waku::Update()
