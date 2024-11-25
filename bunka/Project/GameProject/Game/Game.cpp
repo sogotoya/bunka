@@ -67,8 +67,8 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if(g->GetGoal())
 		{
-			//ステージが4だった場合
-			if (GameData::s_score != 4)
+			//ステージが4だった場合（現在、ステージ４でしかゴールできないようになっている。この下のif文が原因）
+			if (GameData::s_score == 4)
 			{
 				//描画
 				drawclear = true;
