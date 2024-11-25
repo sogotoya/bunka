@@ -3,9 +3,9 @@
 /// オブジェクトの種類
 /// </summary>
 enum {
+    eType_Field,
     eType_Map,
     eType_Menu,
-    eType_Field,
     eType_AreaChange,
     eType_Player,
     eType_Goal,

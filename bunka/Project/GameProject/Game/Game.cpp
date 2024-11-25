@@ -119,22 +119,25 @@ void Game::Update()
 			c->SetCount(180 * 60);
 			
 			//プレイヤーの各ステージのリスポーン位置
-			switch(GameData::s_score)
+			if (GameData::clear)
 			{ 
-				case 1:
-					Base::Add(new Player(CVector2D(200, 900), true));
-					break;
-				case 2:
-					Base::Add(new Player(CVector2D(1800, 900), true));
-					break;
+				switch(GameData::s_score)
+				{ 
+					case 1:
+						Base::Add(new Player(CVector2D(200, 900), true));
+						break;
+					case 2:
+						Base::Add(new Player(CVector2D(1800, 900), true));
+						break;
 			
-				case 3:
-					Base::Add(new Player(CVector2D(1800, 900), true));
-					break;
+					case 3:
+						Base::Add(new Player(CVector2D(1800, 900), true));
+						break;
 
-				case 4:
-					Base::Add(new Player(CVector2D(1800, 900), true));
-					break;
+					case 4:
+						Base::Add(new Player(CVector2D(1800, 900), true));
+						break;
+				}
 			}
 		}
 	}

@@ -110,7 +110,7 @@ void Player::Update()
 		{
 			if (m_pos.y > 1160)
 			{
-				if(!GameData::clear)
+				if(GameData::clear)
 				{
 					GameData::zanki--;
 				}
