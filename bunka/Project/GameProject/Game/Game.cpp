@@ -50,6 +50,9 @@ Game::Game()
 	zankiimg[2] = COPY_RESOURCE("zanki3", CImage);
 	stopimg = COPY_RESOURCE("stop", CImage);
 	stopimg.SetPos(770, 400);
+	clearimg.SetSize(1550, 745);
+	clearimg.SetCenter(50, 100);
+	clearimg.SetPos(230, 240);
 	drawclear = false;
 	drawretry = false;
 	drawone = false;
@@ -65,33 +68,34 @@ void Game::Update()
 	if(Base*b=Base::FindObject(eType_Goal))
 	{
 		Goal* g = dynamic_cast<Goal*>(b);
-		if(g->GetGoal())
+		if (g->GetGoal())
 		{
+<<<<<<< HEAD
 			//ステージが4だった場合（現在、ステージ４でしかゴールできないようになっている。この下のif文が原因）
 			if (GameData::s_score == 4)
+=======
+
+			//ゲームクリア画面
+			drawclear = true;
+			GameData::clear = true;
+
+
+			if (GameData::clear)
+>>>>>>> 222c35617f4f2896cc1b41282f0253ba4f5e8f79
 			{
-				//描画
-				drawclear = true;
-
-				GameData::clear = true;
-				if (GameData::clear = true)
-				{
-					if (PUSH(CInput::eButton1))
-					{
-						Base::KillAll();
-						Base::Add(new Menu());
-						GameData::zanki = 3;
-						GameData::Gameclear = false;
-
-					}
-
-				}
-				else {
-
-					GameData::Gameclear = true;
-
+				if (PUSH(CInput::eButton1))
+				{ 
+					GameData::zanki = 3;
+					GameData::clear = false;
+					SetKill();
+					Base::Kill(1 << eType_Goal
+					| 1 << eType_Player
+					| 1 << eType_count
+					| 1 << eType_Scene);
+					Base::Add(new Menu());
 				}
 			}
+			//チュ－トリアルからメニュー
 			if (GameData::s_score == 0)
 			{
 				Base::KillAll();
@@ -99,16 +103,17 @@ void Game::Update()
 			}
 		}
 	}
+	//プレイヤーがKillされたら
 	if (!Base::FindObject(eType_Player))
 	{
 		//残機がまだあれば描画できる
 		if(GameData::zanki!=0)
-			drawretry = true;
+			
+				drawretry = true;
 		
 		if (PUSH(CInput::eButton1))
 		{
-			//Base::Kill(1 << eType_count);
-			//Base::Add(new count(CVector2D(500, 0)));
+			//リトライした後のカウントリセット
 			Base* b = Base::FindObject(eType_count);
 			count* c = dynamic_cast<count*>(b);
 			c->SetCount(180 * 60);
@@ -133,58 +138,75 @@ void Game::Update()
 			}
 		}
 	}
-
-	if (GameData::Gameclear)
+	//ステージをクリアしたら
+	/*if (GameData::clear)
 	{
-		//ステージクリアすると描画
-		drawone = true;
-		//eButton1で次のマップへ
+
 		if (PUSH(CInput::eButton1))
 		{
-			Base::Kill(1 << eType_Map
-				| 1 << eType_AreaChange
-				| 1 << eType_Goal
+			GameData::zanki = 3;
+			GameData::clear = false;
+			SetKill();
+			Base::Kill(1 << eType_Goal
+				| 1 << eType_Player
 				| 1 << eType_count
-				| 1 << eType_Block);
-			if (GameData::s_score <= 3)
+				| 1	<< eType_Scene);
+			Base::Add(new Menu());
+		}
+		if (GameData::Gameclear)
+		{
+			//ステージクリアすると描画
+			drawone = true;
+			//eButton1で次のマップへ
+			if (PUSH(CInput::eButton1))
 			{
-				Base::Kill(1 << eType_Player);
+				Base::Kill(1 << eType_Map
+					| 1 << eType_AreaChange
+					| 1 << eType_Goal
+					| 1 << eType_count
+					| 1 << eType_Block);
+				if (GameData::s_score <= 3)
+				{
+					Base::Kill(1 << eType_Player);
+				}
+
+				GameData::s_score++;
+				GameData::Gameclear = false;
+				GameData::zanki = GameData::Zanki_set;
+				//s_scoreに連動したMap生成
+				Base::Add(new Map(GameData::s_score));
+
+				Base::Add(new count(CVector2D(500, 0)));
 			}
 
-			GameData::s_score++;
-			GameData::Gameclear = false;
-			GameData::zanki = GameData::Zanki_set;
-			//s_scoreに連動したMap生成
-			Base::Add(new Map(GameData::s_score));
+			//各ステージクリア後の次Playerの出現位置
+			switch (GameData::s_score)
+			{
 
-			Base::Add(new count(CVector2D(500, 0)));
+			case 2:
+				//マップ２のPlayerの出現位置
+				Base::Add(new Player(CVector2D(1800, 900), true));
+				break;
+
+			case 3:
+				//マップ３のPlayerの出現位置
+				Base::Add(new Player(CVector2D(1800, 900), true));
+				break;
+			case 4:
+				//マップ4のPlayerの出現位置
+				Base::Add(new Player(CVector2D(1800, 900), true));
+				break;
+			}
+
 		}
-		
-		//各ステージクリア後の次Playerの出現位置
-		switch(GameData::s_score)
-		{
-		
-		case 2:
-			//マップ２のPlayerの出現位置
-			Base::Add(new Player(CVector2D(1800, 900), true));
-			break;
-		
-		case 3:
-			//マップ３のPlayerの出現位置
-			Base::Add(new Player(CVector2D(1800, 900), true));
-			break;
-		case 4:
-			//マップ4のPlayerの出現位置
-			Base::Add(new Player(CVector2D(1800, 900), true));
-			break;
-		}
-		
-	}
+	}*/
+	
 	
 }
 
 void Game::Draw()
 {
+	//ゲーム中の一時停止
 	if (PUSH(CInput::eButton1))
 		m_pose = !m_pose;
 	//残機描画
@@ -200,50 +222,20 @@ void Game::Draw()
 	//最後のステージクリア画面描画
 	if (drawclear)
 	{
-		clearimg.SetSize(1550,745);
-		clearimg.SetCenter(50,100);
-		clearimg.SetPos(230,240);
 		clearimg.Draw();
-		
 	}
 	//リトライ画面描画
 	if(drawretry)
 	{
 	//ゲームクリアしていなければ表示
-		if(!GameData::Gameclear)
+		if(GameData::clear)
 		{ 
 			retryimg.Draw();
 			drawretry = false;
 		}
 	}
 	
-	//各ステージのクリア画面描画
-	switch (GameData::s_score)
-	{
-	case 1://ステージ1
-		if (drawone)
-		{
-
-			clear_one.Draw();
-			drawone = false;
-			break;
-		}
-		
-	case 2://ステージ2
-		if (drawone)
-		{
-			clear_two.Draw();
-			drawone = false;
-			break;
-		}
-	case 3://ステージ3
-		if (drawone)
-		{
-			clear_two.Draw();
-			drawone = false;
-			break;
-		}
-	}
+	
 	//ゲームオーバー関連
 	if (GameData::Gameover)
 	{

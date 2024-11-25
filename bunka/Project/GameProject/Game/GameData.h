@@ -12,4 +12,5 @@ public:
  static bool Gameclear;
  static bool Gameover;
  static bool clear;
+ static bool playerstop;
 };

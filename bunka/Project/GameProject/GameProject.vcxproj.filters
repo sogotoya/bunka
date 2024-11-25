@@ -50,9 +50,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Base\Base.h">
-      <Filter>Base</Filter>
-    </ClInclude>
     <ClInclude Include="Game\AreaChange.h">
       <Filter>Game</Filter>
     </ClInclude>
@@ -96,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="Game\Tutorial Block.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Base.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
