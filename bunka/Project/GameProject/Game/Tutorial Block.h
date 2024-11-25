@@ -7,6 +7,7 @@ class TutorialBlock :public Base {
 	CImage Limg;
 	CImage Uimg;
 	CImage Downimg;
+	CImage Rwimg;
 private:
 	CFont m_Tutorial_text;
 public:

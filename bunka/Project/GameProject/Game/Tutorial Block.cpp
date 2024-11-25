@@ -6,6 +6,7 @@ m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 	Limg = COPY_RESOURCE("L key", CImage);
 	Uimg = COPY_RESOURCE("U key", CImage);
 	Downimg = COPY_RESOURCE("Down key", CImage);
+	Rwimg = COPY_RESOURCE("Red window", CImage);
 }
 void TutorialBlock::Update()
 {
@@ -30,6 +31,29 @@ void TutorialBlock::Update()
 }
 void TutorialBlock::Draw()
 {
+	if (PUSH_PAD(1, CInput::eRight)) {
+		Rwimg.SetSize(230, 230);
+		Rwimg.SetPos(1140, 430);
+		Rwimg.Draw();
+
+	}
+	if (PUSH_PAD(1, CInput::eLeft)) {
+		Rwimg.SetSize(230, 230);
+		Rwimg.SetPos(1140, 430);
+		Rwimg.Draw();
+
+	}
+	if (PUSH_PAD(1, CInput::eUp)) {
+		Rwimg.SetSize(460, 150);
+		Rwimg.SetPos(1140, 430);
+		Rwimg.Draw();
+	}
+	if (HOLD_PAD(1, CInput::eDown)) {
+		Rwimg.SetSize(460, 150);
+		Rwimg.SetPos(1140, 430);
+		Rwimg.Draw();
+	}
+
 	switch (x) {
 	case 0:
 		Rimg.SetSize(180, 180);
