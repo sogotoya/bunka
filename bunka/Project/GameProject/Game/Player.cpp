@@ -43,7 +43,7 @@ void Player::StateIdle()
 			m_flip = false;
 			move_flag = true;
 		}
-		const float jump_pow = 40;//15
+		const float jump_pow = 60;//15
 		if (m_is_ground && PUSH(CInput::eUp))
 		{
 			m_vec.y = -jump_pow;
