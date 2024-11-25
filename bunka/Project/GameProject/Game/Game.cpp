@@ -135,6 +135,11 @@ void Game::Update()
 			}
 		}
 	}
+	switch (GameData::s_score)
+	{
+	case 4:
+		SOUND("stage2")->Stop();
+	}
 	//ステージをクリアしたら
 	/*if (GameData::clear)
 	{

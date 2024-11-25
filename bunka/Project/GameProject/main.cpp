@@ -127,7 +127,7 @@ void Init(void)
 	SOUND("stage1")->Load("Sound/BGM/Ska_03.wav", 10);
 	SOUND("stage2")->Load("Sound/BGM/tekuno_02.wav", 10);
 	SOUND("stage3")->Load("Sound/BGM/Trance_01.wav", 10);
-	SOUND("stage4")->Load("Sound/BGM/trance2.wav", 10);
+	SOUND("stage4")->Load("Sound/BGM/Future_2.wav", 10);
 	Base::Add(new TItle());
 }
 
