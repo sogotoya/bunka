@@ -14,11 +14,11 @@ Menu::Menu() :Base(eType_Menu)
 	
 	m_menu.SetSize(1920, 1080);
 	//メニュー画像生成
-	for (int i = 1; i < 5; i++)
+	//char name[配列][文字数]
+	char name[4][32] = { "stagewaku1", "stagewaku1", "stagewaku1", "stagewaku1", };
+	for (int i = 0; i < 4; i++)
 	{
-		//Base::Add(m_waku[i] = new Waku("Maru", CVector2D(200 * i, 400), i + 1));
-		Base::Add(m_waku[i] = new Waku("Maru", CVector2D(200*i, 400),i));
-		Base::Add(m_waku[1] = new Waku("stagewaku1", CVector2D(200, 400), 1));
+		Base::Add(m_waku[i] = new Waku(name[i], CVector2D(400 + 250 * i, 400), i + 1));
 	}
 }
 
@@ -40,9 +40,9 @@ Menu::Waku::Waku(char* imgname, CVector2D pos,int stagen):Base(eType_Waku)
 	//何ステージ選択
 	m_stagen = stagen;
 	m_sute= COPY_RESOURCE(imgname, CImage);
-	m_sute.SetSize(100, 100);
-	m_sute.SetCenter(50, 100);
-	m_rect = CRect(-50, -100, 50, 0);
+	m_sute.SetSize(200, 100);
+	m_sute.SetCenter(100, 100);
+	m_rect = CRect(-100, -100, 100, 0);
 }
 
 void Menu::Waku::Update()
@@ -64,10 +64,9 @@ void Menu::Waku::Update()
 			p.y <= rect2.m_bottom && p.y >= rect2.m_top)
 		{
 			GameData::s_score = m_stagen;
+			KillAll();
 			Base::Add(new Game());
 			
-			//SelectKill(eType_Menu);
-			SelectKill(eType_Waku);
 		};
 
 	}
