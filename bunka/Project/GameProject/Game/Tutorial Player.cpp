@@ -30,21 +30,18 @@ void TutorialPlayer::Draw()
 		dimg.SetSize(180, 180);
 		dimg.SetPos(500, 450);
 		m_Tutorial_text.Draw(500, 700, 1, 1, 1, "âEà⁄ìÆ");
-		COPY_RESOURCE("Red window", CImage);
 		dimg.Draw();
 		break;
 	case 1:
 		aimg.SetSize(180, 180);
 		aimg.SetPos(500, 450);
 		m_Tutorial_text.Draw(500, 700, 1, 1, 1, "ç∂à⁄ìÆ");
-		COPY_RESOURCE("Red window", CImage);
 		aimg.Draw();
 		break;
 	case 2:
 		simg.SetSize(410, 100);
 		simg.SetPos(420, 450);
 		m_Tutorial_text.Draw(500, 618, 1, 1, 1, "ÉWÉÉÉìÉv");
-		COPY_RESOURCE("Red Side window", CImage);
 		simg.Draw();
 		break;
 	}
