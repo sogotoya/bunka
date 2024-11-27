@@ -220,7 +220,7 @@ void Game::Draw()
 	}
 	
 	
-	ステージクリア画面描画
+	//ステージクリア画面描画
 	if (drawclear)
 	{
 		clearimg.Draw();
