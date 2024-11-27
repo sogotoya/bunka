@@ -11,19 +11,19 @@ m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 void TutorialBlock::Update()
 {
 
-	if (PUSH_PAD(1, CInput::eRight)) {
+	if (HOLD_PAD(1,CInput::eRight)) {
 		x = 0;
 
 	}
-	if (PUSH_PAD(1, CInput::eLeft)) {
+	if (HOLD_PAD(1,CInput::eLeft)) {
 		x = 1;
 
 	}
-	if (PUSH_PAD(1, CInput::eUp)) {
+	if (HOLD_PAD(1,CInput::eUp)) {
 		x = 2;
 
 	}
-	if (HOLD_PAD(1, CInput::eDown)) {
+	if (HOLD_PAD(1,CInput::eDown)) {
 		x = 3;
 
 	}
@@ -31,25 +31,25 @@ void TutorialBlock::Update()
 }
 void TutorialBlock::Draw()
 {
-	if (PUSH_PAD(1, CInput::eRight)) {
+	if (HOLD_PAD(1,CInput::eRight)) {
 		Rwimg.SetSize(230, 230);
 		Rwimg.SetPos(1140, 430);
 		Rwimg.Draw();
 
 	}
-	if (PUSH_PAD(1, CInput::eLeft)) {
+	if (HOLD_PAD(1,CInput::eLeft)) {
 		Rwimg.SetSize(230, 230);
 		Rwimg.SetPos(1140, 430);
 		Rwimg.Draw();
 
 	}
-	if (PUSH_PAD(1, CInput::eUp)) {
-		Rwimg.SetSize(460, 150);
+	if (HOLD_PAD(1,CInput::eUp)) {
+		Rwimg.SetSize(230, 230);
 		Rwimg.SetPos(1140, 430);
 		Rwimg.Draw();
 	}
-	if (HOLD_PAD(1, CInput::eDown)) {
-		Rwimg.SetSize(460, 150);
+	if (HOLD_PAD(1,CInput::eDown)) {
+		Rwimg.SetSize(230, 230);
 		Rwimg.SetPos(1140, 430);
 		Rwimg.Draw();
 	}
@@ -58,25 +58,25 @@ void TutorialBlock::Draw()
 	case 0:
 		Rimg.SetSize(180, 180);
 		Rimg.SetPos(1160, 450);
-		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "âEà⁄ìÆ");
+		m_Tutorial_text.Draw(1160, 720, 1, 1, 1, "âEà⁄ìÆ");
 		Rimg.Draw();
 		break;
 	case 1:
 		Limg.SetSize(180, 180);
 		Limg.SetPos(1160, 450);
-		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "ç∂à⁄ìÆ");
+		m_Tutorial_text.Draw(1160, 720, 1, 1, 1, "ç∂à⁄ìÆ");
 		Limg.Draw();
 		break;
 	case 2:
 		Uimg.SetSize(180, 180);
 		Uimg.SetPos(1160, 450);
-		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "âÒì]");
+		m_Tutorial_text.Draw(1190, 720, 1, 1, 1, "âÒì]");
 		Uimg.Draw();
 		break;
 	case 3:
 		Downimg.SetSize(180, 180);
 		Downimg.SetPos(1160, 450);
-		m_Tutorial_text.Draw(1160, 700, 1, 1, 1, "çÇë¨ç~â∫");
+		m_Tutorial_text.Draw(1140, 720, 1, 1, 1, "çÇë¨ç~â∫");
 		Downimg.Draw();
 		break;
 	}
