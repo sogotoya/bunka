@@ -113,7 +113,7 @@ void Game::Update()
 			c->SetCount(180 * 60);
 			
 			//プレイヤーの各ステージのリスポーン位置
-			if (GameData::clear)
+			if (GameData::clear==false)
 			{ 
 				switch(GameData::s_score)
 				{ 
@@ -220,11 +220,11 @@ void Game::Draw()
 	}
 	
 	
-	//上に画像が被らないように
-	//最後のステージクリア画面描画
+	ステージクリア画面描画
 	if (drawclear)
 	{
 		clearimg.Draw();
+		GameData::clear = false;
 	}
 	//リトライ画面描画
 	if(drawretry)
