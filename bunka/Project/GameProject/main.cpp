@@ -125,7 +125,7 @@ void Init(void)
 	ADD_RESOURCE("skip", CImage::CreateImage("Image/skip.png"));
 	SOUND("title")->Load("Sound/BGM/House_01.wav", 10);
 	SOUND("Tutorial")->Load("Sound/BGM/Ska_03.wav", 10);
-	SOUND("Stege1")->Load("Sound/BGM/Short.wav", 10);
+	SOUND("stage1")->Load("Sound/BGM/Short.wav", 10);
 	SOUND("stage2")->Load("Sound/BGM/sute2.wav", 10);
 	SOUND("stage3")->Load("Sound/BGM/Rock.wav", 10);
 	SOUND("stage4")->Load("Sound/BGM/sute4.wav", 10);

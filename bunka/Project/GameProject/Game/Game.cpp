@@ -68,19 +68,19 @@ Game::Game()
 		SOUND("Tutorial")->Play();
 		break;
 	case 1:
-		SOUND("stege1")->Play();
+		SOUND("stage1")->Play();
 		break;
 	case 2:
-		SOUND("stege2")->Play();
+		SOUND("stage2")->Play();
 		break;
 	case 3:
-		SOUND("stege3")->Play();
+		SOUND("stage3")->Play();
 		break;
 	case 4:
-		SOUND("stege4")->Play();
+		SOUND("stage4")->Play();
 		break;
 		/*case 5:
-			SOUND("stege5")->Play();
+			SOUND("stage5")->Play();
 			break;*/
 	}
 
@@ -89,9 +89,11 @@ Game::Game()
 
 void Game::Update()
 {
+	
 	if (GameData::s_score == 0)
 	{
 		if (PUSH(CInput::eButton1)) {
+			SOUND("Tutorial")->Stop();
 			Base::KillAll();
 			Base::Add(new Menu());
 		}
@@ -101,9 +103,33 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if (g->GetGoal())
 		{
+			switch (GameData::s_score) {
+			case 0:
+				SOUND("Tutorial")->Stop();
+				break;
+			case 1:
+				SOUND("stage1")->Stop();
+				break;
+
+			case 2:
+				SOUND("stage2")->Stop();
+				break;
+
+			case 3:
+				SOUND("stage3")->Stop();
+				break;
+
+			case 4:
+				SOUND("stage4")->Stop();
+				break;
+				/*case 5
+					SOUND("stage5")->Stop();
+					break;*/
+			}
 				//ゲームクリア画面表示
 				drawclear = true;
 				GameData::Gameclear = true;
+				
 				//チュ－トリアルからメニュー
 				if (GameData::s_score == 0)
 				{
@@ -274,6 +300,29 @@ void Game::Draw()
 		outimg.Draw();
 		if (PUSH(CInput::eButton1))
 		{
+			switch (GameData::s_score) {
+			case 0:
+				SOUND("Tutorial")->Stop();
+				break;
+			case 1:
+				SOUND("stage1")->Stop();
+				break;
+
+			case 2:
+				SOUND("stage2")->Stop();
+				break;
+
+			case 3:
+				SOUND("stage3")->Stop();
+				break;
+
+			case 4:
+				SOUND("stage4")->Stop();
+				break;
+				/*case 5
+					SOUND("stage5")->Stop();
+					break;*/
+			}
 			Base::KillAll();
 		
 			//ゲームオーバーになるとメニュー画面に戻る
@@ -282,6 +331,7 @@ void Game::Draw()
 			GameData::zanki = GameData::Zanki_set;
 			GameData::Gameclear = false;
 			GameData::Gameover = false;
+			
 		}
 	}
 	//一時停止画像の描画
