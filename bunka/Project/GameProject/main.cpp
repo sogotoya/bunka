@@ -122,6 +122,7 @@ void Init(void)
 	ADD_RESOURCE("Red Side window", CImage::CreateImage("Image/Red Side window  .png"));
 	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
 	ADD_RESOURCE("stagewaku1", CImage::CreateImage("Image/stage1.png"));
+<<<<<<< HEAD
 	ADD_RESOURCE("skip", CImage::CreateImage("Image/skip.png"));
 	SOUND("title")->Load("Sound/BGM/trance2.wav", 10);
 	SOUND("Stege")->Load("Sound/BGM/House_01.wav", 10);
@@ -129,6 +130,15 @@ void Init(void)
 	SOUND("stage2")->Load("Sound/BGM/tekuno_02.wav", 10);
 	SOUND("stage3")->Load("Sound/BGM/Trance_01.wav", 10);
 	SOUND("stage4")->Load("Sound/BGM/Future_2.wav", 10);
+=======
+	SOUND("title")->Load("Sound/BGM/House_01.wav", 10);
+	SOUND("Tutorial")->Load("Sound/BGM/Ska_03.wav", 10);
+	SOUND("Stege1")->Load("Sound/BGM/Short.wav", 10);
+	SOUND("stage2")->Load("Sound/BGM/sute2.wav", 10);
+	SOUND("stage3")->Load("Sound/BGM/Rock.wav", 10);
+	SOUND("stage4")->Load("Sound/BGM/sute4.wav", 10);
+	//SOUND("stage5")->Load("Sound/BGM/Trance_01.wav", 10);
+>>>>>>> 59c4d60e86a8db4cf6a59ae2de1e6b062a5bde61
 	Base::Add(new TItle());
 }
 
