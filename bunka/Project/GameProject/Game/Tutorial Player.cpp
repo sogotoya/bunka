@@ -27,7 +27,6 @@ void TutorialPlayer::Update()
 }
 void TutorialPlayer::Draw()
 {
-
 	switch (TutorialProgress) {
 	case 0:
 		if (HOLD(CInput::eRight)) 

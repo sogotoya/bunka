@@ -30,30 +30,7 @@ void TutorialBlock::Update()
 
 }
 void TutorialBlock::Draw()
-{/*
-	if (HOLD_PAD(1,CInput::eRight)) {
-		Rwimg.SetSize(230, 230);
-		Rwimg.SetPos(1140, 430);
-		Rwimg.Draw();
-
-	}
-	if (HOLD_PAD(1,CInput::eLeft)) {
-		Rwimg.SetSize(230, 230);
-		Rwimg.SetPos(1140, 430);
-		Rwimg.Draw();
-
-	}
-	if (HOLD_PAD(1,CInput::eUp)) {
-		Rwimg.SetSize(230, 230);
-		Rwimg.SetPos(1140, 430);
-		Rwimg.Draw();
-	}
-	if (HOLD_PAD(1,CInput::eDown)) {
-		Rwimg.SetSize(230, 230);
-		Rwimg.SetPos(1140, 430);
-		Rwimg.Draw();
-	}
-*/
+{
 	switch (TutorialProgress) {
 	case 0:
 		if (HOLD_PAD(1,CInput::eRight))
