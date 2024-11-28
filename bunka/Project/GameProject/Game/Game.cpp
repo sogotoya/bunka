@@ -290,6 +290,9 @@ void Game::Draw()
 		stopimg.Draw();
 	}
 	//スキップ画面描写
-	skipimg.Draw();
+	if (GameData::s_score ==0)
+	{
+		skipimg.Draw();
+	}
 }
 
