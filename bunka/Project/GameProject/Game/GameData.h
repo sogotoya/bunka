@@ -12,4 +12,9 @@ public:
  static bool Gameclear;
  static bool Gameover;
  static bool playerstop;
+ static bool end_score;
+ static bool stage1;
+ static bool stage2;
+ static bool stage3;
+ static bool stage4;
 };

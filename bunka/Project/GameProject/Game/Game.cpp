@@ -8,12 +8,14 @@
 #include "TItle/TItle.h"
 #include "Field.h"
 #include "UI/Menu.h"
+#include "EndRoll/EndRoll.h"
 
 Game::Game()
 	:Base(eType_Scene)
 {
 	//生成
 	Base::Add(new Field());
+	//Base::Add(new EndRoll(CVector2D(960,0)));
 	//プレイヤーの各ステージのスポーン位置
 	switch (GameData::s_score)
 	{
@@ -103,24 +105,45 @@ void Game::Update()
 		Goal* g = dynamic_cast<Goal*>(b);
 		if (g->GetGoal())
 		{
+			//サウンドの終了とエンドロールの加算
 			switch (GameData::s_score) {
 			case 0:
 				SOUND("Tutorial")->Stop();
 				break;
 			case 1:
 				SOUND("stage1")->Stop();
+				if (GameData::stage1 == 1)
+				{
+					GameData::stage1 == 0;
+					GameData::end_score += 1;
+				}
 				break;
 
 			case 2:
 				SOUND("stage2")->Stop();
+				if (GameData::stage2 == 1)
+				{
+					GameData::stage2 == 0;
+					GameData::end_score += 1;
+				}
 				break;
 
 			case 3:
 				SOUND("stage3")->Stop();
+				if (GameData::stage3 == 1)
+				{
+					GameData::stage3 == 0;
+					GameData::end_score += 1;
+				}
 				break;
 
 			case 4:
 				SOUND("stage4")->Stop();
+				if (GameData::stage4 == 1)
+				{
+					GameData::stage4 == 0;
+					GameData::end_score += 1;
+				}
 				break;
 				/*case 5
 					SOUND("stage5")->Stop();
@@ -191,6 +214,7 @@ void Game::Update()
 				drawretry = false;
 			}
 		}
+		
 	}
 	/*switch (GameData::s_score)
 	{
@@ -259,7 +283,10 @@ void Game::Update()
 
 		}
 	}*/
-	
+	if (GameData::end_score >= 4)
+	{
+		Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, 0)));
+	}
 	
 }
 

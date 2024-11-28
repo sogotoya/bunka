@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
+    <ClCompile Include="EndRoll\EndRoll.cpp" />
     <ClCompile Include="Game\AreaChange.cpp" />
     <ClCompile Include="Game\Block.cpp" />
     <ClCompile Include="Game\BlockManager.cpp" />
@@ -31,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
+    <ClInclude Include="EndRoll\EndRoll.h" />
     <ClInclude Include="Game\AreaChange.h" />
     <ClInclude Include="Game\Block.h" />
     <ClInclude Include="Game\BlockManager.h" />

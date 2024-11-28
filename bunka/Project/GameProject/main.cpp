@@ -130,6 +130,7 @@ void Init(void)
 	SOUND("stage3")->Load("Sound/BGM/Rock.wav", 10);
 	SOUND("stage4")->Load("Sound/BGM/sute4.wav", 10);
 	//SOUND("stage5")->Load("Sound/BGM/Trance_01.wav", 10);
+	ADD_RESOURCE("end", CImage::CreateImage("Image/end.png"));
 	Base::Add(new TItle());
 }
 

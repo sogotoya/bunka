@@ -3,6 +3,7 @@
 /// オブジェクトの種類
 /// </summary>
 enum {
+   
     eType_Field,
     eType_Map,
     eType_Menu,
@@ -22,7 +23,7 @@ enum {
     eType_TutorialBlock,
     eType_Block,
     eType_BlockManager,
-    
+    eType_EndRoll,
 };
 //重力加速度
 #define GRAVITY (9.8f/20)

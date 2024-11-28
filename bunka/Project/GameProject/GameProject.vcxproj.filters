@@ -48,6 +48,9 @@
     <ClCompile Include="Game\Tutorial Block.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="EndRoll\EndRoll.cpp">
+      <Filter>EndRoll</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game\AreaChange.h">
@@ -97,6 +100,9 @@
     <ClInclude Include="Base\Base.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="EndRoll\EndRoll.h">
+      <Filter>EndRoll</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -110,6 +116,9 @@
     </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{ea4e25d3-25fb-4aa7-bf0f-cc79147511bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EndRoll">
+      <UniqueIdentifier>{3c8c5a7f-9814-414e-8a43-1c9d0a0275f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
