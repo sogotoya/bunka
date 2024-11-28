@@ -114,8 +114,8 @@ void Game::Update()
 				SOUND("stage1")->Stop();
 				if (GameData::stage1 == 1)
 				{
-					GameData::stage1 == 0;
 					GameData::end_score += 1;
+					GameData::stage1 = 0;
 				}
 				break;
 
@@ -123,8 +123,8 @@ void Game::Update()
 				SOUND("stage2")->Stop();
 				if (GameData::stage2 == 1)
 				{
-					GameData::stage2 == 0;
 					GameData::end_score += 1;
+					GameData::stage2 = 0;
 				}
 				break;
 
@@ -132,8 +132,8 @@ void Game::Update()
 				SOUND("stage3")->Stop();
 				if (GameData::stage3 == 1)
 				{
-					GameData::stage3 == 0;
 					GameData::end_score += 1;
+					GameData::stage3 = 0;
 				}
 				break;
 
@@ -141,8 +141,8 @@ void Game::Update()
 				SOUND("stage4")->Stop();
 				if (GameData::stage4 == 1)
 				{
-					GameData::stage4 == 0;
 					GameData::end_score += 1;
+					GameData::stage4 = 0;
 				}
 				break;
 				/*case 5
@@ -161,17 +161,26 @@ void Game::Update()
 				}
 				else 
 				{
-
-					if (PUSH(CInput::eButton1))
+					//すべてのステージをクリアしたらエンドロール
+					if (GameData::end_score == 4)
 					{
-						GameData::zanki = 3;
-						SetKill();
-						Base::Kill(1 << eType_Goal
-							| 1 << eType_Player
-							| 1 << eType_count
-							| 1 << eType_Scene);
-						Base::Add(new Menu());
-
+						//EndRollがゲーム内になければ(常に生成されるため1回のみ生成)
+						if (!Base::FindObject(eType_EndRoll))
+							KillAll();
+							Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, 0)));
+					}
+					else
+					{
+						if (PUSH(CInput::eButton1))
+						{
+							GameData::zanki = 3;
+							SetKill();
+							Base::Kill(1 << eType_Goal
+								| 1 << eType_Player
+								| 1 << eType_count
+								| 1 << eType_Scene);
+							Base::Add(new Menu());
+						}
 					}
 
 
@@ -283,8 +292,11 @@ void Game::Update()
 
 		}
 	}*/
-	if (GameData::end_score >= 4)
+	if (GameData::end_score == 4)
 	{
+		//EndRollがゲーム内になければ(常に生成されるため1回のみ生成)
+		if (!Base::FindObject(eType_EndRoll))
+			KillAll();
 		Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, 0)));
 	}
 	
