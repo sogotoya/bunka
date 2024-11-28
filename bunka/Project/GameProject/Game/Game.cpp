@@ -66,6 +66,13 @@ Game::Game()
 
 void Game::Update()
 {
+	if (GameData::s_score == 0)
+	{
+		if (PUSH(CInput::eButton1)) {
+			Base::KillAll();
+			Base::Add(new Menu());
+		}
+	}
 	if(Base*b=Base::FindObject(eType_Goal))
 	{
 		Goal* g = dynamic_cast<Goal*>(b);
