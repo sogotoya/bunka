@@ -12,7 +12,5 @@ bool GameData::Gameclear = false;
 bool GameData::Gameover = false;
 //リトライ関連
 bool GameData::Gametry = false;
-//ゲームクリアしているかの判定（ステージ３をクリアするとリトライ画像を出さないため等）
-bool GameData::clear = false;
 //プレイヤーの操作制御
 bool GameData::playerstop = false;

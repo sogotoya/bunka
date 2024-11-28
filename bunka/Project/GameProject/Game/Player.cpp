@@ -110,15 +110,14 @@ void Player::Update()
 		{
 			if (m_pos.y > 1160)
 			{
-				if(GameData::clear)
+				if (!GameData::Gameclear)
 				{
 					GameData::zanki--;
-				}
-				
-				SetKill();
-				if (GameData::zanki == 0)
-				{
-					GameData::Gameover = true;
+					SetKill();
+					if (GameData::zanki == 0)
+					{
+						GameData::Gameover = true;
+					}
 				}
 			}
 		}

@@ -56,6 +56,7 @@ Game::Game()
 	drawclear = false;
 	drawretry = false;
 	drawone = false;
+	GameData::Gameclear = false;
 	//残機を３にセット
 	for(int i=0;i<3;i++)
 	zankiimg[i].SetSize(75, 75);
@@ -72,66 +73,66 @@ void Game::Update()
 		{
 				//ゲームクリア画面表示
 				drawclear = true;
-
-				GameData::clear = true;
-			if (GameData::clear)
-			{
-				if (PUSH(CInput::eButton1))
-				{ 
-					GameData::zanki = 3;
-					GameData::clear = false;
-					SetKill();
-					Base::Kill(1 << eType_Goal
-					| 1 << eType_Player
-					| 1 << eType_count
-					| 1 << eType_Scene);
+				GameData::Gameclear = true;
+				//チュ－トリアルからメニュー
+				if (GameData::s_score == 0)
+				{
+					Base::KillAll();
 					Base::Add(new Menu());
-				
 				}
-			}
-			//チュ－トリアルからメニュー
-			if (GameData::s_score == 0)
-			{
-				Base::KillAll();
-				Base::Add(new Menu());
-			}
-		}
+				else 
+				{
+
+					if (PUSH(CInput::eButton1))
+					{
+						GameData::zanki = 3;
+						SetKill();
+						Base::Kill(1 << eType_Goal
+							| 1 << eType_Player
+							| 1 << eType_count
+							| 1 << eType_Scene);
+						Base::Add(new Menu());
+
+					}
+
+
+				}
 	}
 	//プレイヤーがKillされたら
-	if (!Base::FindObject(eType_Player))
-	{
-		//残機がまだあれば描画できる
-		if(GameData::zanki!=0)
-			
-				drawretry = true;
-		
-		if (PUSH(CInput::eButton1))
+		if (!Base::FindObject(eType_Player) && !GameData::Gameclear)
 		{
-			//リトライした後のカウントリセット
-			Base* b = Base::FindObject(eType_count);
-			count* c = dynamic_cast<count*>(b);
-			c->SetCount(180 * 60);
-			
-			//プレイヤーの各ステージのリスポーン位置
-			if (GameData::clear==false)
-			{ 
-				switch(GameData::s_score)
-				{ 
-					case 1:
-						Base::Add(new Player(CVector2D(200, 900), true));
-						break;
-					case 2:
-						Base::Add(new Player(CVector2D(1800, 900), true));
-						break;
-			
-					case 3:
-						Base::Add(new Player(CVector2D(1800, 900), true));
-						break;
+			//残機がまだあれば描画できる
+			if (GameData::zanki != 0)
 
-					case 4:
-						Base::Add(new Player(CVector2D(1800, 900), true));
-						break;
+				drawretry = true;
+
+			if (PUSH(CInput::eButton1))
+			{
+				//リトライした後のカウントリセット
+				Base* b = Base::FindObject(eType_count);
+				count* c = dynamic_cast<count*>(b);
+				c->SetCount(180 * 60);
+
+				//プレイヤーの各ステージのリスポーン位置
+
+				switch (GameData::s_score)
+				{
+				case 1:
+					Base::Add(new Player(CVector2D(200, 900), true));
+					break;
+				case 2:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+
+				case 3:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+
+				case 4:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
 				}
+				drawretry = false;
 			}
 		}
 	}
@@ -224,17 +225,11 @@ void Game::Draw()
 	if (drawclear)
 	{
 		clearimg.Draw();
-		GameData::clear = false;
 	}
 	//リトライ画面描画
 	if(drawretry)
 	{
-	//ゲームクリアしていなければ表示
-		if(GameData::clear)
-		{ 
 			retryimg.Draw();
-			drawretry = false;
-		}
 	}
 	
 	
@@ -256,7 +251,6 @@ void Game::Draw()
 			GameData::s_score = 1;
 			GameData::zanki = GameData::Zanki_set;
 			GameData::Gameclear = false;
-			GameData::clear = false;
 			GameData::Gameover = false;
 		}
 	}
