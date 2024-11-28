@@ -27,38 +27,59 @@ void TutorialPlayer::Update()
 }
 void TutorialPlayer::Draw()
 {
-	if (HOLD(CInput::eRight)) {
-		wimg.SetSize(230, 230);
-		wimg.SetPos(480, 430);
-		wimg.Draw();
 
-	}
-	if (HOLD(CInput::eLeft)) {
-		wimg.SetSize(230, 230);
-		wimg.SetPos(480, 430);
-		wimg.Draw();
-
-	}
-	if (HOLD(CInput::eUp)){
-		Swimg.SetSize(460, 150);
-		Swimg.SetPos(400, 430);
-		Swimg.Draw();
-	}
-
-	switch (Step) {
+	switch (TutorialProgress) {
 	case 0:
+		if (HOLD(CInput::eRight)) 
+		{
+			wimg.SetSize(230, 230);
+			wimg.SetPos(480, 430);
+			wimg.Draw();
+			Is_Holded = true;
+		}
+		else if(Is_Holded)
+		{
+			TutorialProgress++;
+			Is_Holded = false;
+		}
 		dimg.SetSize(180, 180);
 		dimg.SetPos(500, 450);
 		m_Tutorial_text.Draw(500, 720, 1, 1, 1, "âEà⁄ìÆ");
 		dimg.Draw();
 		break;
+
 	case 1:
+		if (HOLD(CInput::eLeft))
+		{
+			wimg.SetSize(230, 230);
+			wimg.SetPos(480, 430);
+			wimg.Draw();
+			Is_Holded = true;
+		}
+		else if (Is_Holded)
+		{
+			TutorialProgress++;
+			Is_Holded = false;
+		}
 		aimg.SetSize(180, 180);
 		aimg.SetPos(500, 450);
 		m_Tutorial_text.Draw(500, 720, 1, 1, 1, "ç∂à⁄ìÆ");
 		aimg.Draw();
 		break;
+
 	case 2:
+		if (HOLD(CInput::eUp))
+		{
+			Swimg.SetSize(460, 150);
+			Swimg.SetPos(400, 430);
+			Swimg.Draw();
+			Is_Holded = true;
+		}
+		else if (Is_Holded)
+		{
+			TutorialProgress++;
+			Is_Holded = false;
+		}
 		simg.SetSize(410, 100);
 		simg.SetPos(420, 450);
 		m_Tutorial_text.Draw(500, 630, 1, 1, 1, "ÉWÉÉÉìÉv");

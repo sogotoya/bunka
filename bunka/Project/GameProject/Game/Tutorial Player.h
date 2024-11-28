@@ -14,4 +14,8 @@ public:
 	TutorialPlayer();
 	void Update();
 	void Draw();
+	//チュートリアルの進行度
+	int TutorialProgress=0;
+	//ボタンが押されたかどうか
+	bool Is_Holded = false;
 };

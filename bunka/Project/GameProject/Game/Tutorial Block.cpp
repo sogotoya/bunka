@@ -30,7 +30,7 @@ void TutorialBlock::Update()
 
 }
 void TutorialBlock::Draw()
-{
+{/*
 	if (HOLD_PAD(1,CInput::eRight)) {
 		Rwimg.SetSize(230, 230);
 		Rwimg.SetPos(1140, 430);
@@ -53,27 +53,77 @@ void TutorialBlock::Draw()
 		Rwimg.SetPos(1140, 430);
 		Rwimg.Draw();
 	}
-
-	switch (x) {
+*/
+	switch (TutorialProgress) {
 	case 0:
+		if (HOLD_PAD(1,CInput::eRight))
+		{
+			Rwimg.SetSize(230, 230);
+			Rwimg.SetPos(1140, 430);
+			Rwimg.Draw();
+			Is_Holded = true;
+		}
+		else if (Is_Holded)
+		{
+			TutorialProgress++;
+			Is_Holded = false;
+		}
 		Rimg.SetSize(180, 180);
 		Rimg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1160, 720, 1, 1, 1, "âEà⁄ìÆ");
 		Rimg.Draw();
 		break;
+
 	case 1:
+		if (HOLD_PAD(1,CInput::eLeft))
+		{
+			Rwimg.SetSize(230, 230);
+			Rwimg.SetPos(1140, 430);
+			Rwimg.Draw();
+			Is_Holded = true;
+		}
+		else if (Is_Holded)
+		{
+			TutorialProgress++;
+			Is_Holded = false;
+		}
 		Limg.SetSize(180, 180);
 		Limg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1160, 720, 1, 1, 1, "ç∂à⁄ìÆ");
 		Limg.Draw();
 		break;
+
 	case 2:
+		if (HOLD_PAD(1,CInput::eUp))
+		{
+			Rwimg.SetSize(230, 230);
+			Rwimg.SetPos(1140, 430);
+			Rwimg.Draw();
+			Is_Holded = true;
+		}
+		else if (Is_Holded)
+		{
+			TutorialProgress++;
+			Is_Holded = false;
+		}
 		Uimg.SetSize(180, 180);
 		Uimg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1190, 720, 1, 1, 1, "âÒì]");
 		Uimg.Draw();
 		break;
 	case 3:
+		if (HOLD_PAD(1,CInput::eDown))
+		{
+			Rwimg.SetSize(230, 230);
+			Rwimg.SetPos(1140, 430);
+			Rwimg.Draw();
+			Is_Holded = true;
+		}
+		else if (Is_Holded)
+		{
+			TutorialProgress++;
+			Is_Holded = false;
+		}
 		Downimg.SetSize(180, 180);
 		Downimg.SetPos(1160, 450);
 		m_Tutorial_text.Draw(1140, 720, 1, 1, 1, "çÇë¨ç~â∫");
