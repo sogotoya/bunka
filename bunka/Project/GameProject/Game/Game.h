@@ -21,6 +21,8 @@ private:
 	bool drawone;
 	//一時停止画像
 	CImage stopimg;
+	//スキップ
+	CImage skipimg;
 public:
 	Game();
 	void Update();

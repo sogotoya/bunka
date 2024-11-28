@@ -49,10 +49,13 @@ Game::Game()
 	zankiimg [1] = COPY_RESOURCE("zanki2", CImage);
 	zankiimg[2] = COPY_RESOURCE("zanki3", CImage);
 	stopimg = COPY_RESOURCE("stop", CImage);
+	skipimg = COPY_RESOURCE("skip", CImage);
 	stopimg.SetPos(770, 400);
 	clearimg.SetSize(1550, 745);
 	clearimg.SetCenter(50, 100);
 	clearimg.SetPos(230, 240);
+	skipimg.SetSize(500,190);
+	skipimg.SetPos(700,200);
 	drawclear = false;
 	drawretry = false;
 	drawone = false;
@@ -266,5 +269,7 @@ void Game::Draw()
 	{
 		stopimg.Draw();
 	}
+	//スキップ画面描写
+	skipimg.Draw();
 }
 
