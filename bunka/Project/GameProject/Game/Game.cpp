@@ -60,7 +60,27 @@ Game::Game()
 	//残機を３にセット
 	for(int i=0;i<3;i++)
 	zankiimg[i].SetSize(75, 75);
-	
+	switch (GameData::s_score) {
+	case 0:
+		SOUND("Tutorial")->Play();
+		break;
+	case 1:
+		SOUND("stege1")->Play();
+		break;
+	case 2:
+		SOUND("stege2")->Play();
+		break;
+	case 3:
+		SOUND("stege3")->Play();
+		break;
+	case 4:
+		SOUND("stege4")->Play();
+		break;
+		/*case 5:
+			SOUND("stege5")->Play();
+			break;*/
+	}
+
 
 }
 
