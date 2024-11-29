@@ -41,12 +41,9 @@
     <ClCompile Include="Game\Field.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Tutorial Player.cpp" />
+    <ClCompile Include="Game\Tutorial.cpp" />
     <ClCompile Include="UI\Menu.cpp">
       <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Tutorial Block.cpp">
-      <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="EndRoll\EndRoll.cpp">
       <Filter>EndRoll</Filter>
@@ -90,12 +87,9 @@
     <ClInclude Include="Game\Field.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Tutorial Player.h" />
+    <ClInclude Include="Game\Tutorial.h" />
     <ClInclude Include="UI\Menu.h">
       <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Tutorial Block.h">
-      <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Base\Base.h">
       <Filter>Base</Filter>
