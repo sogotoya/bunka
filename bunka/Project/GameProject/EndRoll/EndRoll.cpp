@@ -10,7 +10,7 @@ EndRoll::EndRoll(const CVector2D& p):Base(eType_EndRoll)
 
 void EndRoll::Update()
 {
-	m_pos.y += EndRoll_Speed;
+	m_pos.y -= EndRoll_Speed;
 }
 
 void EndRoll::Draw()

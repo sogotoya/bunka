@@ -167,7 +167,7 @@ void Game::Update()
 						//EndRollÇ™ÉQÅ[ÉÄì‡Ç…Ç»ÇØÇÍÇŒ(èÌÇ…ê∂ê¨Ç≥ÇÍÇÈÇΩÇﬂ1âÒÇÃÇ›ê∂ê¨)
 						if (!Base::FindObject(eType_EndRoll))
 							KillAll();
-							Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, 0)));
+							Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, SCREEN_HEIGHT)));
 					}
 					else
 					{
@@ -292,13 +292,7 @@ void Game::Update()
 
 		}
 	}*/
-	if (GameData::end_score == 4)
-	{
-		//EndRollÇ™ÉQÅ[ÉÄì‡Ç…Ç»ÇØÇÍÇŒ(èÌÇ…ê∂ê¨Ç≥ÇÍÇÈÇΩÇﬂ1âÒÇÃÇ›ê∂ê¨)
-		if (!Base::FindObject(eType_EndRoll))
-			KillAll();
-		Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, 0)));
-	}
+	
 	
 }
 
