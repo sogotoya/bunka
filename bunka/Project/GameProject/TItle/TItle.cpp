@@ -31,7 +31,7 @@ void TItle::Update()
 		Base::Add(new Field());
 		Base::Add(new Game());
 		Base::Add(new Tutorial());
-		Base::Add(new Player(CVector2D(200, 900), true));
+		//Base::Add(new Player(CVector2D(200, 900), true));
 		Base::Add(new Map(GameData::s_score));
 		Base::Add(new BlockManager());
 		//Base::Add(new Menu());

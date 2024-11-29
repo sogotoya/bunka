@@ -20,7 +20,7 @@ Game::Game()
 	switch (GameData::s_score)
 	{
 	case 0:
-		Base::Add(new Player(CVector2D(200, 900), true));
+		Base::Add(new Player(CVector2D(SCREEN_WIDTH/2, 900), true));
 		break;
 	case 1:
 		Base::Add(new Player(CVector2D(200, 900), true));
