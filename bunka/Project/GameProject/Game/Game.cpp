@@ -166,8 +166,15 @@ void Game::Update()
 					{
 						//EndRollがゲーム内になければ(常に生成されるため1回のみ生成)
 						if (!Base::FindObject(eType_EndRoll))
+						{
 							KillAll();
 							Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, SCREEN_HEIGHT)));
+						}
+						if (PUSH(CInput::eButton1))
+						{
+							KillAll();
+							Base::Add(new TItle());
+						}
 					}
 					else
 					{
@@ -225,75 +232,6 @@ void Game::Update()
 		}
 		
 	}
-	/*switch (GameData::s_score)
-	{
-	case 4:
-		SOUND("stage2")->Stop();
-	}*/
-	//ステージをクリアしたら
-	/*if (GameData::clear)
-	{
-
-		if (PUSH(CInput::eButton1))
-		{
-			GameData::zanki = 3;
-			GameData::clear = false;
-			SetKill();
-			Base::Kill(1 << eType_Goal
-				| 1 << eType_Player
-				| 1 << eType_count
-				| 1	<< eType_Scene);
-			Base::Add(new Menu());
-		}
-		if (GameData::Gameclear)
-		{
-			//ステージクリアすると描画
-			drawone = true;
-			//eButton1で次のマップへ
-			if (PUSH(CInput::eButton1))
-			{
-				Base::Kill(1 << eType_Map
-					| 1 << eType_AreaChange
-					| 1 << eType_Goal
-					| 1 << eType_count
-					| 1 << eType_Block);
-				if (GameData::s_score <= 3)
-				{
-					Base::Kill(1 << eType_Player);
-				}
-
-				GameData::s_score++;
-				GameData::Gameclear = false;
-				GameData::zanki = GameData::Zanki_set;
-				//s_scoreに連動したMap生成
-				Base::Add(new Map(GameData::s_score));
-
-				Base::Add(new count(CVector2D(500, 0)));
-			}
-
-			//各ステージクリア後の次Playerの出現位置
-			switch (GameData::s_score)
-			{
-
-			case 2:
-				//マップ２のPlayerの出現位置
-				Base::Add(new Player(CVector2D(1800, 900), true));
-				break;
-
-			case 3:
-				//マップ３のPlayerの出現位置
-				Base::Add(new Player(CVector2D(1800, 900), true));
-				break;
-			case 4:
-				//マップ4のPlayerの出現位置
-				Base::Add(new Player(CVector2D(1800, 900), true));
-				break;
-			}
-
-		}
-	}*/
-	
-	
 }
 
 void Game::Draw()
