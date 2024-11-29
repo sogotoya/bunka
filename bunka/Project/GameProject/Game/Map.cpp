@@ -1,6 +1,6 @@
 #include "Map.h"
 #include "Goal.h"
-#include "Tutorial Player.h"
+#include "Tutorial.h"
 static int Tutorialstagedata[MAP_HEIGHT][MAP_WIDTH] =
 {
         { 4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,},
@@ -181,7 +181,7 @@ Map::Map(int area):Base(eType_Map)
     {
     case 0:
         memcpy(m_stage_data, Tutorialstagedata, sizeof(Tutorialstagedata));
-        Base::Add(new TutorialPlayer());
+        Base::Add(new Tutorial());
         Base::Add(new Goal(CVector2D(1740, 613)));
         break;
     case 1:
