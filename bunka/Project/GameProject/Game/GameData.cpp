@@ -15,7 +15,7 @@ bool GameData::Gametry = false;
 //プレイヤーの操作制御
 bool GameData::playerstop = false;
 //エンドロール関連
-bool GameData::end_score = 0;
+int GameData::end_score = 0;
 bool GameData::stage1 = 1;
 bool GameData::stage2 = 1;
 bool GameData::stage3 = 1;
