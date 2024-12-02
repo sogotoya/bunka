@@ -15,8 +15,8 @@ Menu::Menu() :Base(eType_Menu)
 	m_menu.SetSize(1920, 1080);
 	//ƒƒjƒ…[‰æ‘œ¶¬
 	//char name[”z—ñ][•¶š”]
-	char name[4][32] = { "stagewaku1", "stagewaku1", "stagewaku1", "stagewaku1", };
-	for (int i = 0; i < 4; i++)
+	char name[5][32] = { "stagewaku1", "stagewaku1", "stagewaku1", "stagewaku1", "stagewaku1",};
+	for (int i = 0; i < 5; i++)
 	{
 		Base::Add(m_waku[i] = new Waku(name[i], CVector2D(380 + 390 * i, 600), i + 1));
 	}

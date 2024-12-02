@@ -17,4 +17,5 @@ public:
  static bool stage2;
  static bool stage3;
  static bool stage4;
+ static bool stage5;
 };

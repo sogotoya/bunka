@@ -20,3 +20,4 @@ bool GameData::stage1 = 1;
 bool GameData::stage2 = 1;
 bool GameData::stage3 = 1;
 bool GameData::stage4 = 1;
+bool GameData::stage5 = 1;

@@ -108,6 +108,7 @@ void Init(void)
 	ADD_RESOURCE("yuugata", CImage::CreateImage("Image/yuugata.png"));
 	ADD_RESOURCE("yuugatakumo", CImage::CreateImage("Image/yuugatakumo.png"));
 	ADD_RESOURCE("Menu", CImage::CreateImage("Image/murasaki.png"));
+	ADD_RESOURCE("murasakikumo", CImage::CreateImage("Image/murasakikumo.png"));
 	ADD_RESOURCE("Waku", CImage::CreateImage("Image/waku.png"));
 	ADD_RESOURCE("Maru", CImage::CreateImage("Image/maru.png"));
 	ADD_RESOURCE("murasaki", CImage::CreateImage("Image/murasaki.png"));
@@ -129,7 +130,7 @@ void Init(void)
 	SOUND("stage2")->Load("Sound/BGM/sute2.wav", 10);
 	SOUND("stage3")->Load("Sound/BGM/Rock.wav", 10);
 	SOUND("stage4")->Load("Sound/BGM/sute4.wav", 10);
-	//SOUND("stage5")->Load("Sound/BGM/Trance_01.wav", 10);
+	SOUND("stage5")->Load("Sound/BGM/Trance_01.wav", 10);
 	ADD_RESOURCE("end", CImage::CreateImage("Image/nagakawa.png"));
 	Base::Add(new TItle());
 }
