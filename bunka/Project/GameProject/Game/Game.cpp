@@ -169,19 +169,20 @@ void Game::Update()
 				else 
 				{
 					//すべてのステージをクリアしたらエンドロール
-					if (GameData::end_score == 4)
+					if (GameData::end_score == 5)
 					{
 						//EndRollがゲーム内になければ(常に生成されるため1回のみ生成)
 						if (!Base::FindObject(eType_EndRoll))
 						{
 							KillAll();
 							Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, SCREEN_HEIGHT)));
+							if (PUSH(CInput::eButton1))
+							{
+								KillAll();
+								Base::Add(new TItle());
+							}
 						}
-						if (PUSH(CInput::eButton1))
-						{
-							KillAll();
-							Base::Add(new TItle());
-						}
+						
 					}
 					else
 					{
