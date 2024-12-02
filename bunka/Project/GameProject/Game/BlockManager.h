@@ -9,4 +9,5 @@ private:
 public:
 	BlockManager();
 	void Update();
+	bool stop;
 };

@@ -1,6 +1,7 @@
 #include "Tutorial.h"
 #include "Player.h"
 #include "Block.h"
+#include "BlockManager.h"
 Tutorial::Tutorial() :Base(eType_Tutorial),
 m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 {
@@ -17,9 +18,12 @@ m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 void Tutorial::Update()
 {
 	Player* p = dynamic_cast<Player*>(Base::FindObject(eType_Player));
+	Block* b = dynamic_cast<Block*>(Base::FindObject(eType_Block));
+	BlockManager* bm = dynamic_cast<BlockManager*>(Base::FindObject(eType_BlockManager));
 
 	switch (Step) {
 	case 0:
+		bm->stop = true;
 		p->stop = true;
 		if (HOLD(CInput::eRight)) {
 			Step++;
@@ -27,6 +31,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 1:
+		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eRight)) {
 			Step++;
@@ -34,6 +39,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 2:
+		bm->stop = true;
 		p->stop = true;
 		if (HOLD(CInput::eLeft)) {
 			Step++;
@@ -41,6 +47,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 3:
+		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eLeft)) {
 			Step++;
@@ -48,6 +55,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 4:
+		bm->stop = true;
 		p->stop = true;
 		if (PUSH(CInput::eButton5)) {
 			Step++;
@@ -56,6 +64,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 5:
+		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eButton5)) {
 			Step++;
@@ -63,6 +72,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 6:
+		bm->stop = true;
 		p->stop = true;
 		if (HOLD_PAD(1,CInput::eRight)) {
 			Step++;
@@ -70,6 +80,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 7:
+		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eRight)) {
 			Step++;
@@ -77,6 +88,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 8:
+		bm->stop = true;
 		p->stop = true;
 		if (HOLD_PAD(1,CInput::eLeft)) {
 			Step++;
@@ -84,6 +96,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 9:
+		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eLeft)) {
 			Step++;
@@ -91,6 +104,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 10:
+		bm->stop = true;
 		p->stop = true;
 		if (HOLD_PAD(1,CInput::eUp)) {
 			Step++;
@@ -98,6 +112,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 11:
+		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eUp)) {
 			Step++;
@@ -105,6 +120,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 12:
+		bm->stop = true;
 		p->stop = true;
 		if (HOLD_PAD(1,CInput::eDown)) {
 			Step++;
@@ -112,6 +128,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 13:
+		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eDown)) {
 			Step++;

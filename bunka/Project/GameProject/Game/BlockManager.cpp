@@ -5,11 +5,13 @@
 BlockManager::BlockManager()
 	:Base(eType_BlockManager)
 {
-
+	stop = false;
 }
 
 void BlockManager::Update()
 {
+	if (stop == true)
+		return;
 	//見つからなければカウントダウン
 	if(!Base::FindObject(eType_Block))
 	m_cnt--;
