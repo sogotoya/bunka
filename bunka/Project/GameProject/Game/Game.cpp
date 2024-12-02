@@ -15,7 +15,6 @@ Game::Game()
 {
 	//生成
 	Base::Add(new Field());
-	//Base::Add(new EndRoll(CVector2D(960,0)));
 	//プレイヤーの各ステージのスポーン位置
 	switch (GameData::s_score)
 	{
