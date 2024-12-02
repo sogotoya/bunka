@@ -36,6 +36,9 @@ Game::Game()
 	case 4:
 		Base::Add(new Player(CVector2D(1800, 900), true));
 		break;
+	case 5:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
 	}
 	Base::Add(new Map(GameData::s_score));
 	Base::Add(new BlockManager());
@@ -81,9 +84,9 @@ Game::Game()
 	case 4:
 		SOUND("stage4")->Play();
 		break;
-		/*case 5:
-			SOUND("stage5")->Play();
-			break;*/
+	case 5:
+		SOUND("stage5")->Play();
+		break;
 	}
 
 
@@ -145,9 +148,14 @@ void Game::Update()
 					GameData::stage4 = 0;
 				}
 				break;
-				/*case 5
-					SOUND("stage5")->Stop();
-					break;*/
+			case 5:
+				SOUND("stage5")->Stop();
+				if (GameData::stage5 == 1)
+				{
+					GameData::end_score += 1;
+					GameData::stage5 = 0;
+				}
+				break;
 			}
 				//ゲームクリア画面表示
 				drawclear = true;
@@ -226,6 +234,9 @@ void Game::Update()
 				case 4:
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
+				case 5:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
 				}
 				drawretry = false;
 			}
@@ -290,9 +301,9 @@ void Game::Draw()
 			case 4:
 				SOUND("stage4")->Stop();
 				break;
-				/*case 5
-					SOUND("stage5")->Stop();
-					break;*/
+			case 5:
+				SOUND("stage5")->Stop();
+				break;
 			}
 			Base::KillAll();
 		

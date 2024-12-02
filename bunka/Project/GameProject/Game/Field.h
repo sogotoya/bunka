@@ -9,6 +9,7 @@ private:
 	CImage m_yuugata;
 	CImage m_yuugatakumo;
 	CImage m_murasaki;
+	CImage m_murasakikumo;
 	static float m_ground_y;
 public:
 	Field();
