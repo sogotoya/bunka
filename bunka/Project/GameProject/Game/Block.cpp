@@ -2,6 +2,7 @@
 #include "GameData.h"
 #include "Map.h"
 #include "Game.h"
+#include "BlockManager.h"
 
 static int block_data[Block::eMax][4][3][3] =
 {
@@ -88,7 +89,7 @@ Block::Block(const CVector2D& pos, int type)
 	m_block_type = type;
 	//回転の初期数
 	m_block_dir = 0;
-	m_pos = pos;
+	m_pos = pos ;
 	m_cnt = 0;
 	//新しい位置へブロックの書き込み
 	WriteBlock(m_pos, 2);
