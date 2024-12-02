@@ -49,14 +49,15 @@ void Tutorial::Update()
 		break;
 	case 4:
 		p->stop = true;
-		if (HOLD(CInput::eUp)) {
+		if (PUSH(CInput::eButton5)) {
 			Step++;
+			p->stop = false;
 
 		}
 		break;
 	case 5:
 		p->stop = false;
-		if (FREE(CInput::eUp)) {
+		if (FREE(CInput::eButton5)) {
 			Step++;
 
 		}
