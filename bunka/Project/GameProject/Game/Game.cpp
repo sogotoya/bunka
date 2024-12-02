@@ -57,7 +57,7 @@ Game::Game()
 	clearimg.SetCenter(50, 100);
 	clearimg.SetPos(230, 240);
 	skipimg.SetSize(500,190);
-	skipimg.SetPos(700,200);
+	skipimg.SetPos(1200,280);
 	drawclear = false;
 	drawretry = false;
 	drawone = false;

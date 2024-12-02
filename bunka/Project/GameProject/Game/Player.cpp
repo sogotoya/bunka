@@ -16,7 +16,7 @@ Player::Player(const CVector2D& p, bool flip)
 	//’Êíó‘Ô‚Ö
 	m_state = eState_Idle;
 	m_is_ground = true;
-	
+	stop = false;
 }
 
 void Player::StateIdle()
@@ -25,7 +25,7 @@ void Player::StateIdle()
 	//ˆÚ“®ƒtƒ‰ƒO
 	bool move_flag = false;
 
-	if (cooltime <= 0)
+	if (cooltime <= 0&&stop==false)
 	{
 		//¶
 		if (HOLD(CInput::eLeft))

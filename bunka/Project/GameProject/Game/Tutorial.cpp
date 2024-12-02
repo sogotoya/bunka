@@ -1,4 +1,6 @@
 #include "Tutorial.h"
+#include "Player.h"
+#include "Block.h"
 Tutorial::Tutorial() :Base(eType_Tutorial),
 m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 {
@@ -14,36 +16,108 @@ m_Tutorial_text("C:\\Windows\\Fonts\\msgothic.ttc", 60)
 }
 void Tutorial::Update()
 {
-	
+	Player* p = dynamic_cast<Player*>(Base::FindObject(eType_Player));
+
+	switch (Step) {
+	case 0:
+		p->stop = true;
 		if (HOLD(CInput::eRight)) {
-			Step=0;
-			
+			Step++;
+
 		}
-		if (HOLD(CInput::eLeft)){
-			Step=1;
-			
+		break;
+	case 1:
+		p->stop = false;
+		if (FREE(CInput::eRight)) {
+			Step++;
+
 		}
+		break;
+	case 2:
+		p->stop = true;
+		if (HOLD(CInput::eLeft)) {
+			Step++;
+
+		}
+		break;
+	case 3:
+		p->stop = false;
+		if (FREE(CInput::eLeft)) {
+			Step++;
+
+		}
+		break;
+	case 4:
+		p->stop = true;
 		if (HOLD(CInput::eUp)) {
-			Step=2;
-			
-		}
-		if (HOLD_PAD(1, CInput::eRight)) {
-			Step=3;
+			Step++;
 
 		}
-		if (HOLD_PAD(1, CInput::eLeft)) {
-			Step=4;
+		break;
+	case 5:
+		p->stop = false;
+		if (FREE(CInput::eUp)) {
+			Step++;
 
 		}
-		if (HOLD_PAD(1, CInput::eUp)) {
-			Step=5;
+		break;
+	case 6:
+		p->stop = true;
+		if (HOLD_PAD(1,CInput::eRight)) {
+			Step++;
 
 		}
-		if (HOLD_PAD(1, CInput::eDown)) {
-			Step=6;
+		break;
+	case 7:
+		p->stop = false;
+		if (FREE(CInput::eRight)) {
+			Step++;
 
 		}
+		break;
+	case 8:
+		p->stop = true;
+		if (HOLD_PAD(1,CInput::eLeft)) {
+			Step++;
 
+		}
+		break;
+	case 9:
+		p->stop = false;
+		if (FREE(CInput::eLeft)) {
+			Step++;
+
+		}
+		break;
+	case 10:
+		p->stop = true;
+		if (HOLD_PAD(1,CInput::eUp)) {
+			Step++;
+
+		}
+		break;
+	case 11:
+		p->stop = false;
+		if (FREE(CInput::eUp)) {
+			Step++;
+
+		}
+		break;
+	case 12:
+		p->stop = true;
+		if (HOLD_PAD(1,CInput::eDown)) {
+			Step++;
+
+		}
+		break;
+	case 13:
+		p->stop = false;
+		if (FREE(CInput::eDown)) {
+			Step++;
+
+		}
+		break;
+	}
 }
 void Tutorial::Draw()
 {

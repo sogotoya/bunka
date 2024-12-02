@@ -92,6 +92,7 @@ Block::Block(const CVector2D& pos, int type)
 	m_cnt = 0;
 	//新しい位置へブロックの書き込み
 	WriteBlock(m_pos, 2);
+	bool stop;
 }
 
 

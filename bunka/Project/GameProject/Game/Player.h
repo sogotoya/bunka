@@ -39,5 +39,6 @@ public:
 	void Update();
 	void Draw();
 	void Collision(Base* b);
+	bool stop;
 };
 extern TexAnimData player_anim_data[];

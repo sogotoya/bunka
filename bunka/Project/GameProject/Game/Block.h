@@ -28,4 +28,5 @@ private:
 public:
 	Block(const CVector2D& pos, int type);
 	void Update();
+	bool stop;
 };
