@@ -19,7 +19,7 @@ void BlockManager::Update()
 	if (m_cnt == 0) 
 	{
 		//dynamic_cast‚ÅBase‚©‚çMap‚É•ÏŠ·
-		Map* m =dynamic_cast<Map*> (Base::FindObject(eType_Block));
+		Map* m =dynamic_cast<Map*> (Base::FindObject(eType_Map));
 		Base::Add(new Block(m->drop_pos, rand() % Block::eMax));
 		m_cnt = rand() % 10 + 10;
 	}

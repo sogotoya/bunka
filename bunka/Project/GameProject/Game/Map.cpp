@@ -217,35 +217,35 @@ Map::Map(int area):Base(eType_Map)
         memcpy(m_stage_data, Tutorialstagedata, sizeof(Tutorialstagedata));
         Base::Add(new Tutorial());
         Base::Add(new Goal(CVector2D(1740, 613)));
-        drop_pos = (CVector2D(100, 100));
+        drop_pos = (CVector2D(20, 0));
         break;
     case 1:
         //ステージ1データをコピー
         memcpy(m_stage_data, stage1data, sizeof(stage1data));
         Base::Add(new Goal(CVector2D(1740, 613)));
-        drop_pos = (CVector2D(100, 100));
+        drop_pos = (CVector2D(20, 0));
         break;
     case 2:
         memcpy(m_stage_data, stage2data, sizeof(stage2data));
         Base::Add(new Goal(CVector2D(90, 613)));
-        drop_pos = (CVector2D(100, 100));
+        drop_pos = (CVector2D(20, 0));
         break;
     case 3:
         memcpy(m_stage_data, stage3data, sizeof(stage3data));
         Base::Add(new Goal(CVector2D(959, 150)));
-        drop_pos = (CVector2D(100, 100));
+        drop_pos = (CVector2D(20, 0));
         break;
 
     case 4:
         memcpy(m_stage_data, stage4data, sizeof(stage4data));
         Base::Add(new Goal(CVector2D(300, 100)));
-        drop_pos = (CVector2D(100, 100));
+        drop_pos = (CVector2D(20, 0));
         break;
 
     case 5:
         memcpy(m_stage_data, stage5data, sizeof(stage5data));
         Base::Add(new Goal(CVector2D(500, 100)));
-        drop_pos = (CVector2D(1800, 100));
+        drop_pos = (CVector2D(30, 0));
         break;
     }
     //ステージ1データをコピー
