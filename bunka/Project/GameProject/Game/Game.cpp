@@ -176,11 +176,7 @@ void Game::Update()
 						{
 							KillAll();
 							Base::Add(new EndRoll(CVector2D(SCREEN_WIDTH / 2, SCREEN_HEIGHT)));
-							if (PUSH(CInput::eButton1))
-							{
-								KillAll();
-								Base::Add(new TItle());
-							}
+							
 						}
 						
 					}

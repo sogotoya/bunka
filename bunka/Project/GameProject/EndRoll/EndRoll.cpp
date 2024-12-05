@@ -1,4 +1,5 @@
 #include "EndRoll.h"
+#include "TItle/TItle.h"
 
 EndRoll::EndRoll(const CVector2D& p):Base(eType_EndRoll)
 {
@@ -11,6 +12,11 @@ EndRoll::EndRoll(const CVector2D& p):Base(eType_EndRoll)
 void EndRoll::Update()
 {
 	m_pos.y -= EndRoll_Speed;
+	if (PUSH(CInput::eButton1))
+	{
+		KillAll();
+		Base::Add(new TItle());
+	}
 }
 
 void EndRoll::Draw()
