@@ -1,4 +1,5 @@
 #include "EndRoll.h"
+#include "Game/Gamedata.h"
 #include "TItle/TItle.h"
 
 EndRoll::EndRoll(const CVector2D& p):Base(eType_EndRoll)
@@ -16,6 +17,10 @@ void EndRoll::Update()
 	{
 		KillAll();
 		Base::Add(new TItle());
+		GameData::s_score = 0;
+		GameData::zanki = GameData::Zanki_set;
+		GameData::Gameclear = false;
+		GameData::Gameover = false;
 	}
 }
 
