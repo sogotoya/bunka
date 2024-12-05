@@ -19,7 +19,7 @@ Game::Game()
 	switch (GameData::s_score)
 	{
 	case 0:
-		Base::Add(new Player(CVector2D(690, 900), true));
+		Base::Add(new Player(CVector2D(780, 900), true));
 		break;
 	case 1:
 		Base::Add(new Player(CVector2D(200, 900), true));
@@ -59,7 +59,7 @@ Game::Game()
 	clearimg.SetCenter(50, 100);
 	clearimg.SetPos(230, 240);
 	skipimg.SetSize(430,170);
-	skipimg.SetPos(700,280);
+	skipimg.SetPos(1400,100);
 	drawclear = false;
 	drawretry = false;
 	drawone = false;

@@ -144,7 +144,7 @@ void Tutorial::Draw()
 		if (HOLD(CInput::eRight)) 
 		{
 			wimg.SetSize(230, 230);
-			wimg.SetPos(580, 430);
+			wimg.SetPos(680, 430);
 			wimg.Draw();
 			Is_Holded = true;
 		}
@@ -154,8 +154,8 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		dimg.SetSize(180, 180);
-		dimg.SetPos(600, 450);
-		m_Tutorial_text.Draw(600, 720, 1, 1, 1, "右移動");
+		dimg.SetPos(700, 450);
+		m_Tutorial_text.Draw(700, 720, 1, 1, 1, "右移動");
 		dimg.Draw();
 		break;
 
@@ -163,7 +163,7 @@ void Tutorial::Draw()
 		if (HOLD(CInput::eLeft))
 		{
 			wimg.SetSize(230, 230);
-			wimg.SetPos(580, 430);
+			wimg.SetPos(680, 430);
 			wimg.Draw();
 			Is_Holded = true;
 		}
@@ -173,8 +173,8 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		aimg.SetSize(180, 180);
-		aimg.SetPos(600, 450);
-		m_Tutorial_text.Draw(600, 720, 1, 1, 1, "左移動");
+		aimg.SetPos(700, 450);
+		m_Tutorial_text.Draw(700, 720, 1, 1, 1, "左移動");
 		aimg.Draw();
 		break;
 
@@ -182,7 +182,7 @@ void Tutorial::Draw()
 		if (HOLD(CInput::eUp))
 		{
 			Swimg.SetSize(460, 150);
-			Swimg.SetPos(520, 460);
+			Swimg.SetPos(610, 460);
 			Swimg.Draw();
 			Is_Holded = true;
 		}
@@ -192,8 +192,8 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		simg.SetSize(410, 100);
-		simg.SetPos(530, 480);
-		m_Tutorial_text.Draw(610, 680, 1, 1, 1, "ジャンプ");
+		simg.SetPos(630, 480);
+		m_Tutorial_text.Draw(710, 680, 1, 1, 1, "ジャンプ");
 		simg.Draw();
 		break;
 	
