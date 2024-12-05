@@ -247,8 +247,25 @@ void Game::Update()
 void Game::Draw()
 {
 	//ゲーム中の一時停止
-	if (PUSH(CInput::eButton10))
+	if (PUSH(CInput::eButton10)) 
+	{
 		m_pose = !m_pose;
+	}
+	if (m_pose) 
+	{
+		if (PUSH(CInput::eButton1))
+		{
+			Base::KillAll();
+			Base::m_pose = false;
+			//ゲームオーバーになるとメニュー画面に戻る
+				Base::Add(new Menu());
+				GameData::s_score = 1;
+				GameData::zanki = GameData::Zanki_set;
+				GameData::Gameclear = false;
+				GameData::Gameover = false;
+		}
+
+	}
 	//残機描画
 	if(GameData::s_score!=0)
 	for (int i = 0; i < GameData::zanki; i++)
