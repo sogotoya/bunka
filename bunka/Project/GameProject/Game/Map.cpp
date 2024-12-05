@@ -217,7 +217,7 @@ Map::Map(int area):Base(eType_Map)
         memcpy(m_stage_data, Tutorialstagedata, sizeof(Tutorialstagedata));
         Base::Add(new Tutorial());
         Base::Add(new Goal(CVector2D(1740, 613)));
-        drop_pos = (CVector2D(24, 0));
+        drop_pos = (CVector2D(20, 0));
         break;
     case 1:
         //ステージ1データをコピー

@@ -31,7 +31,6 @@ void Tutorial::Update()
 		}
 		break;
 	case 1:
-		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eRight)) {
 			Step++;
@@ -39,7 +38,6 @@ void Tutorial::Update()
 		}
 		break;
 	case 2:
-		bm->stop = true;
 		p->stop = true;
 		if (HOLD(CInput::eLeft)) {
 			Step++;
@@ -47,7 +45,6 @@ void Tutorial::Update()
 		}
 		break;
 	case 3:
-		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eLeft)) {
 			Step++;
@@ -55,7 +52,6 @@ void Tutorial::Update()
 		}
 		break;
 	case 4:
-		bm->stop = true;
 		p->stop = true;
 		if (PUSH(CInput::eButton5)) {
 			Step++;
@@ -64,7 +60,6 @@ void Tutorial::Update()
 		}
 		break;
 	case 5:
-		bm->stop = false;
 		p->stop = false;
 		if (FREE(CInput::eButton5)) {
 			Step++;
@@ -72,8 +67,7 @@ void Tutorial::Update()
 		}
 		break;
 	case 6:
-		bm->stop = true;
-		p->stop = true;
+		bm->stop = false;
 		if (HOLD_PAD(1,CInput::eRight)) {
 			Step++;
 
@@ -81,15 +75,13 @@ void Tutorial::Update()
 		break;
 	case 7:
 		bm->stop = false;
-		p->stop = false;
 		if (FREE(CInput::eRight)) {
 			Step++;
 
 		}
 		break;
 	case 8:
-		bm->stop = true;
-		p->stop = true;
+		bm->stop = false;
 		if (HOLD_PAD(1,CInput::eLeft)) {
 			Step++;
 
@@ -97,15 +89,13 @@ void Tutorial::Update()
 		break;
 	case 9:
 		bm->stop = false;
-		p->stop = false;
 		if (FREE(CInput::eLeft)) {
 			Step++;
 
 		}
 		break;
 	case 10:
-		bm->stop = true;
-		p->stop = true;
+		bm->stop = false;
 		if (HOLD_PAD(1,CInput::eUp)) {
 			Step++;
 
@@ -113,15 +103,13 @@ void Tutorial::Update()
 		break;
 	case 11:
 		bm->stop = false;
-		p->stop = false;
 		if (FREE(CInput::eUp)) {
 			Step++;
 
 		}
 		break;
 	case 12:
-		bm->stop = true;
-		p->stop = true;
+		bm->stop = false;
 		if (HOLD_PAD(1,CInput::eDown)) {
 			Step++;
 
@@ -129,7 +117,6 @@ void Tutorial::Update()
 		break;
 	case 13:
 		bm->stop = false;
-		p->stop = false;
 		if (FREE(CInput::eDown)) {
 			Step++;
 
@@ -182,7 +169,7 @@ void Tutorial::Draw()
 		if (HOLD(CInput::eUp))
 		{
 			Swimg.SetSize(460, 150);
-			Swimg.SetPos(610, 460);
+			Swimg.SetPos(650, 460);
 			Swimg.Draw();
 			Is_Holded = true;
 		}
@@ -192,8 +179,8 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		simg.SetSize(410, 100);
-		simg.SetPos(630, 480);
-		m_Tutorial_text.Draw(710, 680, 1, 1, 1, "ÉWÉÉÉìÉv");
+		simg.SetPos(670, 480);
+		m_Tutorial_text.Draw(750, 680, 1, 1, 1, "ÉWÉÉÉìÉv");
 		simg.Draw();
 		break;
 	
@@ -201,7 +188,7 @@ void Tutorial::Draw()
 		if (HOLD_PAD(1, CInput::eRight))
 		{
 			wimg.SetSize(230, 230);
-			wimg.SetPos(850, 430);
+			wimg.SetPos(870, 430);
 			wimg.Draw();
 			Is_Holded = true;
 		}
@@ -211,8 +198,8 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		Rimg.SetSize(180, 180);
-		Rimg.SetPos(870, 450);
-		m_Tutorial_text.Draw(870, 720, 1, 1, 1, "âEà⁄ìÆ");
+		Rimg.SetPos(890, 450);
+		m_Tutorial_text.Draw(890, 420, 1, 1, 1, "âEà⁄ìÆ");
 		Rimg.Draw();
 		break;
 
@@ -220,7 +207,7 @@ void Tutorial::Draw()
 		if (HOLD_PAD(1, CInput::eLeft))
 		{
 			wimg.SetSize(230, 230);
-			wimg.SetPos(850, 430);
+			wimg.SetPos(870, 430);
 			wimg.Draw();
 			Is_Holded = true;
 		}
@@ -230,8 +217,8 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		Limg.SetSize(180, 180);
-		Limg.SetPos(870, 450);
-		m_Tutorial_text.Draw(870, 720, 1, 1, 1, "ç∂à⁄ìÆ");
+		Limg.SetPos(890, 450);
+		m_Tutorial_text.Draw(890, 420, 1, 1, 1, "ç∂à⁄ìÆ");
 		Limg.Draw();
 		break;
 
@@ -239,7 +226,7 @@ void Tutorial::Draw()
 		if (HOLD_PAD(1, CInput::eUp))
 		{
 			wimg.SetSize(230, 230);
-			wimg.SetPos(850, 430);
+			wimg.SetPos(870, 430);
 			wimg.Draw();
 			Is_Holded = true;
 		}
@@ -249,15 +236,15 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		Uimg.SetSize(180, 180);
-		Uimg.SetPos(870, 450);
-		m_Tutorial_text.Draw(870, 720, 1, 1, 1, "âÒì]");
+		Uimg.SetPos(890, 450);
+		m_Tutorial_text.Draw(920, 420, 1, 1, 1, "âÒì]");
 		Uimg.Draw();
 		break;
 	case 6:
 		if (HOLD_PAD(1, CInput::eDown))
 		{
 			wimg.SetSize(230, 230);
-			wimg.SetPos(850, 430);
+			wimg.SetPos(870, 430);
 			wimg.Draw();
 			Is_Holded = true;
 		}
@@ -267,8 +254,8 @@ void Tutorial::Draw()
 			Is_Holded = false;
 		}
 		Downimg.SetSize(180, 180);
-		Downimg.SetPos(870, 450);
-		m_Tutorial_text.Draw(850, 720, 1, 1, 1, "çÇë¨ç~â∫");
+		Downimg.SetPos(890, 450);
+		m_Tutorial_text.Draw(860, 420, 1, 1, 1, "çÇë¨ç~â∫");
 		Downimg.Draw();
 		break;
 }
