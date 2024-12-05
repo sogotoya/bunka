@@ -99,6 +99,7 @@ void Game::Update()
 		if (PUSH(CInput::eButton1)) {
 			SOUND("Tutorial")->Stop();
 			Base::KillAll();
+			Base::m_pose = false;
 			Base::Add(new Menu());
 		}
 	}
@@ -164,6 +165,7 @@ void Game::Update()
 				if (GameData::s_score == 0)
 				{
 					Base::KillAll();
+					Base::m_pose = false;
 					Base::Add(new Menu());
 				}
 				else 
@@ -190,6 +192,7 @@ void Game::Update()
 								| 1 << eType_Player
 								| 1 << eType_count
 								| 1 << eType_Scene);
+						    Base::m_pose = false;
 							Base::Add(new Menu());
 						}
 					}
@@ -302,7 +305,7 @@ void Game::Draw()
 				break;
 			}
 			Base::KillAll();
-		
+			Base::m_pose = false;
 			//ゲームオーバーになるとメニュー画面に戻る
 			Base::Add(new Menu());
 			GameData::s_score = 1;
