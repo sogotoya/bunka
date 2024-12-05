@@ -133,6 +133,10 @@ void Init(void)
 	SOUND("stage5")->Load("Sound/BGM/Trance_01.wav", 10);
 	ADD_RESOURCE("end", CImage::CreateImage("Image/nagakawa.png"));
 	Base::Add(new TItle());
+	ADD_RESOURCE("map2", CImage::CreateImage("Image/stage2.png"));
+	ADD_RESOURCE("map3", CImage::CreateImage("Image/stage3.png"));
+	ADD_RESOURCE("map4", CImage::CreateImage("Image/stage4.png"));
+	ADD_RESOURCE("map5", CImage::CreateImage("Image/stage5.png"));
 }
 
 
