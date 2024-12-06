@@ -44,7 +44,7 @@ void Player::StateIdle()
 			move_flag = true;
 		}
 
-		const float jump_pow = 40;//15
+		const float jump_pow = 15;//15
 		if (m_is_ground && PUSH(CInput::eButton5))
 
 		const float jump_pow = 10;//15
@@ -161,6 +161,10 @@ void Player::Collision(Base* b)
 				m_vec.y = 0;
 				//着地フラグon
 				m_is_ground = true;
+				//1マス対策
+				t = m->CollisionRect(CVector2D(m_pos_old.x, m_pos.y), m_rect, &rev_pos);
+				if (t != 0)
+					m_pos.y = rev_pos.y + MAP_TIP_SIZE;
 			}
 		}
 		break;
