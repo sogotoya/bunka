@@ -115,7 +115,7 @@ void Block::Update()
 		m_cnt++;
 
 		//一定時間で下へ落下
-		if (m_cnt >= move_cnt)//あいうえお
+		if (m_cnt >= move_cnt)
 		{
 			m_cnt = 0;
 			//今の位置のブロックを消す

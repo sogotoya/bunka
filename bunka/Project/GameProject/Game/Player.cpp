@@ -160,6 +160,10 @@ void Player::Collision(Base* b)
 				m_vec.y = 0;
 				//着地フラグon
 				m_is_ground = true;
+				//1マス対策
+				t = m->CollisionRect(CVector2D(m_pos_old.x, m_pos.y), m_rect, &rev_pos);
+				if (t != 0)
+					m_pos.y = rev_pos.y + MAP_TIP_SIZE;
 			}
 		}
 		break;
