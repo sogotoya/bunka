@@ -54,6 +54,7 @@ void Player::StateIdle()
 			m_vec.y = -jump_pow;
 			m_is_ground = false;
 			Base::Add(new Effect("Effect_Jump", m_pos + CVector2D(0, -30), m_flip));
+			SOUND("jump")->Play();
 		}
 	}
 

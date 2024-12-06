@@ -58,6 +58,7 @@ void Menu::Waku::Update()
 			m_pos.y + m_rect.m_top,
 			m_pos.x + m_rect.m_right,
 			m_pos.y + m_rect.m_bottom);
+		SOUND("sentaku")->Play();
 
 		//‹éŒ`“¯Žm‚Ì”»’è
 		if (p.x <= rect2.m_right && p.x >= rect2.m_left &&

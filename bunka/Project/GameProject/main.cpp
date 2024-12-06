@@ -137,6 +137,8 @@ void Init(void)
 	ADD_RESOURCE("map3", CImage::CreateImage("Image/stage3.png"));
 	ADD_RESOURCE("map4", CImage::CreateImage("Image/stage4.png"));
 	ADD_RESOURCE("map5", CImage::CreateImage("Image/stage5.png"));
+	SOUND("jump")->Load("Sound/SE/8bitjump.wav", 10);
+	SOUND("sentaku")->Load("Sound/SE/sentaku7.wav", 10);
 }
 
 
