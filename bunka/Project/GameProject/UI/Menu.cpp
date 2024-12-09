@@ -10,7 +10,7 @@
 Menu::Menu() :Base(eType_Menu)
 {
 	//メニュー背景
-	m_menu = COPY_RESOURCE("Menu", CImage);
+	m_menu = COPY_RESOURCE("kumo", CImage);
 	
 	m_menu.SetSize(1920, 1080);
 	//メニュー画像生成

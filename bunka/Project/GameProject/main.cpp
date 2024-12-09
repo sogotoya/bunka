@@ -104,10 +104,10 @@ void Init(void)
 	ADD_RESOURCE("zanki", CImage::CreateImage("Image/corsa2.png"));
 	ADD_RESOURCE("zanki2", CImage::CreateImage("Image/corsa1.png"));
 	ADD_RESOURCE("zanki3", CImage::CreateImage("Image/jumptobu.png"));
+    ADD_RESOURCE("kumo", CImage::CreateImage("Image/kumo.png"));
 	ADD_RESOURCE("aozora", CImage::CreateImage("Image/aoisora.png"));
 	ADD_RESOURCE("yuugata", CImage::CreateImage("Image/yuugata.png"));
 	ADD_RESOURCE("yuugatakumo", CImage::CreateImage("Image/yuugatakumo.png"));
-	ADD_RESOURCE("Menu", CImage::CreateImage("Image/murasaki.png"));
 	ADD_RESOURCE("murasakikumo", CImage::CreateImage("Image/murasakikumo.png"));
 	ADD_RESOURCE("Waku", CImage::CreateImage("Image/waku.png"));
 	ADD_RESOURCE("Maru", CImage::CreateImage("Image/maru.png"));
