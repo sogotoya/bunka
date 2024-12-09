@@ -6,7 +6,6 @@ count::count(const CVector2D& pos) : Base(eType_count),
 m_count_text("C:\\Windows\\Fonts\\msgothic.ttc", 100)
 {
 	m_cnt = 180 * 60;
-	
 }
 
 
