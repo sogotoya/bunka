@@ -8,6 +8,7 @@ EndRoll::EndRoll(const CVector2D& p):Base(eType_EndRoll)
 	endimg.SetSize(800, 1200);
 	endimg.SetCenter(400, 600);
 	m_pos = p;
+	SOUND("Roll")->Play();
 }
 
 void EndRoll::Update()

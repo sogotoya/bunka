@@ -139,6 +139,7 @@ void Init(void)
 	ADD_RESOURCE("map5", CImage::CreateImage("Image/stage5.png"));
 	SOUND("jump")->Load("Sound/SE/8bitjump.wav", 10);
 	SOUND("sentaku")->Load("Sound/SE/sentaku7.wav", 10);
+	SOUND("Roll")->Load("Sound/BGM/retrogamecenter.wav", 10);
 }
 
 
