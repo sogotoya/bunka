@@ -21,16 +21,18 @@ Player::Player(const CVector2D& p, bool flip)
 
 void Player::StateIdle()
 {
-	const float move_speed = 5;
+	const float move_speed = 1;
 	//移動フラグ
 	bool move_flag = false;
-
+	
 	if (cooltime <= 0&&stop==false)
 	{
 		//左
 		if (HOLD(CInput::eLeft))
 		{
-			m_pos.x += -move_speed;
+			m_vec.x += -move_speed;
+			
+			
 			//反転フラグ
 			m_flip = true;
 			move_flag = true;
@@ -38,7 +40,7 @@ void Player::StateIdle()
 		//右
 		if (HOLD(CInput::eRight))
 		{
-			m_pos.x += move_speed;
+			m_vec.x += move_speed;
 			//反転フラグ
 			m_flip = false;
 			move_flag = true;
@@ -95,6 +97,20 @@ void Player::StateIdle()
 void Player::Update()
 {
 	m_pos_old = m_pos;
+	//滑り
+	static float friction = 0.7f;
+	// 移動速度の最大値
+	static const float maxMoveSpeed = 10.0f;//9.7f;
+	//ステージ５のみ指定した分、滑るように
+	if(GameData::s_score==5)
+	{ 
+		friction = 0.9f;//0.84f;
+	}
+	//X軸の移動速度を　-maxMoveSpeed　～ +maxMoveSpeed の間でクランプ
+	m_vec.x = min(max(m_vec.x, -maxMoveSpeed), maxMoveSpeed);
+	//移動ベクトルに滑りを代入
+	m_vec.x *= friction;
+
 	if (GameData::Gameclear == false)
 	{
 
