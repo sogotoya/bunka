@@ -38,6 +38,9 @@ Game::Game()
 	case 5:
 		Base::Add(new Player(CVector2D(1800, 900), true));
 		break;
+	case 6:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
 	}
 	Base::Add(new Map(GameData::s_score));
 	Base::Add(new BlockManager());
@@ -234,6 +237,9 @@ void Game::Update()
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
 				case 5:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+				case 6:
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
 				}

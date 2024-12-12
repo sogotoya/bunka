@@ -86,7 +86,7 @@ void Init(void)
 	srand(time(NULL));
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 16, 16));
 	//Base::Add(new Player(CVector2D(200, 900), true));
-	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip.png"));
+	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip1.png"));
 	//Base::Add(new Map(GameData::s_score));
 	//Base::Add(new BlockManager());
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
