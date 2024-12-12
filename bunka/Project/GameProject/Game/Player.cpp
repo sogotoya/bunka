@@ -106,6 +106,11 @@ void Player::Update()
 	{ 
 		friction = 0.9f;//0.84f;
 	}
+	//ステージ3のみ指定した分、遅くなる
+	if (GameData::s_score == 3)
+	{
+		friction = 0.6f;//0.84f;
+	}
 	//X軸の移動速度を　-maxMoveSpeed　～ +maxMoveSpeed の間でクランプ
 	m_vec.x = min(max(m_vec.x, -maxMoveSpeed), maxMoveSpeed);
 	//移動ベクトルに滑りを代入
