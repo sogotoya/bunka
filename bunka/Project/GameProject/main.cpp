@@ -145,6 +145,7 @@ void Init(void)
 	SOUND("jump")->Load("Sound/SE/8bitjump.wav", 10);
 	SOUND("sentaku")->Load("Sound/SE/sentaku7.wav", 10);
 	SOUND("Roll")->Load("Sound/BGM/retrogamecenter.wav", 10);
+	ADD_RESOURCE("?", CImage::CreateImage("Image/maphatena.png"));
 }
 
 
