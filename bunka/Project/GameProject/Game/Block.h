@@ -10,6 +10,8 @@ public:
 		eL,
 		eSikaku,
 		eStick,
+		eMountain,
+		eCross,
 		eMax,
 	};
 private:
