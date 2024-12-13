@@ -22,7 +22,7 @@ Field::Field() :Base(eType_Field)
 }
 void Field::Draw()
 {
-	
+	//各ステージの背景の描画
 	switch (GameData::s_score)
 	{
 	case 1:
