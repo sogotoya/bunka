@@ -21,7 +21,7 @@ class Menu :public Base
 
 private:
 	CImage m_menu;
-	Waku *m_waku[6];
+	Waku *m_waku[10];
 
 public:
 	Menu();

@@ -41,6 +41,18 @@ Game::Game()
 	case 6:
 		Base::Add(new Player(CVector2D(1800, 900), true));
 		break;
+	case 7:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
+	case 8:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
+	case 9:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
+	case 10:
+		Base::Add(new Player(CVector2D(1800, 900), true));
+		break;
 	}
 	Base::Add(new Map(GameData::s_score));
 	Base::Add(new BlockManager());
@@ -225,6 +237,7 @@ void Game::Update()
 				case 1:
 					Base::Add(new Player(CVector2D(200, 900), true));
 					break;
+
 				case 2:
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
@@ -236,12 +249,31 @@ void Game::Update()
 				case 4:
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
+
 				case 5:
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
+
 				case 6:
 					Base::Add(new Player(CVector2D(1800, 900), true));
 					break;
+
+				case 7:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+
+				case 8:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+
+				case 9:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+
+				case 10:
+					Base::Add(new Player(CVector2D(1800, 900), true));
+					break;
+
 				}
 				drawretry = false;
 			}
