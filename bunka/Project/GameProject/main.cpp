@@ -85,6 +85,7 @@ void Init(void)
 	//—”‚ÌŽí
 	srand(time(NULL));
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 16, 16));
+	ADD_RESOURCE("Player1", CImage::CreateImage("Image/Player2.png", player_anim_data, 16, 16));
 	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip1.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
 	ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data,32, 32));
@@ -144,6 +145,7 @@ void Init(void)
 	SOUND("jump")->Load("Sound/SE/8bitjump.wav", 10);
 	SOUND("sentaku")->Load("Sound/SE/sentaku7.wav", 10);
 	SOUND("Roll")->Load("Sound/BGM/retrogamecenter.wav", 10);
+	ADD_RESOURCE("?", CImage::CreateImage("Image/maphatena.png"));
 }
 
 
