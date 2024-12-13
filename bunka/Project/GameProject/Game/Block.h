@@ -11,7 +11,6 @@ public:
 		eSikaku,
 		eStick,
 		eMountain,
-		eCross,
 		eMax,
 	};
 private:

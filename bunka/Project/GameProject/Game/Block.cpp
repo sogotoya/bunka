@@ -55,7 +55,6 @@ static int block_data[Block::eMax][4][3][3] =
 		0,0,0,
 	},
 	},
-
 	{
 	{//stick0
 		0,1,0,
@@ -80,33 +79,8 @@ static int block_data[Block::eMax][4][3][3] =
 		0,1,0,
 	    0,0,1,
 	},
-
     },
-	{
-	{//mountain0
-		0,0,0,
-		0,1,0,
-		1,1,1,
-	},
-
-	{//mountain1
-		1,0,0,
-		1,1,0,
-		1,0,0,
-	},
-
-	{//mountain2
-		1,1,1,
-		0,1,0,
-		0,0,0,
-	},
-
-	{//mountain3
-		0,0,1,
-		0,1,1,
-		0,0,1,
-	},
-	},
+	
 };
 
 Block::Block(const CVector2D& pos, int type)
