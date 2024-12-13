@@ -103,6 +103,11 @@ void Init(void)
 	ADD_RESOURCE("yuugata", CImage::CreateImage("Image/yuugata.png"));
 	ADD_RESOURCE("yuugatakumo", CImage::CreateImage("Image/yuugatakumo.png"));
 	ADD_RESOURCE("murasakikumo", CImage::CreateImage("Image/murasakikumo.png"));
+	ADD_RESOURCE("stage6", CImage::CreateImage("Image/stage6.png"));
+	ADD_RESOURCE("stage7", CImage::CreateImage("Image/stage7.png"));
+	ADD_RESOURCE("stage8", CImage::CreateImage("Image/stage8.png"));
+	ADD_RESOURCE("stage9", CImage::CreateImage("Image/stage9.png"));
+	ADD_RESOURCE("stage10", CImage::CreateImage("Image/stage10.png"));
 	ADD_RESOURCE("Waku", CImage::CreateImage("Image/waku.png"));
 	ADD_RESOURCE("Maru", CImage::CreateImage("Image/maru.png"));
 	ADD_RESOURCE("murasaki", CImage::CreateImage("Image/murasaki.png"));

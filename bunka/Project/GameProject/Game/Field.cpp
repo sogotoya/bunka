@@ -19,6 +19,11 @@ Field::Field() :Base(eType_Field)
 	m_yuugatakumo.SetSize(1920, 1080);
 	m_murasaki.SetSize(1920, 1080);
 	m_murasakikumo.SetSize(1920, 1080);
+	m_stage6.SetSize(1920, 1080);
+	m_stage7.SetSize(1920, 1080);
+	m_stage8.SetSize(1920, 1080);
+	m_stage9.SetSize(1920, 1080);
+	m_stage10.SetSize(1920, 1080);
 }
 void Field::Draw()
 {
