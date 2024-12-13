@@ -39,7 +39,7 @@ Game::Game()
 		Base::Add(new Player(CVector2D(1800, 900), true));
 		break;
 	case 6:
-		Base::Add(new Player(CVector2D(1800, 900), true));
+		Base::Add(new Player(CVector2D(100, 600), true));
 		break;
 	case 7:
 		Base::Add(new Player(CVector2D(1800, 900), true));
@@ -255,7 +255,7 @@ void Game::Update()
 					break;
 
 				case 6:
-					Base::Add(new Player(CVector2D(1800, 900), true));
+					Base::Add(new Player(CVector2D(70, 70), true));
 					break;
 
 				case 7:
