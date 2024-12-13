@@ -107,32 +107,6 @@ static int block_data[Block::eMax][4][3][3] =
 		0,0,1,
 	},
 	},
-
-	{
-	{//cross0
-		0,1,0,
-		1,1,1,
-		0,1,0,
-	},
-
-	{//cross1
-		1,0,1,
-		0,1,0,
-		1,0,1,
-	},
-
-	{//cross2
-		0,1,0,
-		1,1,1,
-		0,1,0,
-	},
-
-	{//cross3
-		1,0,1,
-		0,1,0,
-		1,0,1,
-	},
-	}
 };
 
 Block::Block(const CVector2D& pos, int type)
