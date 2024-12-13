@@ -85,14 +85,8 @@ void Init(void)
 	//—”‚ÌŽí
 	srand(time(NULL));
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 16, 16));
-	//Base::Add(new Player(CVector2D(200, 900), true));
 	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip1.png"));
-	//Base::Add(new Map(GameData::s_score));
-	//Base::Add(new BlockManager());
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
-	//Base::Add(new Goal(CVector2D(1740, 613)));
-	//Base::Add(new count(CVector2D(500, 0)));
-	//Base::Add(new Game());
 	ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data,32, 32));
 	ADD_RESOURCE("TItle", CImage::CreateImage("Image/title.png"));
 	ADD_RESOURCE("Retry", CImage::CreateImage("Image/Retry.png"));
@@ -122,7 +116,6 @@ void Init(void)
 	ADD_RESOURCE("Red window", CImage::CreateImage("Image/Red window .png"));
 	ADD_RESOURCE("Red Side window", CImage::CreateImage("Image/Red Side window  .png"));
 	ADD_RESOURCE("stop", CImage::CreateImage("Image/stop.png"));
-	ADD_RESOURCE("stagewaku1", CImage::CreateImage("Image/stage1.png"));
 	ADD_RESOURCE("skip", CImage::CreateImage("Image/skip.png"));
 	SOUND("title")->Load("Sound/BGM/House_01.wav", 10);
 	SOUND("Tutorial")->Load("Sound/BGM/Ska_03.wav", 10);
@@ -133,10 +126,16 @@ void Init(void)
 	SOUND("stage5")->Load("Sound/BGM/Trance_01.wav", 10);
 	ADD_RESOURCE("end", CImage::CreateImage("Image/nagakawa.png"));
 	Base::Add(new TItle());
+	ADD_RESOURCE("stagewaku1", CImage::CreateImage("Image/stage1.png"));
 	ADD_RESOURCE("map2", CImage::CreateImage("Image/stage2.png"));
 	ADD_RESOURCE("map3", CImage::CreateImage("Image/stage3.png"));
 	ADD_RESOURCE("map4", CImage::CreateImage("Image/stage4.png"));
 	ADD_RESOURCE("map5", CImage::CreateImage("Image/stage5.png"));
+	ADD_RESOURCE("map6", CImage::CreateImage("Image/stage6.png"));
+	ADD_RESOURCE("map7", CImage::CreateImage("Image/stage7.png"));
+	ADD_RESOURCE("map8", CImage::CreateImage("Image/stage8.png"));
+	ADD_RESOURCE("map9", CImage::CreateImage("Image/stage9.png"));
+	ADD_RESOURCE("map10", CImage::CreateImage("Image/stage10.png"));
 	SOUND("jump")->Load("Sound/SE/8bitjump.wav", 10);
 	SOUND("sentaku")->Load("Sound/SE/sentaku7.wav", 10);
 	SOUND("Roll")->Load("Sound/BGM/retrogamecenter.wav", 10);
