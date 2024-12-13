@@ -7,7 +7,14 @@
 Player::Player(const CVector2D& p, bool flip)
 	:Base(eType_Player)
 {
-	m_img = COPY_RESOURCE("Player", CImage);
+	if (GameData::s_score < 6) 
+	{
+		m_img = COPY_RESOURCE("Player", CImage);
+	}
+	else 
+	{
+		m_img = COPY_RESOURCE("Player1", CImage);
+	}
 	m_img.ChangeAnimation(0);
 	m_pos_old = m_pos = p;
 	m_img.SetSize(90,90);
