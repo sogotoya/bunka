@@ -139,6 +139,10 @@ void Player::Update()
 
 		m_vec.y += GRAVITY;
 		m_pos += m_vec;
+		
+		//c‹@‚É‚Â‚¢‚Ä
+		if (GameData::s_score == 7)
+			GameData::zanki = 1;
 		//1160‚æ‚è‰º‚És‚­‚ÆKill‚³‚ê‚é
 		if (GameData::zanki != 0) 
 		{

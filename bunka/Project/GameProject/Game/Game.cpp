@@ -42,7 +42,7 @@ Game::Game()
 		Base::Add(new Player(CVector2D(100, 600), true));
 		break;
 	case 7:
-		Base::Add(new Player(CVector2D(1800, 900), true));
+		Base::Add(new Player(CVector2D(300, 200), true));
 		break;
 	case 8:
 		Base::Add(new Player(CVector2D(100, 200), true));
@@ -80,8 +80,8 @@ Game::Game()
 	drawone = false;
 	GameData::Gameclear = false;
 	//残機を３にセット
-	for(int i=0;i<3;i++)
-	zankiimg[i].SetSize(75, 75);
+		for (int i = 0; i < 3; i++)
+			zankiimg[i].SetSize(75, 75);
 	switch (GameData::s_score) {
 	case 0:
 		SOUND("Tutorial")->Play();
@@ -259,7 +259,7 @@ void Game::Update()
 					break;
 
 				case 7:
-					Base::Add(new Player(CVector2D(1800, 900), true));
+					Base::Add(new Player(CVector2D(100, 200), true));
 					break;
 
 				case 8:
