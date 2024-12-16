@@ -426,7 +426,6 @@ Map::Map(int area):Base(eType_Map)
 
     case 8:
         memcpy(m_stage_data, stage8data, sizeof(stage8data));
-        Base::Add(new Goal(CVector2D(500, 100)));
         Base::Add(new Goal(CVector2D(1800, 150)));
         drop_pos = (CVector2D(30, 0));
         break;
