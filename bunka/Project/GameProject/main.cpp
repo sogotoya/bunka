@@ -146,6 +146,7 @@ void Init(void)
 	SOUND("sentaku")->Load("Sound/SE/sentaku7.wav", 10);
 	SOUND("Roll")->Load("Sound/BGM/retrogamecenter.wav", 10);
 	ADD_RESOURCE("?", CImage::CreateImage("Image/maphatena.png"));
+	ADD_RESOURCE("kakusu", CImage::CreateImage("Image/kakusu.png"));
 }
 
 

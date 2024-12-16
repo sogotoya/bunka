@@ -23,6 +23,8 @@ private:
 	CImage stopimg;
 	//スキップ
 	CImage skipimg;
+	//stage7のGoal隠す画像
+	CImage m_kakusu;
 public:
 	Game();
 	void Update();

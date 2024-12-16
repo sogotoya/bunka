@@ -16,6 +16,7 @@ private:
 	CImage m_stage9;
 	CImage m_stage10;
 
+
 	static float m_ground_y;
 public:
 	Field();

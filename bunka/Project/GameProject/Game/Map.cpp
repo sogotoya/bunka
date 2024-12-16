@@ -420,19 +420,18 @@ Map::Map(int area):Base(eType_Map)
 
     case 7:
         memcpy(m_stage_data, stage7data, sizeof(stage7data));
-      Base::Add(new Goal(CVector2D(140, 1100)));
-      /*switch ()
+      switch (rand()%3)
       {
-      case 1:
+      case 0:
           Base::Add(new Goal(CVector2D(140, 1100)));
           break;
-      case 2:
+      case 1:
           Base::Add(new Goal(CVector2D(940, 1100)));
           break;
-      case 3:
+      case 2:
           Base::Add(new Goal(CVector2D(1750, 1100)));
           break;
-      }*/
+      }
       drop_pos = (CVector2D(30, 0));
         break;
 
