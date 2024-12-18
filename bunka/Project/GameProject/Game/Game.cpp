@@ -70,6 +70,9 @@ Game::Game()
 	stopimg = COPY_RESOURCE("stop", CImage);
 	skipimg = COPY_RESOURCE("skip", CImage);
 	m_kakusu = COPY_RESOURCE("kakusu", CImage);
+	m_Goal1 = COPY_RESOURCE("Goal1", CImage);
+	m_Goal2 = COPY_RESOURCE("Goal2", CImage);
+	m_Goal3 = COPY_RESOURCE("Goal3", CImage);
 	stopimg.SetPos(770, 400);
 	clearimg.SetSize(1550, 745);
 	clearimg.SetCenter(50, 100);
@@ -78,6 +81,15 @@ Game::Game()
 	skipimg.SetPos(1400,100);
 	m_kakusu.SetSize(1920,700);
 	m_kakusu.SetPos(0, 900);
+	m_Goal1.SetPos(140, 130);
+	m_Goal1.SetSize(100, 100);
+	m_Goal1.SetCenter(31, 120);
+	m_Goal2.SetPos(940, 130);
+	m_Goal2.SetSize(100, 100);
+	m_Goal2.SetCenter(31, 120);
+	m_Goal3.SetPos(1750, 130);
+	m_Goal3.SetSize(100, 100);
+	m_Goal3.SetCenter(31, 120);
 	drawclear = false;
 	drawretry = false;
 	drawone = false;
@@ -288,9 +300,16 @@ void Game::Update()
 void Game::Draw()
 {
 	//stage7ÇÃGoalâBÇµ
-	if (GameData::s_score)
+	if (GameData::s_score==7)
 		m_kakusu.Draw();
 
+	//stage9ÇÃÉfÉRÉC
+	if (GameData::s_score == 9)
+	{
+		m_Goal1.Draw();
+		m_Goal2.Draw();
+		m_Goal3.Draw();
+	}
 	//ÉQÅ[ÉÄíÜÇÃàÍéûí‚é~
 	if (PUSH(CInput::eButton10)) 
 	{

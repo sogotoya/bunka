@@ -9,6 +9,8 @@ class Map :public Base
 {
 private:
 	CImage m_img;
+	
+
 	//書き換え可能データ
 	int m_stage_data[MAP_HEIGHT][MAP_WIDTH];
 	

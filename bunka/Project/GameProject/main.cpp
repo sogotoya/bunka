@@ -88,6 +88,9 @@ void Init(void)
 	ADD_RESOURCE("Player1", CImage::CreateImage("Image/Player2.png", player_anim_data, 16, 16));
 	ADD_RESOURCE("Map_Tip", CImage::CreateImage("Image/MapTip1.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
+	ADD_RESOURCE("Goal1", CImage::CreateImage("Image/Goal.png"));
+	ADD_RESOURCE("Goal2", CImage::CreateImage("Image/Goal.png"));
+	ADD_RESOURCE("Goal3", CImage::CreateImage("Image/Goal.png"));
 	ADD_RESOURCE("Effect_Jump", CImage::CreateImage("Image/moku.png", effect_anim_data,32, 32));
 	ADD_RESOURCE("TItle", CImage::CreateImage("Image/title.png"));
 	ADD_RESOURCE("Retry", CImage::CreateImage("Image/Retry.png"));

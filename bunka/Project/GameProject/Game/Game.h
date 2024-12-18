@@ -25,6 +25,10 @@ private:
 	CImage skipimg;
 	//stage7‚ÌGoal‰B‚·‰æ‘œ
 	CImage m_kakusu;
+	//Goal‚ÌƒfƒRƒC
+	CImage m_Goal1;
+	CImage m_Goal2;
+	CImage m_Goal3;
 public:
 	Game();
 	void Update();
