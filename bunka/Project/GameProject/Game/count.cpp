@@ -5,7 +5,10 @@
 count::count(const CVector2D& pos) : Base(eType_count),
 m_count_text("C:\\Windows\\Fonts\\msgothic.ttc", 100)
 {
-	m_cnt = 180 * 60;
+	m_cnt = 100 * 60;
+	//stage10‚Ìê‡‚Ì‚İ40•b
+	if (GameData::s_score == 10)
+		m_cnt = 40 * 60;
 }
 
 
