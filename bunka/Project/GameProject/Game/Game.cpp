@@ -51,7 +51,7 @@ Game::Game()
 		Base::Add(new Player(CVector2D(1800, 900), true));
 		break;
 	case 10:
-		Base::Add(new Player(CVector2D(1800, 900), true));
+		Base::Add(new Player(CVector2D(100, 900), true));
 		break;
 	}
 	Base::Add(new Map(GameData::s_score));
@@ -286,7 +286,7 @@ void Game::Update()
 					break;
 
 				case 10:
-					Base::Add(new Player(CVector2D(1800, 900), true));
+					Base::Add(new Player(CVector2D(100, 900), true));
 					break;
 
 				}

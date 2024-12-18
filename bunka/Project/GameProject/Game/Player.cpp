@@ -53,7 +53,7 @@ void Player::StateIdle()
 			move_flag = true;
 		}
 
-		const float jump_pow = 15;//15
+		const float jump_pow = 12;//15
 		if (m_is_ground && PUSH(CInput::eButton5))
 
 		const float jump_pow = 10;//15
@@ -141,7 +141,7 @@ void Player::Update()
 		m_pos += m_vec;
 		
 		//écã@Ç…Ç¬Ç¢Çƒ
-		if (GameData::s_score == 7)
+		if (GameData::s_score == 7||GameData::s_score == 8 || GameData::s_score == 9 || GameData::s_score == 10)
 			GameData::zanki = 1;
 		//1160ÇÊÇËâ∫Ç…çsÇ≠Ç∆KillÇ≥ÇÍÇÈ
 		if (GameData::zanki != 0) 
