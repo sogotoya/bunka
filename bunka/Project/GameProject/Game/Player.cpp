@@ -56,8 +56,8 @@ void Player::StateIdle()
 		const float jump_pow = 12;//15
 		if (m_is_ground && PUSH(CInput::eButton5))
 
-		const float jump_pow = 10;//15
-		if (m_is_ground && PUSH(CInput::eUp))
+		//const float jump_pow = 10;//15
+		//if (m_is_ground && PUSH(CInput::eUp))
 
 		{
 			m_vec.y = -jump_pow;
