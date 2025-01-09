@@ -11,17 +11,27 @@ Menu::Menu() :Base(eType_Menu)
 {
 	//メニュー背景
 	m_menu = COPY_RESOURCE("kumo", CImage);
-	
+
 	m_menu.SetSize(1920, 1080);
 	//メニュー画像生成
 	//char name[配列][文字数]
-	char name[10][32] = { "stagewaku1", "map2", "map3", "map4", "map5","?","?", "?", "?", "?",};
-	for (int i = 0; i < 10; i++)
+	char name[5][32] = { "stagewaku1", "map2", "map3", "map4", "map5", };
+	char name2[5][32] = { "?","?", "?", "?", "?", };
+	for (int i = 0; i < 5; i++)
 	{
-		
-		Base::Add(m_waku[i] = new Waku(name[i], CVector2D(180 + 390 * (i%5), 500+350*(i/5)), i + 1));
-		
+
+		Base::Add(m_waku[i] = new Waku(name[i], CVector2D(180 + 390 * (i % 5), 500 + 350 * (i / 5)), i + 1));
+
 	}
+	int y = 5;
+	//ステージ５クリア後に表示
+	if (GameData::end_score >= 6)
+		for (int u = 0; u < 5; u++)
+		{
+			
+			Base::Add(m_waku[u] = new Waku(name2[u], CVector2D(180 + 390 * (u % 5),700 + 350 * (u / 5)), y + 1));
+			y+=1;
+		}
 }
 
 

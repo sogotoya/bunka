@@ -22,6 +22,7 @@ void EndRoll::Update()
 		GameData::zanki = GameData::Zanki_set;
 		GameData::Gameclear = false;
 		GameData::Gameover = false;
+		GameData::end_score += 1;
 	}
 }
 
