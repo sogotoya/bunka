@@ -399,7 +399,7 @@ void Game::Draw()
 	//一時停止画像の描画
 	if (m_pose)
 	{
-		//stopimg.Draw();
+		stopimg.Draw();
 	}
 	//スキップ画面描写
 	if (GameData::s_score ==0)
