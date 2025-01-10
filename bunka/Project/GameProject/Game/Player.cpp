@@ -105,9 +105,9 @@ void Player::Update()
 {
 	m_pos_old = m_pos;
 	//滑り
-	static float friction = 0.7f;
+	float friction = 0.7f;
 	// 移動速度の最大値
-	static const float maxMoveSpeed = 10.0f;//9.7f;
+	const float maxMoveSpeed = 10.0f;//9.7f;
 	//ステージ５のみ指定した分、滑るように
 	if(GameData::s_score==5)
 	{ 

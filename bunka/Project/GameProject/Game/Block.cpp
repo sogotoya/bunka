@@ -203,7 +203,7 @@ void Block::Update()
 		}
 	}
 	//1000‚æ‚è‰º‚É‚¢‚½‚çƒuƒƒbƒN‚ðíœ
-	if (m_pos.y > 1000)
+	if (m_pos.y > 21)
 	{
 		WriteBlock(m_pos, 0);
 		SetKill();
