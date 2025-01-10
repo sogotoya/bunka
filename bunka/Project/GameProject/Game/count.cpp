@@ -32,9 +32,9 @@ void count::Update()
 
 void count::Draw()
 {
-	if (!GameData::Gameclear)
-	//•¶Žš•\Ž¦
-	m_count_text.Draw(830, 120, 1, 1, 1, "%d",m_cnt/60);
+	//if (!GameData::Gameclear)
+	////•¶Žš•\Ž¦
+	//m_count_text.Draw(830, 120, 1, 1, 1, "%d",m_cnt/60);
 }
 
 void count::Collision(Base* b)
