@@ -14,7 +14,6 @@ m_title_text("C:\\Windows\\Fonts\\tItle.xct",64)
 {
 	m_img = COPY_RESOURCE("TItle", CImage);
 	m_cnt = 0;
-	//if(m_cnt==0)
 	SOUND("title")->Play();
 }
 
@@ -30,8 +29,7 @@ void TItle::Update()
 		Base::KillAll();
 		Base::Add(new Game());
 		Base::Add(new Tutorial());
-		//Base::Add(new Player(CVector2D(200, 900), true));
-		//Base::Add(new Menu());
+	
 		
 	}
 }

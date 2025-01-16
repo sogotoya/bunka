@@ -529,7 +529,7 @@ int Map::CollisionRect(const CVector2D& pos, const CRect& rect,CVector2D* rev_po
         pos.x + rect.m_right,
         pos.y + rect.m_bottom);
     int tx, ty;
-    int t;//?
+    int t;
     t = GetTip(CVector2D(r.m_left, r.m_top),&tx,&ty);//&tx,&tyâΩçsñ⁄Ç≈ìñÇΩÇ¡ÇΩÇ©
     if (t != 0) {
         rev_pos->y = (ty + 1) * MAP_TIP_SIZE - rect.m_top + 1;//m_top + 1Ç≈ÇPÉ}ÉXè„

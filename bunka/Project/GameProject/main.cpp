@@ -68,8 +68,6 @@ void Init(void)
 	CInput::SetButton(1, CInput::eMouseL, VK_LBUTTON);
 	CInput::SetButton(1, CInput::eMouseR, VK_RBUTTON);
 	CInput::SetButton(1, CInput::eMouseC, VK_MBUTTON);
-	//	CInput::SetMouseInside(true);
-	//	CInput::ShowCursor(false);
 	CInput::Update();
 	CInput::Update();
 

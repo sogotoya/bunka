@@ -167,7 +167,6 @@ void Block::Update()
 			//1マス右を確認
 			if (CollisionCheck(m_pos + CVector2D(1, 0), m_block_dir))
 			{
-				//右に行けないのなら削除
 
 				//今の位置へブロックを書き込み
 				WriteBlock(m_pos, 2);

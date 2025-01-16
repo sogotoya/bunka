@@ -53,11 +53,8 @@ void Player::StateIdle()
 			move_flag = true;
 		}
 
-		const float jump_pow = 12;//15
+		const float jump_pow = 12;
 		if (m_is_ground && PUSH(CInput::eButton5))
-
-		//const float jump_pow = 10;//15
-		//if (m_is_ground && PUSH(CInput::eUp))
 
 		{
 			m_vec.y = -jump_pow;
@@ -107,16 +104,16 @@ void Player::Update()
 	//滑り
 	float friction = 0.7f;
 	// 移動速度の最大値
-	const float maxMoveSpeed = 10.0f;//9.7f;
+	const float maxMoveSpeed = 10.0f;
 	//ステージ５のみ指定した分、滑るように
 	if(GameData::s_score==5)
 	{ 
-		friction = 0.9f;//0.84f;
+		friction = 0.9f;
 	}
 	//ステージ3のみ指定した分、遅くなる
 	if (GameData::s_score == 3)
 	{
-		friction = 0.63f;//0.84f;
+		friction = 0.63f;;
 	}
 	//X軸の移動速度を　-maxMoveSpeed　～ +maxMoveSpeed の間でクランプ
 	m_vec.x = min(max(m_vec.x, -maxMoveSpeed), maxMoveSpeed);
@@ -168,7 +165,7 @@ void Player::Draw()
 	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.SetFlipH(m_flip);
 	m_img.Draw();
-	//DrawRect();
+	
 }
 
 void Player::Collision(Base* b)
